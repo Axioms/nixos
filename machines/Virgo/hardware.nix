@@ -86,12 +86,12 @@
   };
 
   fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/e1e5f76b-d01a-4953-b983-8fe75849fa1e9";
+    device = "/dev/disk/by-uuid/63d5edb1-b3f1-4525-99ed-659304e4005e";
     fsType = "ext4";
   };
 
   fileSystems."/mnt/libvirt" = {
-    device = "/dev/disk/by-uuid/0b434c3c-70a0-4ba6-bc30-1e3adc765c2851";
+    device = "/dev/disk/by-uuid/0b434c3c-70a0-4ba6-bc30-1e3adc765c28";
     fsType = "ext4";
   };
 
@@ -138,7 +138,7 @@
     text = ''
       # <volume-name> <encrypted-device> [key-file] [options]
       #ainstsdd1 UUID=0201b90d-c3e2-4e0b-81a1-b0bf73b21007 ${config.age.secrets.ainstsdd1-Virgo-key.path} luks,key-slot=1
-      ainstsdb1 UUID=63d5edb1-b3f1-4525-99ed-659304e4005e ${config.age.secrets.ainstsdb1-Virgo-key.path} luks,key-slot=1
+      ainstsdb1 UUID=e5ea3b7f-edfe-4aab-999c-d49b54bab21b ${config.age.secrets.ainstsdb1-Virgo-key.path} luks,key-slot=1
       ainstsde1 UUID=6adad7da-3bb9-4ffa-895f-8ddc5e26e0e1 ${config.age.secrets.ainstsde1-Virgo-key.path} luks,key-slot=1
       ainstsda1 UUID=ed67f5cb-e5ea-4efa-a6ef-0c47f1b1fdac ${config.age.secrets.ainstsda1-Virgo-key.path} luks,key-slot=1
       ainstsdc1 UUID=8f97e143-80b8-43a9-904c-248b1173a90d ${config.age.secrets.ainstsdc1-Virgo-key.path} luks,key-slot=1
