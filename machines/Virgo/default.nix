@@ -29,10 +29,10 @@
     ../../users/axiom
     ../../modules/core/network-bridge.nix
     ../../modules/extra/docker.nix
-    inputs.ucodenix.nixosModules.default
+    #inputs.ucodenix.nixosModules.default
   ];
   syncthing.username = "axiom";
-  network-module.bridge.devices = [ "enp1s0" ];
+  network-module.bridge.devices = [ "enp12s0" ];
   hyprland.settings.monitor = ''
     monitor=DP-3, 1920x1080,0x0, 1
     monitor=DP-1, 3840x2160@120.00Hz, 1920x0, 1
@@ -40,7 +40,7 @@
   '';
   networking.hostName = "Virgo"; # Define your hostname.
 
-  services.ucodenix.enable = true;
+  #services.ucodenix.enable = true;
   #services.ucodenix.cpuModelId = "00A10F10";
   #hardware.cpu.amd.updateMicrocode = true;
   system.stateVersion = "25.05"; # Did you read the comment?
