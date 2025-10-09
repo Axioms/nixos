@@ -28,7 +28,7 @@
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
     secrets = {
-      url = "git+file:///home/axiom/Documents/git/nixos-secrets";
+      url = "https://github.com/Axioms/nixos-secrets";
       flake = false;
     };
     nixvirt = {
