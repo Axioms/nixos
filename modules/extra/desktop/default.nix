@@ -17,7 +17,7 @@
     allowedUDPPortRanges = allowedTCPPortRanges;
   };
 
-  home.file."app-org.kde.xwaylandvideobridge@autostart.service" = {
+  home-manager.users.axiom.home.file."app-org.kde.xwaylandvideobridge@autostart.service" = {
     enable = true;
     executable = true;
     text = "
