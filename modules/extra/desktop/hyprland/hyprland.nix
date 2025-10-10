@@ -153,7 +153,7 @@
 
           exec-once = waybar & 
           exec-once = steam -silent & 
-          exec-once = ${pkgs.dunst}/bin/dunst & 
+          exec-once = ${pkgs.dunst}/bin/dunst -config ${./dunst/dunstrc} & 
           exec-once = hyprpaper &
           #exec-once = swww-daemon & 
           #exec-once = swww img ~/.config/assets/backgrounds/cat_leaves.png  --transition-fps 255 --transition-type outer --transition-duration 0.8 & 
