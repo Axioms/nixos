@@ -14,6 +14,10 @@
       url = "github:Lyndeno/apple-fonts.nix";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
+    dolphin-overlay = {
+      url = "github:rumboon/dolphin-overlay";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
     home-manager-stable = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs-stable";
@@ -103,6 +107,7 @@
           agenix.nixosModules.default
           agenix-rekey.nixosModules.default
           inputs.home-manager-stable.nixosModules.home-manager
+          {nixpkgs.overlays = [ inputs.dolphin-overlay.overlays.default ];}
         ];
       };
 

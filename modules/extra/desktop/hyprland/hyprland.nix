@@ -30,6 +30,7 @@
       xdg-desktop-portal-wlr
       cliphist
       grimblast
+      shared-mime-info
     ];
 
     nix.settings = {
@@ -40,9 +41,10 @@
 
     programs.hyprland = {
       enable = true;
-      xwayland.enable = true;
       withUWSM = true;
     };
+
+    # This fixes the unpopulated MIME menus
 
     programs.iio-hyprland.enable = true;
     # Optional, hint electron apps to use wayland:
@@ -480,7 +482,6 @@
           layerrule = blur,dunst
 
         '';
-        xwayland.enable = true;
       };
     };
 
