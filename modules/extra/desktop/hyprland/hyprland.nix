@@ -29,6 +29,7 @@
       ddcutil
       xdg-desktop-portal-wlr
       cliphist
+      grimblast
     ];
 
     nix.settings = {
