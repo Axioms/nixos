@@ -53,7 +53,7 @@
           Description = "wallpaper every 20 minutes";
         };
         Timer = {
-          OnCalendar = "*:0/1";
+          OnCalendar = "*:0/20";
           Unit = "hyprpaper-wallpaper.service";
         };
         Install = {
