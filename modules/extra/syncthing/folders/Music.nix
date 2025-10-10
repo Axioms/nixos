@@ -7,7 +7,7 @@
 
 {
   home-manager.users."${config.syncthing.username}".services.syncthing.settings.folders.Music = {
-    enable = false;
+    enable = true;
     id = "dn22o-zmjw9";
     label = "Music";
     path = "/home/axiom/Music";

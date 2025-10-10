@@ -9,7 +9,7 @@
   home-manager.users."${config.syncthing.username
   }".services.syncthing.settings.folders.AndroidCamera =
     {
-      enable = false;
+      enable = true;
       id = "pixel_hr41-photos";
       label = "Android Camera";
       path = "/home/axiom/Android Camera";

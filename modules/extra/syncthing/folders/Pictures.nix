@@ -7,7 +7,7 @@
 
 {
   home-manager.users."${config.syncthing.username}".services.syncthing.settings.folders.Pictures = {
-    enable = false;
+    enable = true;
     id = "0e165-3i136";
     label = "Pictures";
     path = "/home/axiom/Pictures";

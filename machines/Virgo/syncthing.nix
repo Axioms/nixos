@@ -16,8 +16,15 @@
     ../../modules/extra/syncthing/devices/Pisces.nix
     ../../modules/extra/syncthing/devices/Sagittarius.nix
     ../../modules/extra/syncthing/devices/Virgo.nix
-
     ../../modules/extra/syncthing/folders/AndroidCamera.nix
+    ../../modules/extra/syncthing/folders/Books.nix
+    ../../modules/extra/syncthing/folders/Downloads.nix
+    ../../modules/extra/syncthing/folders/Pictures.nix
+    ../../modules/extra/syncthing/folders/School.nix
+    ../../modules/extra/syncthing/folders/Music.nix
+    ../../modules/extra/syncthing/folders/Library.nix
+    ../../modules/extra/syncthing/folders/ISOs.nix
+    ../../modules/extra/syncthing/folders/EmuDeck-Saves.nix
   ];
 
   age.secrets.syncthing-Virgo-key = {

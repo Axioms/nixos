@@ -12,13 +12,14 @@
 
 {
   imports = [
-    (modulesPath + "/profiles/qemu-guest.nix")
+    (modulesPath + "/installer/scan/not-detected.nix")
   ];
   zramSwap = {
     enable = true;
     memoryMax = 1024 * 1024 * 1024;
   };
   boot.initrd.availableKernelModules = [
+  "nvme" "xhci_pci_renesas" "thunderbolt" "usbhid" "usb_storage" "sd_mod"
     "ahci"
     "xhci_pci"
     "sr_mod"
@@ -32,7 +33,7 @@
     "dm-snapshot"
     "cryptd"
   ];
-  boot.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-amd" ];
 
   boot.extraModprobeConfig = ''
     softdep nouveau pre: vfio-pci
@@ -58,22 +59,20 @@
     "pcie_acs_override=downstream,multifunction"
     "ipv6.disable=1"
   ];
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/1baac3c9-c26f-43bb-8b5d-674e53e6b57d";
-    fsType = "ext4";
-  };
 
-  boot.initrd.luks.devices."luks-92a6b480-c42d-41cf-8ca1-3282d423f9c0".device =
-    "/dev/disk/by-uuid/92a6b480-c42d-41cf-8ca1-3282d423f9c0";
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/0fbaae9a-a8b7-4490-bb00-a3a67d11f426";
+      fsType = "ext4";
+    };
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/573C-341A";
-    fsType = "vfat";
-    options = [
-      "fmask=0077"
-      "dmask=0077"
-    ];
-  };
+    boot.initrd.luks.devices."luks-ccff488b-f9ae-4b7f-a78f-5083655bb5fe".device = "/dev/disk/by-uuid/ccff488b-f9ae-4b7f-a78f-5083655bb5fe";
+    boot.loader.systemd-boot.consoleMode = "max";
+
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/6076-5A43";
+      fsType = "vfat";
+      options = [ "fmask=0077" "dmask=0077" ];
+    };
 
   fileSystems."/mnt/data" = {
     device = "/dev/disk/by-uuid/cf7488e9-4f32-4454-aee0-d4bc7383e551";
@@ -153,4 +152,5 @@
   #networking.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

@@ -7,7 +7,7 @@
 
 {
   home-manager.users."${config.syncthing.username}".services.syncthing.settings.folders.School = {
-    enable = false;
+    enable = true;
     id = "73nfo-5y9fc";
     label = "School";
     path = "/mnt/data/drive";

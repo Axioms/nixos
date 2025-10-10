@@ -7,7 +7,7 @@
 
 {
   home-manager.users."${config.syncthing.username}".services.syncthing.settings.folders.ISOs = {
-    enable = false;
+    enable = true;
     id = "kscza-5qpec";
     label = "ISOs";
     path = "/mnt/data/ISOs";

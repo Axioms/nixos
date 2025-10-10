@@ -24,14 +24,18 @@
     ../../modules/extra/kitty
     ../../modules/extra/smartcard.nix
     ../../modules/extra/development.nix
+    ../../modules/extra/looking-glass-client.nix
     ../../modules/extra/libvirt
     ../../modules/kernel/zen.nix
     ../../users/axiom
     ../../modules/core/network-bridge.nix
     ../../modules/extra/docker.nix
+    ../../modules/extra/steam.nix
     #inputs.ucodenix.nixosModules.default
   ];
   syncthing.username = "axiom";
+
+  networking.firewall.enable = false;
   network-module.bridge.devices = [ "enp12s0" ];
   hyprland.settings.monitor = ''
     monitor=DP-3, 1920x1080,0x0, 1

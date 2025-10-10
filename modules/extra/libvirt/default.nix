@@ -156,14 +156,14 @@ in
     }
     {
       definition = nixos-domain-xml;
-      active = true;
+      active = false;
       restart = false;
     }
-    #{
-    #  definition = windows-10-glass-domain-xml;
-    #  active = false;
-    #  restart = false;
-    #}
+    {
+      definition = windows-10-glass-domain-xml;
+      active = false;
+      restart = false;
+    }
   ];
   virtualisation.libvirt.verbose = true;
   virtualisation.libvirtd = {
@@ -172,18 +172,6 @@ in
       package = pkgs.unstable.qemu_kvm;
       runAsRoot = true;
       swtpm.enable = true;
-      ovmf = {
-        enable = true;
-        packages = [
-          (pkgs.unstable.OVMFFull.override {
-            secureBoot = true;
-            msVarsTemplate = true;
-            httpSupport = true;
-            tpmSupport = true;
-            tlsSupport = true;
-          }).fd
-        ];
-      };
     };
 
   };

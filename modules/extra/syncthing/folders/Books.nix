@@ -7,7 +7,7 @@
 
 {
   home-manager.users."${config.syncthing.username}".services.syncthing.settings.folders.Books = {
-    enable = false;
+    enable = true;
     id = "01db6-wir5u";
     label = "Books";
     path = "/mnt/data/e-reader-books";

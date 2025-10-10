@@ -7,7 +7,7 @@
 
 {
   home-manager.users."${config.syncthing.username}".services.syncthing.settings.folders.Downloads = {
-    enable = false;
+    enable = true;
     id = "qovpu-t2awa";
     label = "Downloads";
     path = "/home/axiom/Downloads";
