@@ -32,7 +32,7 @@
       pkgs.hyprland
     ];
   };
-  
+
   xdg.menus.enable = true;
   xdg.mime.enable = true;
 

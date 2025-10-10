@@ -9,5 +9,6 @@
     tmux
     vulnix
     linuxHeaders
+    killall
   ];
 }

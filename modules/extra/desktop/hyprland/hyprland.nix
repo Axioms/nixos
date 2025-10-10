@@ -42,6 +42,7 @@
     programs.hyprland = {
       enable = true;
       withUWSM = true;
+      xwayland.enable = true;
     };
 
     # This fixes the unpopulated MIME menus

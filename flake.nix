@@ -107,7 +107,7 @@
           agenix.nixosModules.default
           agenix-rekey.nixosModules.default
           inputs.home-manager-stable.nixosModules.home-manager
-          {nixpkgs.overlays = [ inputs.dolphin-overlay.overlays.default ];}
+          { nixpkgs.overlays = [ inputs.dolphin-overlay.overlays.default ]; }
         ];
       };
 
