@@ -17,7 +17,8 @@
     nextcloud-client
     nvtopPackages.full
     spotify
-    #streamcontroller
+    unstable.streamcontroller
+    distrobox
     syncthingtray
     thunderbird-latest
     vesktop
@@ -26,4 +27,7 @@
     #vscode
     jq
   ];
+
+  programs.nix-ld.enable = true;
+
 }

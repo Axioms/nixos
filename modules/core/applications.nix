@@ -8,5 +8,6 @@
     sbctl
     tmux
     vulnix
+    linuxHeaders
   ];
 }
