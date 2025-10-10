@@ -26,6 +26,13 @@
       target = ".share/hypaper/wallpaper.sh";
     };
 
+    home.file."hyprpaper.conf" = {
+      enable = true;
+      executable = true;
+      text = "";
+      target = ".config/hypr/hyprpaper.conf";
+    };
+
     systemd.user = {
       services.hyprpaper-wallpaper = {
         Unit = {
@@ -46,8 +53,8 @@
           Description = "wallpaper every 20 minutes";
         };
         Timer = {
-          OnCalendar = "*:0/20";
-          Unit = "hyprpaper-wallpaper";
+          OnCalendar = "*:0/1";
+          Unit = "hyprpaper-wallpaper.service";
         };
         Install = {
           WantedBy = [ "multi-user.target" ];

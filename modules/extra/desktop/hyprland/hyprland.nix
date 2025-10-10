@@ -18,6 +18,19 @@
     };
   };
   config = {
+
+    environment.systemPackages = with pkgs; [
+      libsForQt5.qt5ct
+      kdePackages.qt6ct
+      nwg-look
+      networkmanagerapplet
+      wl-clipboard
+      kdePackages.kdeconnect-kde
+      ddcutil
+      xdg-desktop-portal-wlr
+      cliphist
+    ];
+
     nix.settings = {
       substituters = [ "https://hyprland.cachix.org" ];
       trusted-substituters = [ "https://hyprland.cachix.org" ];
@@ -75,8 +88,8 @@
           # Set programs that you use
           $terminal = kitty
           $fileManager = dolphin
-          $menu = tofi-drun -c ~/.config/tofi/configA --drun-launch=true
-          $browser = /opt/zen-browser-bin/zen-bin
+          $menu = tofi-drun -c ~/.share/tofi/configA --drun-launch=true
+          $browser = zen-beta
           $notes = obsidian
           $editor = code
           $editor-alt = subl
@@ -110,7 +123,7 @@
           env = QT_QPA_PLATFORMTHEME,qt5ct
           env = QT_WAYLAND_DISABLE_WINDOWDECORATION,1
           env = QT_AUTO_SCREEN_SCALE_FACTOR,1
-          env = QT_STYLE_OVERRIDE,kvantum
+          #env = QT_STYLE_OVERRIDE,kvantum
 
           # Toolkit Backend Variables
           env = GDK_BACKEND,wayland,x11,*
@@ -133,33 +146,34 @@
           # Or execute your favorite apps at launch like this:
           exec-once = dbus-update-activation-environment --all
 
-          exec-once = /usr/lib/pam_kwallet_init & kwalletd6 & kded5 & /usr/lib/polkit-kde-authentication-agent-1 & nm-applet &   # Start KWallet
-          exec-once = /bin/bash -c 'while ! dbus-send --session --dest=org.freedesktop.DBus --type=method_call --print-reply /org/freedesktop/DBus org.freedesktop.DBus.ListNames | grep org.kde.StatusNotifierWatcher; do sleep 0.1; done'   # Fix for waybar tray not working
+          exec-once = ${pkgs.kdePackages.kwallet-pam}/libexec/pam_kwallet_init & kwalletd6 & kded5 & ${pkgs.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1 & nm-applet &   # Start KWallet
+          exec-once = ${pkgs.bash}/bin/bash -c 'while ! dbus-send --session --dest=org.freedesktop.DBus --type=method_call --print-reply /org/freedesktop/DBus org.freedesktop.DBus.ListNames | grep org.kde.StatusNotifierWatcher; do sleep 0.1; done'   # Fix for waybar tray not working
           exec-once = XDG_MENU_PREFIX=arch- kbuildsycoca6   # Stupid Dolphin Open With being empty fix
 
           exec-once = waybar & 
-          exec-once = /usr/bin/dunst & 
+          exec-once = steam -silent & 
+          exec-once = ${pkgs.dunst}/bin/dunst & 
           exec-once = hyprpaper &
           #exec-once = swww-daemon & 
           #exec-once = swww img ~/.config/assets/backgrounds/cat_leaves.png  --transition-fps 255 --transition-type outer --transition-duration 0.8 & 
           exec-once = wl-paste --type text --watch cliphist store & 
           exec-once = wl-paste --type image --watch cliphist store & 
           exec-once = hypridle & 
-          #exec-once = nm-applet & 
-          #exec-once = /usr/lib/polkit-kde-authentication-agent-1 & 
-          exec-once = /usr/lib/kdeconnectd & 
+          exec-once = nm-applet & 
+          #exec-once = ${pkgs.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1 & 
+          exec-once = ${pkgs.kdePackages.kdeconnect-kde}/bin/kdeconnectd & 
 
           # Systemd services inherit hyprland environment
           exec-once = systemctl --user import-environment
           exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-          exec-once = /bin/bash -c 'sleep 2.5 ; nextcloud &'
+          exec-once = ${pkgs.bash}/bin/bash -c 'sleep 2.5 ; nextcloud &'
           #
           ## Portals
           #exec-once = systemctl --user restart xdg-desktop-portal.service
           exec-once = systemctl --user restart xdg-desktop-portal-hyprland.service
           exec-once = systemctl --user restart xdg-desktop-portal-wlr
-          exec-once = /bin/bash -c 'sleep 3; systemctl --user start hyprpaper-wallpaper.service'
-          exec-once = /bin/bash -c 'sleep 3; systemctl --user start wallpaper.timer'
+          exec-once = ${pkgs.bash}/bin/bash -c 'sleep 3; systemctl --user start hyprpaper-wallpaper.service'
+          exec-once = ${pkgs.bash}/bin/bash -c 'sleep 4; systemctl --user start wallpaper.timer'
           exec-once = ddcutil --display 1 setvcp 10 100
           exec-once = ddcutil --display 2 setvcp 10 100
           exec-once = ddcutil --display 3 setvcp 10 100
@@ -372,7 +386,7 @@
 
 
           # Clipboard
-          bind = SUPER, V, exec, cliphist list | tofi -c ${./tofi/configV} | cliphist decode | wl-copy
+          bind = SUPER, V, exec, cliphist list | tofi -c ~/.share/tofi/configA | cliphist decode | wl-copy
 
           # Colour Picker
           bind = $mainMod, P, exec, $colorPicker | wl-copy 
