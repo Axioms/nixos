@@ -11,6 +11,7 @@
   services.desktopManager.plasma6.enableQt5Integration = true;
 
   environment.systemPackages = with pkgs; [
+    kdePackages.plasma-workspace
     kdePackages.kdeplasma-addons
     kdePackages.wallpaper-engine-plugin
     kdePackages.sddm-kcm
