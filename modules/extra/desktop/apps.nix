@@ -17,7 +17,7 @@
     nextcloud-client
     nvtopPackages.full
     spotify
-    stable.streamcontroller
+    #streamcontroller
     syncthingtray
     thunderbird-latest
     vesktop

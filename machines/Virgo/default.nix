@@ -35,6 +35,9 @@
   ];
   syncthing.username = "axiom";
 
+  # temp allow flatpacks until streamcontroller is updated
+  services.flatpak.enable = true;
+
   networking.firewall.enable = false;
   network-module.bridge.devices = [ "enp12s0" ];
   hyprland.settings.monitor = ''

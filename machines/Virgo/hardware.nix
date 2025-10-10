@@ -19,7 +19,12 @@
     memoryMax = 1024 * 1024 * 1024;
   };
   boot.initrd.availableKernelModules = [
-  "nvme" "xhci_pci_renesas" "thunderbolt" "usbhid" "usb_storage" "sd_mod"
+    "nvme"
+    "xhci_pci_renesas"
+    "thunderbolt"
+    "usbhid"
+    "usb_storage"
+    "sd_mod"
     "ahci"
     "xhci_pci"
     "sr_mod"
@@ -60,19 +65,23 @@
     "ipv6.disable=1"
   ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/0fbaae9a-a8b7-4490-bb00-a3a67d11f426";
-      fsType = "ext4";
-    };
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/0fbaae9a-a8b7-4490-bb00-a3a67d11f426";
+    fsType = "ext4";
+  };
 
-    boot.initrd.luks.devices."luks-ccff488b-f9ae-4b7f-a78f-5083655bb5fe".device = "/dev/disk/by-uuid/ccff488b-f9ae-4b7f-a78f-5083655bb5fe";
-    boot.loader.systemd-boot.consoleMode = "max";
+  boot.initrd.luks.devices."luks-ccff488b-f9ae-4b7f-a78f-5083655bb5fe".device =
+    "/dev/disk/by-uuid/ccff488b-f9ae-4b7f-a78f-5083655bb5fe";
+  boot.loader.systemd-boot.consoleMode = "max";
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/6076-5A43";
-      fsType = "vfat";
-      options = [ "fmask=0077" "dmask=0077" ];
-    };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/6076-5A43";
+    fsType = "vfat";
+    options = [
+      "fmask=0077"
+      "dmask=0077"
+    ];
+  };
 
   fileSystems."/mnt/data" = {
     device = "/dev/disk/by-uuid/cf7488e9-4f32-4454-aee0-d4bc7383e551";
