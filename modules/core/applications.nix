@@ -11,7 +11,7 @@
     linuxHeaders
   ];
 
-    environment.shellAliases = {
+  environment.shellAliases = {
     killall = "pkill";
   };
 }

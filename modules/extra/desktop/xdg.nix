@@ -1,7 +1,12 @@
-{ pkgs, inputs, system, ... }:
+{
+  pkgs,
+  inputs,
+  system,
+  ...
+}:
 {
 
-    environment.sessionVariables.DEFAULT_BROWSER = "${inputs.zen-browser.packages.x86_64-linux.beta}/bin/zen-beta";
+  environment.sessionVariables.DEFAULT_BROWSER = "${inputs.zen-browser.packages.x86_64-linux.beta}/bin/zen-beta";
 
   # Portals
   home-manager.users.axiom = {
@@ -45,11 +50,15 @@
 
       portal = {
         config = {
-          common.default = [
-            "kde"
-            "gtk"
-            "gnome"
-          ];
+          common = {
+            default = [
+              "kde"
+              "gtk"
+              "gnome"
+            ];
+            "org.freedesktop.impl.portal.ScreenCast" = [ "hyprland" ];
+            "org.freedesktop.impl.portal.Screenshot" = [ "hyprland" ];
+          };
           common."org.freedesktop.impl.portal.Secret" = [
             "kwallet"
           ];
