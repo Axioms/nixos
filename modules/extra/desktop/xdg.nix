@@ -56,12 +56,11 @@
               "gtk"
               "gnome"
             ];
-            "org.freedesktop.impl.portal.ScreenCast" = [ "hyprland" ];
-            "org.freedesktop.impl.portal.Screenshot" = [ "hyprland" ];
           };
-          common."org.freedesktop.impl.portal.Secret" = [
-            "kwallet"
-          ];
+          common."org.freedesktop.impl.portal.Secret" = [ "kwallet" ];
+          common."org.freedesktop.impl.portal.ScreenCast" = [ "hyprland" ];
+          common."org.freedesktop.impl.portal.Screenshot" = [ "hyprland" ];
+
           kde.default = [
             "kde"
             "gtk"
