@@ -25,6 +25,7 @@
     ../../modules/extra/syncthing/folders/Library.nix
     ../../modules/extra/syncthing/folders/ISOs.nix
     ../../modules/extra/syncthing/folders/EmuDeck-Saves.nix
+    ../../modules/extra/syncthing/folders/AndroidBackups.nix
   ];
 
   age.secrets.syncthing-Virgo-key = {
