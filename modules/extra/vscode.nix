@@ -30,25 +30,25 @@
           ];
 
           userSettings = {
-            "workbench.colorTheme" = "Panda Syntax";
-            "workbench.iconTheme" = "material-icon-theme";
-            "security.workplace.trust.enabled" = false;
-            "git.openRepositroyInParentFolders" = "always";
-            "redhat.telemetry.enabled" = false;
-            "telemetry.feedback.enabled" = false;
+            "chat.agent.enabled" = false;
+            "chat.commandCenter.enabled" = false;
+            "explorer.confirmDelete" = false;
+            "explorer.confirmDragAndDrop" = false;
+            "files.autoSave" = "afterDelay";
             "git.autofetch" = true;
+            "git.confirmSync" = false;
+            "git.openRepositroyInParentFolders" = "always";
             "github.copilot.enable" = false;
             "github.copilot.editor.enableAutoCompletions" = false;
             "github.copilot.editor.enableCodeActions" = false;
             "github.copilot.nextEditSuggestions.enabled" = false;
             "github.copilot.renameSuggestions.triggerAutomatically" = false;
-            "chat.commandCenter.enabled" = false;
-            "chat.agent.enabled" = false;
-            "files.autoSave" = "afterDelay";
+            "redhat.telemetry.enabled" = false;
+            "telemetry.feedback.enabled" = false;
+            "security.workplace.trust.enabled" = false;
+            "workbench.colorTheme" = "Panda Syntax";
+            "workbench.iconTheme" = "material-icon-theme";
             "workbench.secondarySideBar.defaultVisibility" = "hidden";
-            "explorer.confirmDragAndDrop" = false;
-            "git.openRepositoryInParentFolders" = "always";
-            "explorer.confirmDelete" = false;
           };
         };
       };
