@@ -9,6 +9,9 @@
     tmux
     vulnix
     linuxHeaders
-    killall
   ];
+
+    environment.shellAliases = {
+    killall = "pkill";
+  };
 }
