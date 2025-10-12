@@ -7,7 +7,7 @@
 
 {
   home-manager.users."${config.syncthing.username
-  }".services.syncthing.settings.folders.AndroidCamera =
+  }".services.syncthing.settings.folders.AndroidBackup =
     {
       enable = true;
       id = "pixel_lf8i-backups";
