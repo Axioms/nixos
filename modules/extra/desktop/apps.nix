@@ -25,6 +25,7 @@
     #ventoy-bin-full
     veracrypt
     #vscode
+    unstable.wiremix
     jq
   ];
 
