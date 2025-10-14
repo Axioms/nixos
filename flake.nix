@@ -1,6 +1,7 @@
 {
   description = "A very basic flake";
   inputs = {
+    nixpkgs-streamcontroller.url = "github:NixOS/nixpkgs/pull/416567/head";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
     flake-utils.url = "github:numtide/flake-utils";

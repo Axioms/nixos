@@ -18,6 +18,12 @@
     enable = true;
     memoryMax = 1024 * 1024 * 1024;
   };
+
+hardware.graphics = {
+  enable = true;
+  enable32Bit = true;
+};
+
   boot.initrd.availableKernelModules = [
     "nvme"
     "xhci_pci_renesas"

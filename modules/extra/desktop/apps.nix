@@ -17,7 +17,7 @@
     nextcloud-client
     nvtopPackages.full
     spotify
-    unstable.streamcontroller
+    streamdeck.streamcontroller
     distrobox
     syncthingtray
     thunderbird-latest
