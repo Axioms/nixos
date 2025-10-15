@@ -35,9 +35,24 @@
     #inputs.ucodenix.nixosModules.default
   ];
   syncthing.username = "axiom";
+  security.polkit.enable = true;
 
-  # temp allow flatpacks until streamcontroller is updated
-  services.flatpak.enable = true;
+  security.polkit.extraConfig = ''
+    polkit.addRule(function(action, subject) {
+      if (
+        subject.isInGroup("users")
+          && (
+            action.id == "org.freedesktop.login1.reboot" ||
+            action.id == "org.freedesktop.login1.reboot-multiple-sessions" ||
+            action.id == "org.freedesktop.login1.power-off" ||
+            action.id == "org.freedesktop.login1.power-off-multiple-sessions"
+          )
+        )
+      {
+        return polkit.Result.YES;
+      }
+    });
+  '';
 
   networking.firewall.enable = false;
   network-module.bridge.devices = [ "enp12s0" ];

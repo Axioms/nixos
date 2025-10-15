@@ -150,7 +150,7 @@
           # Or execute your favorite apps at launch like this:
           exec-once = dbus-update-activation-environment --all
 
-          exec-once = ${pkgs.kdePackages.kwallet-pam}/libexec/pam_kwallet_init & kwalletd6 & kded5 & ${pkgs.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1 & nm-applet &   # Start KWallet
+          exec-once = ${pkgs.kdePackages.kwallet-pam}/libexec/pam_kwallet_init & kwalletd6 & kded5 & ${pkgs.unstable.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1 & nm-applet &   # Start KWallet
           exec-once = ${pkgs.bash}/bin/bash -c 'while ! dbus-send --session --dest=org.freedesktop.DBus --type=method_call --print-reply /org/freedesktop/DBus org.freedesktop.DBus.ListNames | grep org.kde.StatusNotifierWatcher; do sleep 0.1; done'   # Fix for waybar tray not working
           exec-once = XDG_MENU_PREFIX=arch- kbuildsycoca6   # Stupid Dolphin Open With being empty fix
 
@@ -164,7 +164,7 @@
           exec-once = wl-paste --type image --watch cliphist store & 
           exec-once = hypridle & 
           exec-once = nm-applet & 
-          #exec-once = ${pkgs.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1 & 
+          #exec-once = ${pkgs.unstable.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1 & 
           exec-once = ${pkgs.kdePackages.kdeconnect-kde}/bin/kdeconnectd & 
 
           # Systemd services inherit hyprland environment
