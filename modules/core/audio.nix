@@ -1,6 +1,12 @@
 { config, pkgs, ... }:
 
 {
+
+  disabledModules = [ "services/desktops/pipewire/pipewire.nix" ];
+  imports = [
+    "${inputs.nixpkgs-unstable}/nixos/modules/services/desktops/pipewire/pipewire.nix"
+  ];
+
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   hardware.bluetooth.enable;
