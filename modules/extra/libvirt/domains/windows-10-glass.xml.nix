@@ -232,14 +232,12 @@ in
         <source>
           <address domain="0x0000" bus="0x0e" slot="0x00" function="0x0"/>
         </source>
-        <rom bar="off"/>
         <address type="pci" domain="0x0000" bus="0x05" slot="0x00" function="0x0"/>
       </hostdev>
       <hostdev mode="subsystem" type="pci" managed="yes">
         <source>
           <address domain="0x0000" bus="0x0e" slot="0x00" function="0x1"/>
         </source>
-        <rom bar="off"/>
         <address type="pci" domain="0x0000" bus="0x07" slot="0x00" function="0x0"/>
       </hostdev>
       <redirdev bus="usb" type="spicevmc">
@@ -256,7 +254,7 @@ in
       </rng>
       <shmem name="looking-glass">
         <model type="ivshmem-plain"/>
-        <size unit="M">128</size>
+        <size unit="M">256</size>
         <address type="pci" domain="0x0000" bus="0x10" slot="0x01" function="0x0"/>
       </shmem>
     </devices>
