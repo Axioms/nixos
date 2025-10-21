@@ -56,6 +56,10 @@
 
   networking.firewall.enable = false;
   network-module.bridge.devices = [ "enp12s0" ];
+  networking.interfaces.enp12s0.wakeOnLan = {
+    policy = "magic";
+    enable = true;
+  };
   hyprland.settings.monitor = ''
     monitor=DP-3, 1920x1080,0x0, 1
     monitor=DP-1, 3840x2160@120.00Hz, 1920x0, 1
