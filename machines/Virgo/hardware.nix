@@ -19,10 +19,10 @@
     memoryMax = 1024 * 1024 * 1024;
   };
 
-hardware.graphics = {
-  enable = true;
-  enable32Bit = true;
-};
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
 
   boot.initrd.availableKernelModules = [
     "nvme"
@@ -44,7 +44,10 @@ hardware.graphics = {
     "dm-snapshot"
     "cryptd"
   ];
-  boot.kernelModules = [ "kvm-amd" ];
+  boot.kernelModules = [
+    "kvm-amd"
+    "kvmfr"
+  ];
 
   boot.extraModprobeConfig = ''
     softdep nouveau pre: vfio-pci
@@ -53,9 +56,10 @@ hardware.graphics = {
     options kvm_amd nested=1
     options kvm ignore_msrs=1
     options vfio-pci ids=10de:2482,10de:228b,1912:0014
+    options kvmfr static_size_mb=256
   '';
 
-  boot.extraModulePackages = [ ];
+  boot.extraModulePackages = [ config.boot.kernelPackages.kvmfr ];
   boot.kernelParams = [
     "microcode.amd_sha_check=off"
     "iommu=pt"

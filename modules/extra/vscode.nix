@@ -47,7 +47,7 @@
             "telemetry.feedback.enabled" = false;
             "security.workplace.trust.enabled" = false;
             "workbench.colorTheme" = "Panda Syntax";
-            "workbench.productIconTheme"= "material-product-icons";
+            "workbench.productIconTheme" = "material-product-icons";
             "workbench.secondarySideBar.defaultVisibility" = "hidden";
           };
         };

@@ -57,7 +57,7 @@
   networking.firewall.enable = false;
   network-module.bridge.devices = [ "enp12s0" ];
   networking.interfaces.enp12s0.wakeOnLan = {
-    policy = ["magic"];
+    policy = [ "magic" ];
     enable = true;
   };
   hyprland.settings.monitor = ''

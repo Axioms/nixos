@@ -14,7 +14,11 @@
     enable = true;
     openFirewall = true;
     port = 9090;
-    allowed-origins = [ "http://localhost:9090" "https://localhost:9090" "https://virgo.local.axioms.dev" ];
+    allowed-origins = [
+      "http://localhost:9090"
+      "https://localhost:9090"
+      "https://virgo.local.axioms.dev"
+    ];
   };
   systemd.tmpfiles.rules = [
     "f /usr/share/dbus-1/system.d/org.freedesktop.UDisks2.conf 0644 root root - -"

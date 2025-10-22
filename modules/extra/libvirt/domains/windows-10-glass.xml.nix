@@ -8,7 +8,7 @@ let
 in
 # xml
 ''
-  <domain type="kvm">
+  <domain type="kvm" xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0">
     <name>windows-10-glass</name>
     <uuid>66ec900b-4a8f-4bd3-9096-425459466631</uuid>
     <metadata>
@@ -252,11 +252,19 @@ in
         <backend model="random">/dev/urandom</backend>
         <address type="pci" domain="0x0000" bus="0x09" slot="0x00" function="0x0"/>
       </rng>
+      <!--
       <shmem name="looking-glass">
         <model type="ivshmem-plain"/>
         <size unit="M">256</size>
         <address type="pci" domain="0x0000" bus="0x10" slot="0x01" function="0x0"/>
       </shmem>
+      -->
     </devices>
+   <qemu:commandline xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
+     <qemu:arg value="-device"/>
+     <qemu:arg value="{'driver':'ivshmem-plain','id':'shmem0','memdev':'looking-glass'}"/>
+     <qemu:arg value="-object"/>
+     <qemu:arg value="{'qom-type':'memory-backend-file','id':'looking-glass','mem-path':'/dev/kvmfr0','size':268435456,'share':true}"/>
+   </qemu:commandline>
   </domain>
 ''

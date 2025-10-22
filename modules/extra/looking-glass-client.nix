@@ -47,10 +47,11 @@
         vsync=yes
 
         [app]
-        renderer=OpenGL
+        renderer=EGL
+        shmFile=/dev/kvmfr0
 
-        ;[egl]
-        ;vsync=yes
+        [egl]
+        vsync=yes
         ;nvGain=1
 
         [wayland]
@@ -64,7 +65,20 @@
     looking-glass-client
   ];
 
-  systemd.tmpfiles.rules = [
-    "f /dev/shm/looking-glass 0660 axiom qemu-libvirtd -"
-  ];
+  services.udev.extraRules = ''
+    SUBSYSTEM=="kvmfr", OWNER="axiom", GROUP="kvm", MODE="0660"
+  '';
+
+  virtualisation.libvirtd.qemu.verbatimConfig = ''
+    cgroup_device_acl = [
+        "/dev/null", "/dev/full", "/dev/zero",
+        "/dev/random", "/dev/urandom",
+        "/dev/ptmx", "/dev/kvm",
+        "/dev/kvmfr0"
+    ]
+  '';
+
+  #  systemd.tmpfiles.rules = [
+  #    "f /dev/shm/looking-glass 0660 axiom qemu-libvirtd -"
+  #  ];
 }
