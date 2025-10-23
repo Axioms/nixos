@@ -8,7 +8,7 @@ let
 in
 # xml
 ''
-  <domain type="kvm" xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0">
+  <domain xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0" type="kvm">
     <name>windows-10-glass</name>
     <uuid>66ec900b-4a8f-4bd3-9096-425459466631</uuid>
     <metadata>
@@ -70,7 +70,7 @@ in
       <vmport state="off"/>
       <smm state="on"/>
     </features>
-    <cpu mode="host-model" check="partial">
+    <cpu mode="host-passthrough" check="none" migratable="on">
       <topology sockets="1" dies="1" clusters="1" cores="8" threads="2"/>
     </cpu>
     <clock offset="utc">
@@ -252,13 +252,6 @@ in
         <backend model="random">/dev/urandom</backend>
         <address type="pci" domain="0x0000" bus="0x09" slot="0x00" function="0x0"/>
       </rng>
-      <!--
-      <shmem name="looking-glass">
-        <model type="ivshmem-plain"/>
-        <size unit="M">256</size>
-        <address type="pci" domain="0x0000" bus="0x10" slot="0x01" function="0x0"/>
-      </shmem>
-      -->
     </devices>
    <qemu:commandline xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
      <qemu:arg value="-device"/>
