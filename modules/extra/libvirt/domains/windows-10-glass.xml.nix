@@ -38,7 +38,7 @@ in
       </baseBoard>
     </sysinfo>
     <os firmware="efi">
-      <type arch="x86_64" machine="pc-q35-6.1">hvm</type>
+      <type arch="x86_64" machine="pc-q35-10.1">hvm</type>
       <firmware>
         <feature enabled="no" name="enrolled-keys"/>
         <feature enabled="yes" name="secure-boot"/>
