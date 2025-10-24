@@ -253,7 +253,7 @@ in
         <address type="pci" domain="0x0000" bus="0x09" slot="0x00" function="0x0"/>
       </rng>
     </devices>
-   <qemu:commandline xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
+   <qemu:commandline>
      <qemu:arg value="-device"/>
      <qemu:arg value="{'driver':'ivshmem-plain','id':'shmem0','memdev':'looking-glass'}"/>
      <qemu:arg value="-object"/>
