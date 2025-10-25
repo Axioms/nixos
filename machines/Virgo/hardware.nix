@@ -61,17 +61,17 @@
 
   boot.extraModulePackages = [ config.boot.kernelPackages.kvmfr ];
   boot.kernelParams = [
-    "microcode.amd_sha_check=off"
+    "amd_iommu=on"
     "iommu=pt"
-    "iommu=1"
     "rootfstype=ext4"
     "video=efifb:off"
     "loglevel=3"
     "udev.log_priority=3"
     "xhci_hcd.quirks=270336"
-    "transparent_hugepage=never"
+    #"transparent_hugepage=never"
     "rd.driver.pre=vfio-pci"
-    "pcie_acs_override=downstream,multifunction"
+    #"pcie_acs_override=downstream,multifunction"
+    "vfio-pci.ids=10de:2482,10de:228b,1912:0014"
     "ipv6.disable=1"
   ];
 
