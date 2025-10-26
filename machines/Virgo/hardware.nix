@@ -34,13 +34,13 @@
     "ahci"
     "xhci_pci"
     "sr_mod"
-    "kvm_amd"
-    "kvm"
-    "vfio-pci"
-    "vfio_iommu_type1"
-    "vfio"
   ];
   boot.initrd.kernelModules = [
+    "vfio-pci"
+    "vfio"
+    "vfio_iommu_type1"
+    "kvm_amd"
+    "kvm"
     "dm-snapshot"
     "cryptd"
   ];
@@ -50,27 +50,28 @@
   ];
 
   boot.extraModprobeConfig = ''
-    softdep nouveau pre: vfio-pci
-    softdep nvidia pre: vfio-pci
-    softdep nvidia* pre: vfio-pci
+    #softdep nouveau pre: vfio-pci
+    #softdep nvidia pre: vfio-pci
+    #softdep nvidia* pre: vfio-pci
     options kvm_amd nested=1
     options kvm ignore_msrs=1
-    options vfio-pci ids=10de:2482,10de:228b,1912:0014
+    #options vfio-pci ids=10de:2482,1458:408f,10de:228b,1458:408f,1912:0014
     options kvmfr static_size_mb=256
   '';
 
   boot.extraModulePackages = [ config.boot.kernelPackages.kvmfr ];
   boot.kernelParams = [
     "amd_iommu=on"
-    "iommu=pt"
+    #"iommu=pt"
+    "intremap=no_x2apic_optout"
     "rootfstype=ext4"
     "video=efifb:off"
     "loglevel=3"
     "udev.log_priority=3"
     "xhci_hcd.quirks=270336"
-    #"transparent_hugepage=never"
+    "transparent_hugepage=never"
     "rd.driver.pre=vfio-pci"
-    #"pcie_acs_override=downstream,multifunction"
+    "pcie_acs_override=downstream,multifunction"
     "vfio-pci.ids=10de:2482,10de:228b,1912:0014"
     "ipv6.disable=1"
   ];

@@ -44,14 +44,14 @@
         micDefault=deny
 
         [opengl]
-        vsync=yes
+        vsync=no
 
         [app]
         renderer=EGL
         shmFile=/dev/kvmfr0
 
         [egl]
-        vsync=yes
+        vsync=no
         ;nvGain=1
 
         [wayland]
