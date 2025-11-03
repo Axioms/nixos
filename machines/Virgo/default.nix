@@ -36,6 +36,7 @@
     ../../modules/extra/docker.nix
     ../../modules/extra/steam.nix
     ../../modules/extra/minecraft.nix
+    ../../modules/extra/birdtray.nix
     #inputs.ucodenix.nixosModules.default
   ];
   syncthing.username = "axiom";

@@ -20,7 +20,6 @@
     streamdeck.streamcontroller
     distrobox
     syncthingtray
-    thunderbird-latest
     vesktop
     #ventoy-bin-full
     veracrypt

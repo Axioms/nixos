@@ -24,7 +24,7 @@
             "advanced/onlyShowIconOnUnreadMessages": false,
             "advanced/runProcessOnChange": "",
             "advanced/tbcmdline": [
-                "${pkgs.birdtray}"
+                "${pkgs.thunderbird-latest}/bin/thunderbird"
             ],
             "advanced/tbprocessname": "thunderbird",
             "advanced/tbwindowmatch": " Mozilla Thunderbird",
@@ -63,5 +63,6 @@
 
   environment.systemPackages = with pkgs; [
     birdtray
+    thunderbird-latest
   ];
 }
