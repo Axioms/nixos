@@ -10,6 +10,10 @@
   ...
 }:
 {
+  nix.settings = {
+    download-buffer-size = 524288000; # 500 MiB
+  };
+  
   imports = [
     ./hardware.nix
     ./syncthing.nix
