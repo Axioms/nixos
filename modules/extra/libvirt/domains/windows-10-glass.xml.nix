@@ -70,7 +70,7 @@ in
       <vmport state="off"/>
       <smm state="on"/>
     </features>
-    <cpu mode="host-passthrough" check="none" migratable="on">
+    <cpu mode="host-model" check="partial">
       <topology sockets="1" dies="1" clusters="1" cores="8" threads="2"/>
     </cpu>
     <clock offset="utc">
@@ -253,11 +253,11 @@ in
         <address type="pci" domain="0x0000" bus="0x09" slot="0x00" function="0x0"/>
       </rng>
     </devices>
-   <qemu:commandline>
-     <qemu:arg value="-device"/>
-     <qemu:arg value="{'driver':'ivshmem-plain','id':'shmem0','memdev':'looking-glass'}"/>
-     <qemu:arg value="-object"/>
-     <qemu:arg value="{'qom-type':'memory-backend-file','id':'looking-glass','mem-path':'/dev/kvmfr0','size':268435456,'share':true}"/>
-   </qemu:commandline>
+    <qemu:commandline>
+      <qemu:arg value="-device"/>
+      <qemu:arg value="{'driver':'ivshmem-plain','id':'shmem0','memdev':'looking-glass'}"/>
+      <qemu:arg value="-object"/>
+      <qemu:arg value="{'qom-type':'memory-backend-file','id':'looking-glass','mem-path':'/dev/kvmfr0','size':268435456,'share':true}"/>
+    </qemu:commandline>
   </domain>
 ''
