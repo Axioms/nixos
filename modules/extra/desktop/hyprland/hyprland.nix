@@ -181,6 +181,7 @@
           exec-once = ddcutil --display 1 setvcp 10 100
           exec-once = ddcutil --display 2 setvcp 10 100
           exec-once = ddcutil --display 3 setvcp 10 100
+          exec-once = ${pkgs.thunderbird-latest}/bin/thunderbird
           #####################
           ### LOOK AND FEEL ###
           #####################
@@ -474,6 +475,9 @@
           windowrulev2 = float,class:^(nm-applet)$
           windowrulev2 = float,class:^(nm-connection-editor)$
           windowrulev2 = float,class:^(org.kde.polkit-kde-authentication-agent-1)$
+
+          # hidden Thunderbird
+          windowrulev2 = workspace special:email silent, class:^(thunderbird)$, title:^(Mozilla Thunderbird)$
 
           # windowrulev2 = suppressevent maximize, class:.* # You'll probably like this.
 

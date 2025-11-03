@@ -13,7 +13,7 @@
   nix.settings = {
     download-buffer-size = 524288000; # 500 MiB
   };
-  
+
   imports = [
     ./hardware.nix
     ./syncthing.nix
@@ -36,7 +36,7 @@
     ../../modules/extra/docker.nix
     ../../modules/extra/steam.nix
     ../../modules/extra/minecraft.nix
-    ../../modules/extra/birdtray.nix
+    ../../modules/extra/thunderbird
     #inputs.ucodenix.nixosModules.default
   ];
   syncthing.username = "axiom";

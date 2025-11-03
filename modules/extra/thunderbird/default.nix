@@ -59,6 +59,13 @@
         }
       '';
     };
+
+    home.file."email-widget.sh" = {
+      enable = true;
+      executable = true;
+      source = ./email-widget.sh;
+      target = ".share/thunderbird/email-widget.sh";
+    };
   };
 
   environment.systemPackages = with pkgs; [

@@ -72,6 +72,7 @@
       "pulseaudio#input",
       "pulseaudio#output",
       "custom/spacer1",
+      "custom/email",
       "backlight",
       "custom/battery",
       "custom/spacer1",
@@ -335,6 +336,15 @@
     "custom/spacer3": {
       "format": " // ",
       "tooltip": false
+    },
+
+    "custom/email": {
+      "format": "{}",
+      "exec": "~/.share/thunderbird/email-widget.sh",
+      "return-type": "json",
+      "interval": 60,
+      "tooltip": false,
+      "on-click": "hyprctl dispatch togglespecialworkspace email"
     }
   }
 ]
