@@ -342,7 +342,7 @@
       "format": "{}",
       "exec": "~/.share/thunderbird/email-widget.sh",
       "return-type": "json",
-      "interval": 60,
+      "interval": 10,
       "tooltip": false,
       "on-click": "hyprctl dispatch togglespecialworkspace email"
     }
