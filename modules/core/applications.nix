@@ -9,6 +9,7 @@
     tmux
     vulnix
     linuxHeaders
+    nvd
   ];
 
   environment.shellAliases = {
