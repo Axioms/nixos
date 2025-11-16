@@ -16,7 +16,7 @@
       ];
       programs.zen-browser = {
         enable = true;
-        /*
+        
         policies = {
           AutofillAddressEnabled = false;
           AutofillCreditCardEnabled = false;
@@ -28,12 +28,15 @@
           DontCheckDefaultBrowser = true;
           NoDefaultBookmarks = true;
           OfferToSaveLogins = false;
+          /*
           EnableTrackingProtection = {
             Value = true;
             Locked = true;
             Cryptomining = true;
             Fingerprinting = true;
           };
+          */
+          /*
           ExtensionSettings = {
             "{acf82b50-48cf-4dd4-8059-5c949e754a65}" = {
               install_url = "https://addons.mozilla.org/firefox/downloads/latest/anori/latest.xpi";
