@@ -60,6 +60,10 @@
     });
   '';
 
+  age.rekey = {
+    hostPubkey = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCyMVFEoo4mdabDl87ZG+6lvNf04YKmoFPNTbtu6hXZPOs9GNLPMvoYJjSmlI4yh1xSk1DxGGtYFvBHFyvdpqwruHJeYVDqQNvrW0OjorU6eTKMmljv02dUf71rXyF8z2MZJYNT2QqOm+t5C5kj8k73sZXPDA3bE7HxKS2043CcS2MkHVZJcLLO8+S0cLMTv7dWgRRru+yX5Hg3XUAMLBI3ABav90M7QFm4OvsMGudT5qrzbUC+cyADkii0o0DOpzZEG/dECwtwhbPoP3leWThqz/FMwmbmK4fxyJ2NJRAbL1X07l4OnLOlyzyiRgA/pSNJzRWzv95nB5V1PhVdn7lUGKS3CeLjawZdP8vECH2zLHqoJNrcDwLUzE0ZM3vcJd7ene/7SNgUyttAWdXlv8FlzLR3fIWlRuiQz2f4TANjI45PjR80aRriUqASZubyFERAt/JM4jZSYr2jzEmIWCjWZ04QaI632qSgUkzfVSLcSdUgfvqMvTkTAK72Gmu51Ts= root@Virgo";
+  };
+
   networking.firewall.enable = false;
   network-module.bridge.devices = [ "enp12s0" ];
   networking.interfaces.enp12s0.wakeOnLan = {

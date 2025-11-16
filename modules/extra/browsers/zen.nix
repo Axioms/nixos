@@ -16,7 +16,7 @@
       ];
       programs.zen-browser = {
         enable = true;
-        
+
         policies = {
           AutofillAddressEnabled = false;
           AutofillCreditCardEnabled = false;
@@ -29,88 +29,88 @@
           NoDefaultBookmarks = true;
           OfferToSaveLogins = false;
           /*
-          EnableTrackingProtection = {
-            Value = true;
-            Locked = true;
-            Cryptomining = true;
-            Fingerprinting = true;
-          };
+            EnableTrackingProtection = {
+              Value = true;
+              Locked = true;
+              Cryptomining = true;
+              Fingerprinting = true;
+            };
           */
           /*
-          ExtensionSettings = {
-            "{acf82b50-48cf-4dd4-8059-5c949e754a65}" = {
-              install_url = "https://addons.mozilla.org/firefox/downloads/latest/anori/latest.xpi";
-              installation_mode = "force_installed";
+            ExtensionSettings = {
+              "{acf82b50-48cf-4dd4-8059-5c949e754a65}" = {
+                install_url = "https://addons.mozilla.org/firefox/downloads/latest/anori/latest.xpi";
+                installation_mode = "force_installed";
+              };
+              "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
+                install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
+                installation_mode = "force_installed";
+              };
+              "{74145f27-f039-47ce-a470-a662b129930a}" = {
+                install_url = "https://addons.mozilla.org/firefox/downloads/latest/clearurls/latest.xpi";
+                installation_mode = "force_installed";
+              };
+              "CookieAutoDelete@kennydo.com" = {
+                install_url = "https://addons.mozilla.org/firefox/downloads/latest/cookie-autodelete/latest.xpi";
+                installation_mode = "force_installed";
+              };
+              "cookie.block.extension@gmail.com" = {
+                install_url = "https://addons.mozilla.org/firefox/downloads/latest/cookieblock/latest.xpi";
+                installation_mode = "force_installed";
+              };
+              "{7fc8ef53-24ec-4205-87a4-1e745953bb0d}" = {
+                install_url = "https://addons.mozilla.org/firefox/downloads/latest/css-exfil-protection/latest.xpi";
+                installation_mode = "force_installed";
+              };
+              "addon@darkreader.org" = {
+                install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
+                installation_mode = "force_installed";
+              };
+              "jid1-BoFifL9Vbdl2zQ@jetpack" = {
+                install_url = "https://addons.mozilla.org/firefox/downloads/latest/decentraleyes/latest.xpi";
+                installation_mode = "force_installed";
+              };
+              "@testpilot-containers" = {
+                install_url = "https://addons.mozilla.org/firefox/downloads/latest/multi-account-containers/latest.xpi";
+                installation_mode = "force_installed";
+              };
+              "jordanlinkwarden@gmail.com" = {
+                install_url = "https://addons.mozilla.org/firefox/downloads/latest/linkwarden/latest.xpi";
+                installation_mode = "force_installed";
+              };
+              "{b86e4813-687a-43e6-ab65-0bde4ab75758}" = {
+                install_url = "https://addons.mozilla.org/firefox/downloads/latest/localcdn-fork-of-decentraleyes/latest.xpi";
+                installation_mode = "force_installed";
+              };
+              "plasma-browser-integration@kde.org" = {
+                install_url = "https://addons.mozilla.org/firefox/downloads/latest/plasma-integration/latest.xpi";
+                installation_mode = "force_installed";
+              };
+              "{6da4a0dd-e540-4a26-8202-98e364ecef2e}" = {
+                install_url = "https://addons.mozilla.org/firefox/downloads/latest/youtube-dislike/latest.xpi";
+                installation_mode = "force_installed";
+              };
+              "smart-referer@meh.paranoid.pk" = {
+                install_url = "https://addons.mozilla.org/firefox/downloads/latest/smart-referer/latest.xpi";
+                installation_mode = "force_installed";
+              };
+              "tab-stash@condordes.net" = {
+                install_url = "https://addons.mozilla.org/firefox/downloads/latest/tab-stash/latest.xpi";
+                installation_mode = "force_installed";
+              };
+              "{c607c8df-14a7-4f28-894f-29e8722976af}" = {
+                install_url = "https://addons.mozilla.org/firefox/downloads/latest/temporary-containers/latest.xpi";
+                installation_mode = "force_installed";
+              };
+              "uBlock0@raymondhill.net" = {
+                install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+                installation_mode = "force_installed";
+              };
+              "info@virustotal.com" = {
+                install_url = "https://addons.mozilla.org/firefox/downloads/latest/vt4browsers/latest.xpi";
+                installation_mode = "force_installed";
+              };
             };
-            "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
-              install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
-              installation_mode = "force_installed";
-            };
-            "{74145f27-f039-47ce-a470-a662b129930a}" = {
-              install_url = "https://addons.mozilla.org/firefox/downloads/latest/clearurls/latest.xpi";
-              installation_mode = "force_installed";
-            };
-            "CookieAutoDelete@kennydo.com" = {
-              install_url = "https://addons.mozilla.org/firefox/downloads/latest/cookie-autodelete/latest.xpi";
-              installation_mode = "force_installed";
-            };
-            "cookie.block.extension@gmail.com" = {
-              install_url = "https://addons.mozilla.org/firefox/downloads/latest/cookieblock/latest.xpi";
-              installation_mode = "force_installed";
-            };
-            "{7fc8ef53-24ec-4205-87a4-1e745953bb0d}" = {
-              install_url = "https://addons.mozilla.org/firefox/downloads/latest/css-exfil-protection/latest.xpi";
-              installation_mode = "force_installed";
-            };
-            "addon@darkreader.org" = {
-              install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
-              installation_mode = "force_installed";
-            };
-            "jid1-BoFifL9Vbdl2zQ@jetpack" = {
-              install_url = "https://addons.mozilla.org/firefox/downloads/latest/decentraleyes/latest.xpi";
-              installation_mode = "force_installed";
-            };
-            "@testpilot-containers" = {
-              install_url = "https://addons.mozilla.org/firefox/downloads/latest/multi-account-containers/latest.xpi";
-              installation_mode = "force_installed";
-            };
-            "jordanlinkwarden@gmail.com" = {
-              install_url = "https://addons.mozilla.org/firefox/downloads/latest/linkwarden/latest.xpi";
-              installation_mode = "force_installed";
-            };
-            "{b86e4813-687a-43e6-ab65-0bde4ab75758}" = {
-              install_url = "https://addons.mozilla.org/firefox/downloads/latest/localcdn-fork-of-decentraleyes/latest.xpi";
-              installation_mode = "force_installed";
-            };
-            "plasma-browser-integration@kde.org" = {
-              install_url = "https://addons.mozilla.org/firefox/downloads/latest/plasma-integration/latest.xpi";
-              installation_mode = "force_installed";
-            };
-            "{6da4a0dd-e540-4a26-8202-98e364ecef2e}" = {
-              install_url = "https://addons.mozilla.org/firefox/downloads/latest/youtube-dislike/latest.xpi";
-              installation_mode = "force_installed";
-            };
-            "smart-referer@meh.paranoid.pk" = {
-              install_url = "https://addons.mozilla.org/firefox/downloads/latest/smart-referer/latest.xpi";
-              installation_mode = "force_installed";
-            };
-            "tab-stash@condordes.net" = {
-              install_url = "https://addons.mozilla.org/firefox/downloads/latest/tab-stash/latest.xpi";
-              installation_mode = "force_installed";
-            };
-            "{c607c8df-14a7-4f28-894f-29e8722976af}" = {
-              install_url = "https://addons.mozilla.org/firefox/downloads/latest/temporary-containers/latest.xpi";
-              installation_mode = "force_installed";
-            };
-            "uBlock0@raymondhill.net" = {
-              install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
-              installation_mode = "force_installed";
-            };
-            "info@virustotal.com" = {
-              install_url = "https://addons.mozilla.org/firefox/downloads/latest/vt4browsers/latest.xpi";
-              installation_mode = "force_installed";
-            };
-          };
           */
           Preferences =
             let
