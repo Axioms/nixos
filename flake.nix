@@ -33,7 +33,7 @@
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
     secrets = {
-      url = "git+ssh://git@github.com:Axioms/nixos-secrets.git";
+      url = "git+ssh://git@github.com/Axioms/nixos-secrets.git";
       flake = false;
     };
     nixvirt = {
