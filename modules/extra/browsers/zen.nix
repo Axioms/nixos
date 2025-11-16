@@ -16,6 +16,7 @@
       ];
       programs.zen-browser = {
         enable = true;
+        /*
         policies = {
           AutofillAddressEnabled = false;
           AutofillCreditCardEnabled = false;
@@ -107,6 +108,7 @@
               installation_mode = "force_installed";
             };
           };
+          */
           Preferences =
             let
               locked = value: {
