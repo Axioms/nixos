@@ -26,6 +26,7 @@
     #vscode
     unstable.wiremix
     jq
+    grayjay
   ];
 
   programs.nix-ld.enable = true;
