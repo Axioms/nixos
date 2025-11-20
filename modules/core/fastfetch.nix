@@ -224,7 +224,7 @@
               type = "command";
               key = "│ {#33} Updates{#keys} │";
               shell = "/bin/sh";
-              text = "checkupdates | wc -l";
+              text = "git -C "/home/nix/nixos/" rev-list --count HEAD..origin/main";
               format = "{1} Update(s) available";
             }
             {
@@ -247,5 +247,17 @@
         };
 
       };
+
+      home.file.".config/fastfetch/CheckKernelUpdate.sh" = {
+      enable = true;
+      executable = true;
+      text = ''
+          NEW_KERNEL="$(nix search nixpkgs ^legacyPackages.x86_64-linux.linuxPackages_zen.kernel$ --offline | tr '\n' ' ' | cut -d "(" -f 2 | cut -d ")" -f 1)"
+          OLD_KERNEL="$(uname -r | cut -d "-" -f 1,3)"
+
+          [[ "$NEW_KERNEL" > "$OLD_KERNEL" ]] && echo "*** System restart required ***"
+      '';
+      target = ".config/fastfetch/CheckKernelUpdate.sh";
+    };
     };
 }
