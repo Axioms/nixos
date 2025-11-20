@@ -224,7 +224,7 @@
               type = "command";
               key = "│ {#33} Updates{#keys} │";
               shell = "/bin/sh";
-              text = "git -C "/home/nix/nixos/" rev-list --count HEAD..origin/main";
+              text = ''git -C "/home/nix/nixos" rev-list --count HEAD..origin/main'';
               format = "{1} Update(s) available";
             }
             {
