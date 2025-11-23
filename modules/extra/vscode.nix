@@ -49,6 +49,9 @@
             "workbench.colorTheme" = "Panda Syntax";
             "workbench.productIconTheme" = "material-product-icons";
             "workbench.secondarySideBar.defaultVisibility" = "hidden";
+            "nix.enableLanguageServer" = true;
+            "nix.formatterPath" = "nixfmt";
+            "nix.serverPath" = "nixd";
           };
         };
       };
