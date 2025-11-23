@@ -24,13 +24,16 @@
     ./wlogout
   ];
 
-  environment.systemPackages = let
-  # I wish there was a `pkgs.mapLink` or something to do this
-  application-menu = pkgs.runCommandLocal "xdg-application-menu" { } ''
-    mkdir -p $out/etc/xdg/menus/
-    ln -s ${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu $out/etc/xdg/menus/applications.menu
-  '';
-in [
-  application-menu
-]
+  environment.systemPackages =
+    let
+      # I wish there was a `pkgs.mapLink` or something to do this
+      application-menu = pkgs.runCommandLocal "xdg-application-menu" { } ''
+        mkdir -p $out/etc/xdg/menus/
+        ln -s ${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu $out/etc/xdg/menus/applications.menu
+      '';
+    in
+    [
+      application-menu
+    ];
+
 }
