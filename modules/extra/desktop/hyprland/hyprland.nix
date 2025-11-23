@@ -400,7 +400,7 @@
           bind = SUPER, L, exec, hyprlock
 
           # wlogout
-          bind = SUPER, ESCAPE, exec, wlogout
+          bind = SUPER, ESCAPE, exec, wlogout -b 4
 
           # waybar
           bind = Ctrl, Escape, exec, pkill waybar || waybar # toggle waybar
@@ -485,6 +485,14 @@
           layerrule = ignorezero,tofi
           layerrule = ignorezero, dunst
           layerrule = blur,dunst
+
+          ######################
+          ### WLOGOUT CONFIG ###
+          ######################
+
+          layerrule = blur, logout_dialog
+          layerrule = ignorezero, logout_dialog
+          layerrule = ignorealpha 0.5, logout_dialog
 
         '';
       };

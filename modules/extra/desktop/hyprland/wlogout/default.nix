@@ -16,125 +16,68 @@
       enable = true;
       layout = [
         {
-          label = "exit";
-          action = "";
-          text = "Exit";
-          keybind = "h";
+          "label" = "lock";
+          "action" = "hyprlock";
         }
+
         {
-          label = "shutdown";
-          action = "systemctl poweroff";
-          text = "Shutdown";
-          keybind = "s";
+          "label" = "logout";
+          "action" = "hyprctl dispatch exit";
         }
+
         {
-          label = "lock";
-          action = "hyprlockr";
-          text = "Lock";
-          keybind = "l";
+          "label" = "shutdown";
+          "action" = "shutdown -h now";
         }
+
         {
-          label = "logout";
-          action = "hyprctl dispatch exit";
-          text = "Logout";
-          keybind = "e";
-        }
-        {
-          label = "reboot";
-          action = "systemctl reboot";
-          text = "Reboot";
-          keybind = "r";
+          "label" = "reboot";
+          "action" = "reboot";
         }
       ];
 
       style = ''
-              * {
-            font-family: JetBrains Mono, Symbols Nerd Font;
-            font-size: 24px;
-            transition-property: background-color;
-            transition-duration: 0.7s;
+        * {
+          background-image: none;
         }
 
         window {
-            background-color: #11111b;
-            /* border-radius: 10px; */
+          background-color: rgba(25, 0, 46, 0.5);
         }
 
         button {
-            background-color: #11111b;
-            border-style: solid;
-            /* border-width: 2px; */
-            border-radius: 50px;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 15%;
-            margin: 15px;
+          color: rgb(255, 14, 130);
+          font-size: 16px;
+          background-color: rgb(36, 0, 65);
+          border-style: none;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 10%;
+          border-radius: 30px;
+          margin: 500px 75px;
+          text-shadow: 0px 0px;
+          box-shadow: 0px 0px;
         }
 
-        button:active,
         button:hover {
-            background-color: #cdd6f4;
-        }
-
-        button:focus {
-            background-color: #cdd6f4;
+          background-color: rgb(144, 0, 72);
+          outline-style: none;
         }
 
         #lock {
-            background-image: image(url("${../assets/wlogout/lock.png}"), url("${../assets/wlogout/lock.png}"));
-        }
-
-        #lock:hover {
-            background-image: image(url("${../assets/wlogout/lock-hover.png}"), url("${../assets/wlogout/lock.png}"));
-            color: #11111b;
+          background-image: image(url("${../assets/wlogout/lock.png}"));
         }
 
         #logout {
-            background-image: image(url("${../assets/wlogout/logout.png}"), url("${../assets/wlogout/logout.png}"));
-        }
-
-        #logout:hover {
-            background-image: image(url("${../assets/wlogout/logout-hover.png}"), url("${../assets/wlogout/logout.png}"));
-            color: #11111b;
-        }
-
-        #suspend {
-            background-image: image(url("${../assets/wlogout/sleep.png}"), url("${../assets/wlogout/sleep.png}"));
-        }
-
-        #suspend:hover {
-            background-image: image(url("${../assets/wlogout/sleep-hover.png}"), url("${../assets/wlogout/sleep.png}"));
-            color: #11111b;
+          background-image: image(url("${../assets/wlogout/logout.png}"));
         }
 
         #shutdown {
-            background-image: image(url("${../assets/wlogout/power.png}"), url("${../assets/wlogout/power.png}"));
-        }
-
-        #shutdown:hover {
-            background-image: image(url("${../assets/wlogout/power-hover.png}"), url("${../assets/wlogout/power-hover.png}"));
-            color: #11111b;
+          background-image: image(url("${../assets/wlogout/power.png}"));
         }
 
         #reboot {
-            background-image: image(url("${../assets/wlogout/restart.png}"), url("${../assets/wlogout/restart.png}"));
-        }
-
-        #reboot:hover {
-            background-image: image(url("${../assets/wlogout/restart-hover.png}"), url("${../assets/wlogout/restart.png}"));
-            color: #11111b;
-        }
-
-        #exit {
-            background-image: image(url("${../assets/wlogout/restart.png}"), url("${../assets/wlogout/restart.png}"));
-            background-color: #11111b;
-
-        }
-
-        #exit:hover {
-            background-image: image(url("${../assets/wlogout/restart-hover.png}"), url("${../assets/wlogout/restart.png}"));
-            color: #11111b;
-            background-color: #cdd6f4;
+          background-image: image(url("${../assets/wlogout/restart.png}"));
         }
       '';
     };

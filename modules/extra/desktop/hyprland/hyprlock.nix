@@ -13,7 +13,7 @@
 
   home-manager.users.axiom = {
     programs.hyprlock = {
-      enable = false;
+      enable = true;
       extraConfig = ''
         background {
             monitor =
