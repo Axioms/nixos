@@ -8,7 +8,8 @@
     remotePlay.openFirewall = true;
 
     extraPackages = with pkgs; [
-      rose-pine-hyprcursor
+      kdePackages.breeze-icons
+      kdePackages.breeze
     ];
   };
 }

@@ -75,6 +75,7 @@ in
   imports = [
     inputs.nixvirt.nixosModules.default
     "${inputs.nixpkgs-unstable}/nixos/modules/virtualisation/libvirtd.nix"
+    "${inputs.nixpkgs-unstable}/nixos/modules/services/networking/firewalld" #until firewalld is in stable
   ];
   programs.virt-manager = {
     enable = true;
