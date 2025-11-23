@@ -436,7 +436,7 @@
 
           # Example windowrule v1
           # windowrule = float, ^(kitty)$
-          windowrule = float, class:^(jome)$
+          # windowrule = float, class:^(jome)$
 
           # Example windowrule v2
           # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
