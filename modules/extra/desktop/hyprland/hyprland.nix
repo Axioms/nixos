@@ -20,7 +20,6 @@
   config = {
 
     environment.systemPackages = with pkgs; [
-      libsForQt5.qt5ct
       kdePackages.qt6ct
       nwg-look
       networkmanagerapplet
@@ -31,6 +30,7 @@
       cliphist
       grimblast
       shared-mime-info
+      rose-pine-hyprcursor
     ];
 
     nix.settings = {
