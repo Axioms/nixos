@@ -175,7 +175,7 @@
     python310 # for coq setup
     python310Packages.virtualenv
     # lua lsp for vim config
-    sumneko-lua-language-server
+    lua-language-server
     # for nvim
     gcc
   ];
