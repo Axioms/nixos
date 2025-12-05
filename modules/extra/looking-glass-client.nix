@@ -64,9 +64,10 @@
   environment.systemPackages = with pkgs; [
     looking-glass-client
   ];
-
+  
+  services.udev.enable = true;
   services.udev.extraRules = ''
-    SUBSYSTEM=="kvmfr", OWNER="axiom", GROUP="kvm", MODE="0660"
+    SUBSYSTEM=="kvmfr", GROUP="kvm", MODE="0660"
   '';
 
   virtualisation.libvirtd.qemu.verbatimConfig = ''
