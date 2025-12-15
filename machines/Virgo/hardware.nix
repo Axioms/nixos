@@ -25,14 +25,7 @@
   };
 
   hardware.amdgpu.initrd.enable = true;
-
-  hardware.graphics.extraPackages = with pkgs; [
-    amdvlk
-  ];
-
-  hardware.graphics.extraPackages32 = with pkgs; [
-  driversi686Linux.amdvlk
-];
+  hardware.amdgpu.opencl.enable = true;
 
   boot.initrd.availableKernelModules = [
     "nvme"
