@@ -10,6 +10,7 @@
     vulnix
     linuxHeaders
     nvd
+    nix-output-monitor
   ];
 
   environment.shellAliases = {

@@ -117,6 +117,22 @@
         ];
       };
 
+      nixosConfigurations.Aries = inputs.nixpkgs-stable.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {
+          inherit inputs outputs self;
+        };
+        modules = [
+          ./machines/Aries
+          ./modules/core/age/age.nix
+          lanzaboote.nixosModules.lanzaboote
+          agenix.nixosModules.default
+          agenix-rekey.nixosModules.default
+          inputs.home-manager-stable.nixosModules.home-manager
+          { nixpkgs.overlays = [ inputs.dolphin-overlay.overlays.default ]; }
+        ];
+      };
+
       agenix-rekey = inputs.agenix-rekey.configure {
         userFlake = self;
         inherit (self) nixosConfigurations;

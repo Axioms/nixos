@@ -13,9 +13,9 @@ test $host:
 	nixos-rebuild dry-activate --flake .#{{host}}
 
 apply $host:
-	nixos-rebuild build --flake .#{{host}}
-	nvd diff /run/current-system $(nix eval ".#nixosConfigurations.{{host}}.config.system.build.toplevel" --raw)
-	nixos-rebuild switch --flake .#{{host}}
+	nom build .#nixosConfigurations.{{host}}.config.system.build.toplevel --out-link /tmp/nixos-configuration
+	nvd diff /run/current-system /tmp/nixos-configuration
+	sudo /tmp/nixos-configuration/bin/switch-to-configuration switch
 	rm result
 
 copy $host:

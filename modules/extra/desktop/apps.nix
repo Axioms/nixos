@@ -14,7 +14,8 @@
     mission-center
     mpv
     nextcloud-client
-    nvtopPackages.full
+    #nvtopPackages.full
+    protonvpn-gui
     spotify
     streamdeck.streamcontroller
     distrobox
