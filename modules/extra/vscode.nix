@@ -21,14 +21,18 @@
         enable = true;
 
         profiles.default = {
+          enableMcpIntegration = false;
+          enableExtensionUpdateCheck = false;
+          enableUpdateCheck = false;
+
           extensions = with pkgs.vscode-marketplace; [
             jnoortheen.nix-ide
             eamodio.gitlens
             tinkertrain.theme-panda
             pkief.material-product-icons
             christian-kohler.path-intellisense
+            gruntfuggly.todo-tree
           ];
-
           userSettings = {
             "chat.agent.enabled" = false;
             "chat.commandCenter.enabled" = false;
@@ -47,11 +51,26 @@
             "telemetry.feedback.enabled" = false;
             "security.workplace.trust.enabled" = false;
             "workbench.colorTheme" = "Panda Syntax";
-            "workbench.productIconTheme" = "material-product-icons";
             "workbench.secondarySideBar.defaultVisibility" = "hidden";
             "nix.enableLanguageServer" = true;
             "nix.formatterPath" = "nixfmt";
             "nix.serverPath" = "nixd";
+            "todo-tree.general.showActivityBarBadge" = true;
+            "todo-tree.highlights.useColourScheme" = true;
+            "todo-tree.general.tags" = [
+              "BUG"
+              "HACK"
+              "FIXME"
+              "TODO"
+              "XXX"
+              "[ ]"
+              "[x]"
+              "wait"
+            ];
+            "workbench.settings.showAISearchToggle" = false;
+            "gitlens.ai.enabled" =  false;
+            "chat.todoListTool.descriptionField" = false;
+            "chat.disableAIFeatures" = true;
           };
         };
       };

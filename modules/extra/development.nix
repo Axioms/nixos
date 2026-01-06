@@ -17,7 +17,7 @@
     filezilla
     git
     godot
-    isoimagewriter
+    kdePackages.isoimagewriter
     just
     meld
     nil

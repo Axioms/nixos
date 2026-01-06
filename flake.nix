@@ -2,7 +2,6 @@
   description = "A very basic flake";
   inputs = {
     nixpkgs-streamcontroller.url = "github:NixOS/nixpkgs/pull/416567/head";
-    nixpkgs-jellyfin-media-player.url = "github:NixOS/nixpkgs/pull/465340/head";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
     flake-utils.url = "github:numtide/flake-utils";
@@ -10,15 +9,15 @@
 
     agenix-rekey = {
       url = "github:oddlama/agenix-rekey";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     apple-fonts = {
       url = "github:Lyndeno/apple-fonts.nix";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     dolphin-overlay = {
       url = "github:rumboon/dolphin-overlay";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     home-manager-stable = {
       url = "github:nix-community/home-manager/release-25.11";
@@ -29,13 +28,8 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     lanzaboote = {
-      url = "github:nix-community/lanzaboote/v0.4.3";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
-      inputs.rust-overlay.follows = "rust-overlay";
-    };
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
+      url = "github:nix-community/lanzaboote/v1.0.0";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     secrets = {
       url = "git+ssh://git@github.com/Axioms/nixos-secrets.git";
@@ -47,25 +41,25 @@
     };
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       # IMPORTANT: we're using "libgbm" and is only available in unstable so ensure
       # to have it up-to-date or simply don't specify the nixpkgs input
       inputs = {
-        home-manager.follows = "home-manager-stable";
-        nixpkgs.follows = "nixpkgs-stable";
+        home-manager.follows = "home-manager-unstable";
+        nixpkgs.follows = "nixpkgs-unstable";
       };
     };
     vscode-server = {
       url = "github:nix-community/nixos-vscode-server";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     plasma-manager = {
       url = "github:nix-community/plasma-manager";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
-      inputs.home-manager.follows = "home-manager-stable";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.home-manager.follows = "home-manager-unstable";
     };
     ucodenix.url = "github:e-tho/ucodenix";
   };
@@ -84,9 +78,9 @@
       inherit (helpers) mkMerge;
     in
     {
-      formatter.x86_64-linux = inputs.nixpkgs-stable.legacyPackages.x86_64-linux.nixfmt-tree;
+      formatter.x86_64-linux = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux.nixfmt-tree;
 
-      nixosConfigurations.vm = inputs.nixpkgs-stable.lib.nixosSystem {
+      nixosConfigurations.vm = inputs.nixpkgs-unstable.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {
           inherit inputs outputs self;
@@ -101,7 +95,7 @@
         ];
       };
 
-      nixosConfigurations.Virgo = inputs.nixpkgs-stable.lib.nixosSystem {
+      nixosConfigurations.Virgo = inputs.nixpkgs-unstable.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {
           inherit inputs outputs self;
@@ -112,7 +106,7 @@
           lanzaboote.nixosModules.lanzaboote
           agenix.nixosModules.default
           agenix-rekey.nixosModules.default
-          inputs.home-manager-stable.nixosModules.home-manager
+          inputs.home-manager-unstable.nixosModules.home-manager
           { nixpkgs.overlays = [ inputs.dolphin-overlay.overlays.default ]; }
         ];
       };

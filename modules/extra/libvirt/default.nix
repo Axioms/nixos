@@ -69,12 +69,12 @@ let
 in
 {
 
-  disabledModules = [ "virtualisation/libvirtd.nix" ];
+  #disabledModules = [ "virtualisation/libvirtd.nix" ];
 
   boot.extraModprobeConfig = "options kvm_amd nested=1";
   imports = [
     inputs.nixvirt.nixosModules.default
-    "${inputs.nixpkgs-unstable}/nixos/modules/virtualisation/libvirtd.nix"
+    #  "${inputs.nixpkgs-unstable}/nixos/modules/virtualisation/libvirtd.nix"
   ];
   programs.virt-manager = {
     enable = true;

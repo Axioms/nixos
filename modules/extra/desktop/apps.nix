@@ -4,13 +4,14 @@
   environment.systemPackages = with pkgs; [
     birdtray
     deskflow
-    jellyfin-media-player.jellyfin-media-player
+    jellyfin-desktop
     looking-glass-client
     kdePackages.ark
     kdePackages.filelight
     kdePackages.kcmutils
     kdePackages.partitionmanager
     kdePackages.dolphin
+    kdePackages.kmix
     mission-center
     mpv
     nextcloud-client
@@ -19,15 +20,16 @@
     streamdeck.streamcontroller
     distrobox
     syncthingtray
-    vesktop
+    #TODO: switch to unstable
+    stable.vesktop
     #ventoy-bin-full
     veracrypt
     #vscode
     unstable.wiremix
     jq
-    grayjay
+    #TODO: switch to unstable
+    stable.grayjay
   ];
 
   programs.nix-ld.enable = true;
-
 }

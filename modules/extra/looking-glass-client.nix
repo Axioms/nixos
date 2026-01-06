@@ -64,7 +64,7 @@
   environment.systemPackages = with pkgs; [
     looking-glass-client
   ];
-  
+
   services.udev.enable = true;
   services.udev.extraRules = ''
     SUBSYSTEM=="kvmfr", GROUP="kvm", MODE="0660"
