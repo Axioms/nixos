@@ -71,6 +71,7 @@
             "gitlens.ai.enabled" = false;
             "chat.todoListTool.descriptionField" = false;
             "chat.disableAIFeatures" = true;
+            "editor.fontFamily" = "'JetBrainsMono Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace";
           };
         };
       };
