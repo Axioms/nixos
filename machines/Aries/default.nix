@@ -23,6 +23,7 @@
     ../../modules/extra/minecraft.nix
     ../../modules/extra/thunderbird
     ../../modules/extra/steam.nix
+    ../../modules/extra/fingerprint.nix
   ];
 
   networking.hostName = "Aries"; # Define your hostname.
