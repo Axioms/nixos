@@ -2,7 +2,6 @@
   description = "A very basic flake";
   inputs = {
     nixpkgs-streamcontroller.url = "github:NixOS/nixpkgs/pull/416567/head";
-    nixpkgs-jellyfin-media-player.url = "github:NixOS/nixpkgs/pull/465340/head";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
     flake-utils.url = "github:numtide/flake-utils";
@@ -29,13 +28,8 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     lanzaboote = {
-      url = "github:nix-community/lanzaboote/v0.4.3";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
-      inputs.rust-overlay.follows = "rust-overlay";
-    };
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
+      url = "github:nix-community/lanzaboote/v1.0.0";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     secrets = {
       url = "git+ssh://git@github.com/Axioms/nixos-secrets.git";

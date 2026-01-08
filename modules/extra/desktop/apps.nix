@@ -4,7 +4,7 @@
   environment.systemPackages = with pkgs; [
     birdtray
     deskflow
-    jellyfin-media-player.jellyfin-media-player
+    jellyfin-media-player
     looking-glass-client
     kdePackages.ark
     kdePackages.filelight
