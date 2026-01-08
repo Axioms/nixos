@@ -17,7 +17,7 @@
     services = {
       hypridle = {
 
-        enable = false;
+        enable = true;
         settings = {
           general = {
             lock_cmd = "pidof hyprlock || hyprlock"; # avoid starting multiple hyprlock instances.
@@ -43,10 +43,10 @@
               on-resume = "hyprctl dispatch dpms on"; # screen on when activity is detected after timeout has fired.
             }
 
-            {
-              timeout = 900; # 30min
-              on-timeout = "systemctl suspend"; # suspend pc
-            }
+            #{
+            #  timeout = 900; # 30min
+            #  on-timeout = "systemctl suspend"; # suspend pc
+            #}
           ];
         };
       };
