@@ -4,9 +4,9 @@
   nix.settings = {
     download-buffer-size = 524288000; # 500 MiB
   };
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware.nix
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware.nix
     ../../modules/core
     ../../modules/extra/browsers/zen.nix
     ../../modules/extra/desktop/apps.nix
@@ -22,7 +22,8 @@
     ../../modules/extra/docker.nix
     ../../modules/extra/minecraft.nix
     ../../modules/extra/thunderbird
-    ];
+    ../../modules/extra/steam.nix
+  ];
 
   networking.hostName = "Aries"; # Define your hostname.
   security.polkit.enable = true;
