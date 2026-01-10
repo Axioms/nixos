@@ -368,6 +368,7 @@
           # Scroll through existing workspaces with mainMod + scroll
           bind = $mainMod, mouse_down, workspace, e+1
           bind = $mainMod, mouse_up, workspace, e-1
+          bind = CTRL, Tab, exec, ~/.share/hypaper/focus.sh
 
           # Move/resize windows with mainMod + LMB/RMB and dragging
           bindm = $mainMod, mouse:272, movewindow

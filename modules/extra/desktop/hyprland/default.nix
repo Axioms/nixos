@@ -36,4 +36,11 @@
       application-menu
     ];
 
+    home.file."focus.sh" = {
+      enable = true;
+      executable = true;
+      source = ./focus.sh;
+      target = ".share/hypaper/focus.sh";
+    };
+
 }
