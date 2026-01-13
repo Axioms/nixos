@@ -32,6 +32,8 @@
             pkief.material-product-icons
             christian-kohler.path-intellisense
             gruntfuggly.todo-tree
+            ewen-lbh.vscode-hyprls
+            fireblast.hyprlang-vscode
           ];
 
           userSettings = {

@@ -30,5 +30,6 @@
     scrcpy
     sdrpp
     solvespace
+    unstable.hyprls
   ];
 }
