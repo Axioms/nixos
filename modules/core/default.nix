@@ -5,6 +5,7 @@
   imports = [
     ./i18n.nix
     ./applications.nix
+    ./audio.nix
     ./env.nix
     ./fastfetch.nix
     ./fonts.nix
@@ -30,6 +31,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Use Beta Cache
+  nix.settings.substituters = [ "https://aseipp-nix-cache.global.ssl.fastly.net" ];
+  
   # automation
   nix.optimise = {
     automatic = true;

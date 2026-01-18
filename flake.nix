@@ -4,6 +4,7 @@
     nixpkgs-streamcontroller.url = "github:NixOS/nixpkgs/pull/416567/head";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
+    hyprland.url = "github:hyprwm/Hyprland";
     flake-utils.url = "github:numtide/flake-utils";
     agenix.url = "github:ryantm/agenix";
 
@@ -26,6 +27,10 @@
     home-manager-unstable = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+    hypr-dynamic-cursors = {
+        url = "github:VirtCode/hypr-dynamic-cursors";
+        inputs.hyprland.follows = "hyprland";
     };
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v1.0.0";
