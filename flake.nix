@@ -27,6 +27,10 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+     hytale = {
+      url = "github:swagtop/hytale-flake";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v1.0.0";
       inputs.nixpkgs.follows = "nixpkgs-unstable";

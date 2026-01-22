@@ -28,6 +28,7 @@
       "docker"
       "libvirt"
       "libvirt-qemu"
+      "input"
       "kvm"
       "qemu"
       "wheel"

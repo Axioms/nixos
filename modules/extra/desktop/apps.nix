@@ -24,6 +24,7 @@
     #ventoy-bin-full
     veracrypt
     #vscode
+    wl-clicker
     unstable.wiremix
     jq
     grayjay
