@@ -1,4 +1,4 @@
-_:
+{ inputs, ... }:
 
 {
   nix.settings = {
@@ -24,6 +24,7 @@ _:
     ../../modules/extra/thunderbird
     ../../modules/extra/steam.nix
     ../../modules/extra/fingerprint.nix
+    inputs.mineral.nixosModules.nix-mineral
   ];
 
   networking.hostName = "Aries"; # Define your hostname.
@@ -44,6 +45,14 @@ _:
       }
     });
   '';
+
+  nix-mineral = {
+    enable = true;
+  };
+
+  age.rekey = {
+    hostPubkey = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC40CvgW64A29uY/74n8vvF4imHcPQ6RLq3mBIMfY24ovF3pDsViqakth4pvtanqAhUPSeQeyzLchvjtmzPh67asTgIxjg4HK7auey9H3HJFc7ctYUMwn8G2A3SgdJZl9qyF95mwuUWc3Fm1iDDoIATnf+DpkfBXMnNkzCfOEtQ0LdszNde7pfwZZwfRNguIG2VGFRyXZEyjRSYDwdUDxRyp+9LNhJ6enNdqgtqlREoUR4PTp4OQ/2mao91RY3aq1WuenDYnPirxEK2mpAlCa6NhnwVBBbVTvm/BXCxbHPLi/gZvWKvBb6mn3hRD84XiYmX0Jvc0fKHHfOm9OXfkrxTMUna0dpJnRs1D5g0i6w2KlFd8YeQorKA9Vb/TDHfPGvW8AGX/4QQQRkdKB5HGNhF3vbQngyX9thjnrxqYgi14jrpBOXx6ZLD+aafPLKnllLSRBApsoNqsuIOi1tWN+GvsYdraAuqVYceHbWRLFE2uEhmZVdU43ctXayudiWwRVgpuhYxfV3B9bBnLJWzRTYjP27DKSTa3fUatyIU1VmikZJZtl04d0pHt1dJ/XEPnNvl1OlGHorhOO3M+PfBR3RJnLOVZa1f+iWKMQMyX7w+76K8Gvm+f3nzE3qmTccsSNdNYhKu2r0Xsi0PAX1efXXAzwacXY34nJCNLkCF6ItdPQ== root@nixos";
+  };
 
   hyprland.settings.monitor = ''
     monitor=, preferred, auto, 1

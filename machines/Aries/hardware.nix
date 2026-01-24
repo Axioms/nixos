@@ -24,6 +24,9 @@
   };
 
   boot = {
+    extraModulePackages = [ ];
+    kernelModules = [ "kvm-amd" ];
+
     initrd = {
       availableKernelModules = [
         "nvme"
@@ -38,9 +41,6 @@
         "/dev/disk/by-uuid/36bd6fb7-a9d0-443b-9fa1-2a3bb03843c7";
     };
   };
-
-  kernelModules = [ "kvm-amd" ];
-  extraModulePackages = [ ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/62353844-37e5-4a07-867c-0cc880236b81";
