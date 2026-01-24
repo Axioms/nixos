@@ -1,11 +1,8 @@
 {
-  pkgs,
-  OVMFFull,
   config,
   ...
 }:
-let
-in
+
 # xml
 ''
   <domain type="kvm">

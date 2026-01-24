@@ -1,11 +1,7 @@
 {
-  pkgs,
   config,
-  OVMFFull,
   ...
 }:
-let
-in
 # xml
 ''
   <domain xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0" type="kvm">

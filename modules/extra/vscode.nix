@@ -1,9 +1,4 @@
 {
-  config,
-  options,
-  lib,
-  pkgs,
-  uPkgs,
   inputs,
   ...
 }:

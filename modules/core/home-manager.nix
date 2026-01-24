@@ -1,10 +1,4 @@
-{
-  config,
-  options,
-  lib,
-  input,
-  ...
-}:
+_:
 
 {
   home-manager = {

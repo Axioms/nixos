@@ -4,7 +4,6 @@
 {
   config,
   lib,
-  pkgs,
   modulesPath,
   inputs,
   ...
@@ -19,143 +18,150 @@
     memoryMax = 1024 * 1024 * 1024;
   };
 
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+
+    amdgpu = {
+      initrd.enable = true;
+      opencl.enable = true;
+    };
   };
 
-  hardware.amdgpu.initrd.enable = true;
-  hardware.amdgpu.opencl.enable = true;
+  boot = {
+    initrd = {
+      availableKernelModules = [
+        "nvme"
+        "xhci_pci_renesas"
+        "thunderbolt"
+        "usbhid"
+        "usb_storage"
+        "sd_mod"
+        "ahci"
+        "xhci_pci"
+        "sr_mod"
+      ];
+      kernelModules = [
+        "vfio-pci"
+        "vfio"
+        "vfio_iommu_type1"
+        "kvm_amd"
+        "kvm"
+        "dm-snapshot"
+        "cryptd"
+      ];
 
-  boot.initrd.availableKernelModules = [
-    "nvme"
-    "xhci_pci_renesas"
-    "thunderbolt"
-    "usbhid"
-    "usb_storage"
-    "sd_mod"
-    "ahci"
-    "xhci_pci"
-    "sr_mod"
-  ];
-  boot.initrd.kernelModules = [
-    "vfio-pci"
-    "vfio"
-    "vfio_iommu_type1"
-    "kvm_amd"
-    "kvm"
-    "dm-snapshot"
-    "cryptd"
-  ];
-  boot.kernelModules = [
-    "kvm-amd"
-    "kvmfr"
-  ];
+      luks.devices."luks-ccff488b-f9ae-4b7f-a78f-5083655bb5fe".device =
+        "/dev/disk/by-uuid/ccff488b-f9ae-4b7f-a78f-5083655bb5fe";
+    };
+    loader.systemd-boot.consoleMode = "max";
 
-  boot.extraModprobeConfig = ''
-    #softdep nouveau pre: vfio-pci
-    #softdep nvidia pre: vfio-pci
-    #softdep nvidia* pre: vfio-pci
-    options kvm_amd nested=1
-    options kvm ignore_msrs=1
-    #options vfio-pci ids=10de:2482,1458:408f,10de:228b,1458:408f,1912:0014
-    options kvmfr static_size_mb=256
-  '';
+    kernelModules = [
+      "kvm-amd"
+      "kvmfr"
+    ];
 
-  boot.extraModulePackages = [ config.boot.kernelPackages.kvmfr ];
-  boot.kernelParams = [
-    "amd_iommu=on"
-    #"iommu=pt"
-    "intremap=no_x2apic_optout"
-    "rootfstype=ext4"
-    "video=efifb:off"
-    "loglevel=3"
-    "udev.log_priority=3"
-    "xhci_hcd.quirks=270336"
-    "transparent_hugepage=never"
-    "rd.driver.pre=vfio-pci"
-    "pcie_acs_override=downstream,multifunction"
-    "vfio-pci.ids=10de:2482,10de:228b,1912:0014"
-    "ipv6.disable=1"
-    "video=DP-3:1920x1080"
-    "video=DP-1:3840x2160@120"
-    "video=HDMI-A-1:3840x2160@60"
-  ];
+    extraModprobeConfig = ''
+      #softdep nouveau pre: vfio-pci
+      #softdep nvidia pre: vfio-pci
+      #softdep nvidia* pre: vfio-pci
+      options kvm_amd nested=1
+      options kvm ignore_msrs=1
+      #options vfio-pci ids=10de:2482,1458:408f,10de:228b,1458:408f,1912:0014
+      options kvmfr static_size_mb=256
+    '';
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/0fbaae9a-a8b7-4490-bb00-a3a67d11f426";
-    fsType = "ext4";
-  };
-
-  boot.initrd.luks.devices."luks-ccff488b-f9ae-4b7f-a78f-5083655bb5fe".device =
-    "/dev/disk/by-uuid/ccff488b-f9ae-4b7f-a78f-5083655bb5fe";
-  boot.loader.systemd-boot.consoleMode = "max";
-
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/6076-5A43";
-    fsType = "vfat";
-    options = [
-      "fmask=0077"
-      "dmask=0077"
+    extraModulePackages = [ config.boot.kernelPackages.kvmfr ];
+    kernelParams = [
+      "amd_iommu=on"
+      #"iommu=pt"
+      "intremap=no_x2apic_optout"
+      "rootfstype=ext4"
+      "video=efifb:off"
+      "loglevel=3"
+      "udev.log_priority=3"
+      "xhci_hcd.quirks=270336"
+      "transparent_hugepage=never"
+      "rd.driver.pre=vfio-pci"
+      "pcie_acs_override=downstream,multifunction"
+      "vfio-pci.ids=10de:2482,10de:228b,1912:0014"
+      "ipv6.disable=1"
+      "video=DP-3:1920x1080"
+      "video=DP-1:3840x2160@120"
+      "video=HDMI-A-1:3840x2160@60"
     ];
   };
-
-  fileSystems."/mnt/data" = {
-    device = "/dev/disk/by-uuid/cf7488e9-4f32-4454-aee0-d4bc7383e551";
-    fsType = "ext4";
-  };
-
-  fileSystems."/mnt/backup" = {
-    device = "/dev/disk/by-uuid/0b593e11-ad24-4b81-9224-f863a44f5d98";
-    fsType = "ext4";
-  };
-
-  fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/63d5edb1-b3f1-4525-99ed-659304e4005e";
-    fsType = "ext4";
-  };
-
-  fileSystems."/mnt/libvirt" = {
-    device = "/dev/disk/by-uuid/0b434c3c-70a0-4ba6-bc30-1e3adc765c28";
-    fsType = "ext4";
+  fileSystems = {
+    "/" = {
+      device = "/dev/disk/by-uuid/0fbaae9a-a8b7-4490-bb00-a3a67d11f426";
+      fsType = "ext4";
+    };
+    "/boot" = {
+      device = "/dev/disk/by-uuid/6076-5A43";
+      fsType = "vfat";
+      options = [
+        "fmask=0077"
+        "dmask=0077"
+      ];
+    };
+    "/mnt/data" = {
+      device = "/dev/disk/by-uuid/cf7488e9-4f32-4454-aee0-d4bc7383e551";
+      fsType = "ext4";
+    };
+    "/mnt/backup" = {
+      device = "/dev/disk/by-uuid/0b593e11-ad24-4b81-9224-f863a44f5d98";
+      fsType = "ext4";
+    };
+    "/home" = {
+      device = "/dev/disk/by-uuid/63d5edb1-b3f1-4525-99ed-659304e4005e";
+      fsType = "ext4";
+    };
+    "/mnt/libvirt" = {
+      device = "/dev/disk/by-uuid/0b434c3c-70a0-4ba6-bc30-1e3adc765c28";
+      fsType = "ext4";
+    };
   };
 
   swapDevices = [ ];
 
-  age.secrets.ainstsda1-Virgo-key = {
-    owner = "root";
-    mode = "400";
-    rekeyFile = "${inputs.secrets}/Virgo/disks/ainstsda1.key.age";
-  };
+  age.secrets = {
+    ainstsda1-Virgo-key = {
+      owner = "root";
+      mode = "400";
+      rekeyFile = "${inputs.secrets}/Virgo/disks/ainstsda1.key.age";
+    };
 
-  age.secrets.ainstsdb1-Virgo-key = {
-    owner = "root";
-    mode = "400";
-    rekeyFile = "${inputs.secrets}/Virgo/disks/ainstsdb1.key.age";
-  };
+    ainstsdb1-Virgo-key = {
+      owner = "root";
+      mode = "400";
+      rekeyFile = "${inputs.secrets}/Virgo/disks/ainstsdb1.key.age";
+    };
 
-  age.secrets.ainstsdc1-Virgo-key = {
-    owner = "root";
-    mode = "400";
-    rekeyFile = "${inputs.secrets}/Virgo/disks/ainstsdc1.key.age";
-  };
+    ainstsdc1-Virgo-key = {
+      owner = "root";
+      mode = "400";
+      rekeyFile = "${inputs.secrets}/Virgo/disks/ainstsdc1.key.age";
+    };
 
-  age.secrets.ainstsdd1-Virgo-key = {
-    owner = "root";
-    mode = "400";
-    rekeyFile = "${inputs.secrets}/Virgo/disks/ainstsdd1.key.age";
-  };
+    ainstsdd1-Virgo-key = {
+      owner = "root";
+      mode = "400";
+      rekeyFile = "${inputs.secrets}/Virgo/disks/ainstsdd1.key.age";
+    };
 
-  age.secrets.ainstsde1-Virgo-key = {
-    owner = "root";
-    mode = "400";
-    rekeyFile = "${inputs.secrets}/Virgo/disks/ainstsde1.key.age";
-  };
+    ainstsde1-Virgo-key = {
+      owner = "root";
+      mode = "400";
+      rekeyFile = "${inputs.secrets}/Virgo/disks/ainstsde1.key.age";
+    };
 
-  age.secrets.nvme2n1p1-Virgo-key = {
-    owner = "root";
-    mode = "400";
-    rekeyFile = "${inputs.secrets}/Virgo/disks/nvme2n1p1.key.age";
+    nvme2n1p1-Virgo-key = {
+      owner = "root";
+      mode = "400";
+      rekeyFile = "${inputs.secrets}/Virgo/disks/nvme2n1p1.key.age";
+    };
   };
 
   environment.etc.crypttab = {

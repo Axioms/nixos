@@ -1,8 +1,9 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
     btop
+    comma
     curl
     fastfetch
     sbctl
@@ -11,6 +12,7 @@
     linuxHeaders
     nvd
     nix-output-monitor
+    statix
   ];
 
   environment.shellAliases = {

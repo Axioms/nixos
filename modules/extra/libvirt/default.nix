@@ -8,15 +8,13 @@
 let
 
   domainTemplate = {
-    OVMFFull = (
-      pkgs.OVMFFull.override {
-        secureBoot = true;
-        msVarsTemplate = true;
-        httpSupport = false;
-        tpmSupport = true;
-        tlsSupport = false;
-      }
-    );
+    OVMFFull = pkgs.OVMFFull.override {
+      secureBoot = true;
+      msVarsTemplate = true;
+      httpSupport = false;
+      tpmSupport = true;
+      tlsSupport = false;
+    };
 
     inherit config pkgs;
   };
@@ -79,101 +77,109 @@ in
   programs.virt-manager = {
     enable = true;
   };
-  virtualisation.libvirt.package = pkgs.unstable.libvirt;
-  virtualisation.libvirt.enable = true;
-  virtualisation.libvirt.swtpm.enable = true;
-  virtualisation.libvirt.connections."qemu:///system".networks = [
-    {
-      definition = default-network-xml;
-      active = true;
-      restart = true;
-    }
-    {
-      definition = hostOnly-network-xml;
-      active = true;
-      restart = true;
-    }
-    {
-      definition = sus-network-xml;
-      active = true;
-      restart = true;
-    }
-  ];
-
-  virtualisation.libvirt.connections."qemu:///system".pools = [
-    {
-      definition = data-storage-xml;
-      active = true;
-      restart = true;
-    }
-    {
-      definition = default-storage-xml;
-      active = true;
-      restart = true;
-    }
-    {
-      definition = libvirt-storage-xml;
-      active = true;
-      restart = true;
-    }
-    {
-      definition = nvram-storage-xml;
-      active = true;
-      restart = true;
-    }
-    {
-      definition = OS-storage-xml;
-      active = true;
-      restart = true;
-    }
-  ];
-
-  virtualisation.libvirt.connections."qemu:///system".domains = [
-    {
-      definition = almalinux9-domain-xml;
-      active = false;
-      restart = true;
-    }
-    {
-      definition = archlinux-domain-xml;
-      active = false;
-      restart = false;
-    }
-    {
-      definition = fedora-domain-xml;
-      active = false;
-      restart = false;
-    }
-    {
-      definition = hackTheBox-domain-xml;
-      active = false;
-      restart = false;
-    }
-    {
-      definition = kali-domain-xml;
-      active = false;
-      restart = false;
-    }
-    {
-      definition = nixos-domain-xml;
-      active = false;
-      restart = false;
-    }
-    {
-      definition = windows-10-glass-domain-xml;
-      active = false;
-      restart = false;
-    }
-  ];
-  virtualisation.libvirt.verbose = true;
-  virtualisation.libvirtd = {
-    enable = true;
-    qemu = {
-      package = pkgs.unstable.qemu_kvm;
-      runAsRoot = true;
+  virtualisation = {
+    libvirt = {
+      package = pkgs.unstable.libvirt;
+      enable = true;
       swtpm.enable = true;
+      connections = {
+        "qemu:///system".networks = [
+          {
+            definition = default-network-xml;
+            active = true;
+            restart = true;
+          }
+          {
+            definition = hostOnly-network-xml;
+            active = true;
+            restart = true;
+          }
+          {
+            definition = sus-network-xml;
+            active = true;
+            restart = true;
+          }
+        ];
+
+        "qemu:///system".pools = [
+          {
+            definition = data-storage-xml;
+            active = true;
+            restart = true;
+          }
+          {
+            definition = default-storage-xml;
+            active = true;
+            restart = true;
+          }
+          {
+            definition = libvirt-storage-xml;
+            active = true;
+            restart = true;
+          }
+          {
+            definition = nvram-storage-xml;
+            active = true;
+            restart = true;
+          }
+          {
+            definition = OS-storage-xml;
+            active = true;
+            restart = true;
+          }
+        ];
+
+        "qemu:///system".domains = [
+          {
+            definition = almalinux9-domain-xml;
+            active = false;
+            restart = true;
+          }
+          {
+            definition = archlinux-domain-xml;
+            active = false;
+            restart = false;
+          }
+          {
+            definition = fedora-domain-xml;
+            active = false;
+            restart = false;
+          }
+          {
+            definition = hackTheBox-domain-xml;
+            active = false;
+            restart = false;
+          }
+          {
+            definition = kali-domain-xml;
+            active = false;
+            restart = false;
+          }
+          {
+            definition = nixos-domain-xml;
+            active = false;
+            restart = false;
+          }
+          {
+            definition = windows-10-glass-domain-xml;
+            active = false;
+            restart = false;
+          }
+        ];
+        verbose = true;
+      };
+    };
+    libvirtd = {
+      enable = true;
+      qemu = {
+        package = pkgs.unstable.qemu_kvm;
+        runAsRoot = true;
+        swtpm.enable = true;
+      };
+
     };
 
+    spiceUSBRedirection.enable = true;
   };
 
   environment.etc = {
@@ -185,8 +191,6 @@ in
       source = config.virtualisation.libvirtd.qemu.package + "/share/qemu/edk2-i386-vars.fd";
     };
   };
-
-  virtualisation.spiceUSBRedirection.enable = true;
 
   users.users.axiom = {
     extraGroups = [ "libvirtd" ];

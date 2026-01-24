@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }:
 
@@ -13,9 +12,11 @@
   };
 
   config = {
-    networking.bridges.bridge0.interfaces = config.network-module.bridge.devices;
-    networking.useDHCP = lib.mkDefault false;
-    networking.interfaces.bridge0.useDHCP = lib.mkDefault true;
-    networking.enableIPv6 = false;
+    networking = {
+      bridges.bridge0.interfaces = config.network-module.bridge.devices;
+      useDHCP = lib.mkDefault false;
+      interfaces.bridge0.useDHCP = lib.mkDefault true;
+      enableIPv6 = false;
+    };
   };
 }

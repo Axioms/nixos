@@ -1,12 +1,4 @@
-{
-  config,
-  options,
-  lib,
-  pkgs,
-  uPkgs,
-  inputs,
-  ...
-}:
+_:
 
 {
   programs.hyprlock.enable = false;

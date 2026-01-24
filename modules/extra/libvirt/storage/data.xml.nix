@@ -1,8 +1,4 @@
-{
-  ...
-}:
-let
-in
+_:
 # xml
 ''
   <pool type="dir">

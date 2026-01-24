@@ -7,6 +7,9 @@
     flake-utils.url = "github:numtide/flake-utils";
     agenix.url = "github:ryantm/agenix";
 
+    alien = {
+      url = "github:thiagokokada/nix-alien";
+    };
     agenix-rekey = {
       url = "github:oddlama/agenix-rekey";
       inputs.nixpkgs.follows = "nixpkgs-stable";
@@ -27,7 +30,7 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
-     hytale = {
+    hytale = {
       url = "github:swagtop/hytale-flake";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
@@ -38,6 +41,10 @@
     secrets = {
       url = "git+ssh://git@github.com/Axioms/nixos-secrets.git";
       flake = false;
+    };
+    mineral = {
+      url = "github:cynicsketch/nix-mineral/";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     nixvirt = {
       url = "https://flakehub.com/f/AshleyYakeley/NixVirt/*.tar.gz";
@@ -84,53 +91,54 @@
     {
       formatter.x86_64-linux = inputs.nixpkgs-stable.legacyPackages.x86_64-linux.nixfmt-tree;
 
-      nixosConfigurations.vm = inputs.nixpkgs-stable.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {
-          inherit inputs outputs self;
+      nixosConfigurations = {
+        vm = inputs.nixpkgs-stable.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {
+            inherit inputs outputs self;
+          };
+          modules = [
+            ./machines/Vm
+            ./modules/core/age/age.nix
+            lanzaboote.nixosModules.lanzaboote
+            agenix.nixosModules.default
+            agenix-rekey.nixosModules.default
+            inputs.home-manager-stable.nixosModules.home-manager
+          ];
         };
-        modules = [
-          ./machines/Vm
-          ./modules/core/age/age.nix
-          lanzaboote.nixosModules.lanzaboote
-          agenix.nixosModules.default
-          agenix-rekey.nixosModules.default
-          inputs.home-manager-stable.nixosModules.home-manager
-        ];
-      };
 
-      nixosConfigurations.Virgo = inputs.nixpkgs-stable.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {
-          inherit inputs outputs self;
+        Virgo = inputs.nixpkgs-stable.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {
+            inherit inputs outputs self;
+          };
+          modules = [
+            ./machines/Virgo
+            ./modules/core/age/age.nix
+            lanzaboote.nixosModules.lanzaboote
+            agenix.nixosModules.default
+            agenix-rekey.nixosModules.default
+            inputs.home-manager-stable.nixosModules.home-manager
+            { nixpkgs.overlays = [ inputs.dolphin-overlay.overlays.default ]; }
+          ];
         };
-        modules = [
-          ./machines/Virgo
-          ./modules/core/age/age.nix
-          lanzaboote.nixosModules.lanzaboote
-          agenix.nixosModules.default
-          agenix-rekey.nixosModules.default
-          inputs.home-manager-stable.nixosModules.home-manager
-          { nixpkgs.overlays = [ inputs.dolphin-overlay.overlays.default ]; }
-        ];
-      };
 
-      nixosConfigurations.Aries = inputs.nixpkgs-stable.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {
-          inherit inputs outputs self;
+        Aries = inputs.nixpkgs-stable.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {
+            inherit inputs outputs self;
+          };
+          modules = [
+            ./machines/Aries
+            ./modules/core/age/age.nix
+            lanzaboote.nixosModules.lanzaboote
+            agenix.nixosModules.default
+            agenix-rekey.nixosModules.default
+            inputs.home-manager-stable.nixosModules.home-manager
+            { nixpkgs.overlays = [ inputs.dolphin-overlay.overlays.default ]; }
+          ];
         };
-        modules = [
-          ./machines/Aries
-          ./modules/core/age/age.nix
-          lanzaboote.nixosModules.lanzaboote
-          agenix.nixosModules.default
-          agenix-rekey.nixosModules.default
-          inputs.home-manager-stable.nixosModules.home-manager
-          { nixpkgs.overlays = [ inputs.dolphin-overlay.overlays.default ]; }
-        ];
       };
-
       agenix-rekey = inputs.agenix-rekey.configure {
         userFlake = self;
         inherit (self) nixosConfigurations;

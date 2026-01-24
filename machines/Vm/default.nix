@@ -2,9 +2,6 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
-  lib,
-  pkgs,
-  config,
   inputs,
   ...
 }:
@@ -38,8 +35,14 @@
   ];
 
   # Qemu guest shit
-  services.qemuGuest.enable = true;
-  services.spice-vdagentd.enable = true; # enable copy and paste between host and guest
+  services = {
+    qemuGuest.enable = true;
+    spice-vdagentd.enable = true; # enable copy and paste between host and guest
+    ucodenix = {
+      enable = true;
+      cpuModelId = "00A10F10";
+    };
+  };
   syncthing.username = "axiom";
   network-module.bridge.devices = [ "enp1s0" ];
   hyprland.settings.monitor = ''
@@ -47,8 +50,6 @@
   '';
   networking.hostName = "vm"; # Define your hostname.
 
-  services.ucodenix.enable = true;
-  services.ucodenix.cpuModelId = "00A10F10";
   hardware.cpu.amd.updateMicrocode = true;
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 

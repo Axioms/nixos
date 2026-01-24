@@ -1,9 +1,7 @@
 {
   config,
-  options,
   lib,
   pkgs,
-  uPkgs,
   ...
 }:
 
@@ -33,15 +31,29 @@
       hyprlandPlugins.hypr-dynamic-cursors
     ];
 
-    programs.hyprland = {
-      enable = true;
-      withUWSM = true;
-      xwayland.enable = true;
+    programs = {
+      hyprland = {
+        enable = true;
+        withUWSM = true;
+        xwayland.enable = true;
+      };
+      iio-hyprland.enable = true;
+
+      dconf.profiles.user.databases = [
+        {
+          settings."org/gnome/desktop/interface" = {
+            gtk-theme = "Adwaita";
+            icon-theme = "Flat-Remix-Red-Dark";
+            font-name = "SF Pro 10";
+            document-font-name = "SF Pro 10";
+            monospace-font-name = "JetBrainsMono Nerd Font Mono 10";
+          };
+        }
+      ];
     };
 
     # This fixes the unpopulated MIME menus
 
-    programs.iio-hyprland.enable = true;
     # Optional, hint electron apps to use wayland:
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
@@ -557,16 +569,5 @@
       };
     };
 
-    programs.dconf.profiles.user.databases = [
-      {
-        settings."org/gnome/desktop/interface" = {
-          gtk-theme = "Adwaita";
-          icon-theme = "Flat-Remix-Red-Dark";
-          font-name = "SF Pro 10";
-          document-font-name = "SF Pro 10";
-          monospace-font-name = "JetBrainsMono Nerd Font Mono 10";
-        };
-      }
-    ];
   };
 }

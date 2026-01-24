@@ -34,13 +34,15 @@
           common."org.freedesktop.impl.portal.ScreenCast" = [ "hyprland" ];
           common."org.freedesktop.impl.portal.Screenshot" = [ "hyprland" ];
 
-          kde.default = [
-            "kde"
-            "gtk"
-            "gnome"
-          ];
-          kde."org.freedesktop.portal.FileChooser" = [ "kde" ];
-          kde."org.freedesktop.portal.OpenURI" = [ "kde" ];
+          kde = {
+            default = [
+              "kde"
+              "gtk"
+              "gnome"
+            ];
+            "org.freedesktop.portal.FileChooser" = [ "kde" ];
+            "org.freedesktop.portal.OpenURI" = [ "kde" ];
+          };
         };
 
         extraPortals = with pkgs.kdePackages; [

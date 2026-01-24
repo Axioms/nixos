@@ -1,11 +1,6 @@
-{
-  config,
-  pkgs,
-  inputs,
-  ...
-}:
+_:
 
 {
 
-  home-manager.users.axiom = { pkgs, inputs, ... }: { };
+  home-manager.users.axiom = _: { };
 }

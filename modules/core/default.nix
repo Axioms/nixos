@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+_:
 
 {
 
@@ -24,22 +24,24 @@
   # Set your time zone.
   time.timeZone = "America/New_York";
   systemd.oomd.enable = false;
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Use Beta Cache
-  nix.settings.substituters = [ "https://aseipp-nix-cache.global.ssl.fastly.net" ];
-  
-  # automation
-  nix.optimise = {
-    automatic = true;
-    dates = [ "09:00" ];
-  };
+  nix = {
+    settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    # Allow unfree packages
 
+    # Use Beta Cache
+    settings.substituters = [ "https://aseipp-nix-cache.global.ssl.fastly.net" ];
+
+    # automation
+    optimise = {
+      automatic = true;
+      dates = [ "09:00" ];
+    };
+  };
   services.fstrim = {
     enable = true;
     interval = "weekly";

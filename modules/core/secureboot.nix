@@ -1,7 +1,5 @@
 {
-  config,
   lib,
-  pkgs,
   ...
 }:
 
@@ -12,12 +10,16 @@
   # This setting is usually set to true in configuration.nix
   # generated at installation time. So we force it to false
   # for now.
-  boot.initrd.systemd.enable = true;
-  boot.loader.systemd-boot.enable = lib.mkForce false;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  boot.lanzaboote = {
-    enable = true;
-    pkiBundle = "/var/lib/sbctl";
+  boot = {
+    boot.initrd.systemd.enable = true;
+    loader = {
+      systemd-boot.enable = lib.mkForce false;
+      efi.canTouchEfiVariables = true;
+    };
+    lanzaboote = {
+      enable = true;
+      pkiBundle = "/var/lib/sbctl";
+    };
   };
+
 }
