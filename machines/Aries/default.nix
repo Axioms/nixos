@@ -24,6 +24,7 @@
     ../../modules/extra/thunderbird
     ../../modules/extra/steam.nix
     ../../modules/extra/fingerprint.nix
+    ../../modules/extra/plymouth.nix
     inputs.mineral.nixosModules.nix-mineral
   ];
 
