@@ -1,13 +1,14 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   boot = {
 
     plymouth = {
       enable = true;
-      theme = "rings";
+      theme = "pixels";
       themePackages = with pkgs; [
         # By default we would install all themes
         (adi1090x-plymouth-themes.override {
-          selected_themes = [ "Pixels" ];
+          selected_themes = [ "pixels" ];
         })
       ];
     };
