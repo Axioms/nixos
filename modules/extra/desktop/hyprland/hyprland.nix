@@ -23,6 +23,8 @@
       networkmanagerapplet
       wl-clipboard
       kdePackages.kdeconnect-kde
+      hyprcursor
+      rose-pine-hyprcursor
       ddcutil
       xdg-desktop-portal-wlr
       cliphist

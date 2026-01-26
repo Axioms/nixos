@@ -63,10 +63,10 @@ _: {
       enable = true;
     };
 
-    network-module.bridge.devices = [ "enp12s0" ];
-
     hostName = "Virgo"; # Define your hostname.
   };
+
+  network-module.bridge.devices = [ "enp12s0" ];
 
   hyprland.settings.monitor = ''
     monitor=DP-3, 1920x1080,0x0, 1

@@ -166,8 +166,8 @@ in
             restart = false;
           }
         ];
-        verbose = true;
       };
+      verbose = true;
     };
     libvirtd = {
       enable = true;
