@@ -70,27 +70,27 @@
       options kvm_amd nested=1
       options kvm ignore_msrs=1
       #options vfio-pci ids=10de:2482,1458:408f,10de:228b,1458:408f,1912:0014
-      options kvmfr static_size_mb=256
+      #options kvmfr static_size_mb=256
     '';
 
     extraModulePackages = [ config.boot.kernelPackages.kvmfr ];
     kernelParams = [
-      "amd_iommu=on"
+      #"amd_iommu=on"
       #"iommu=pt"
-      "intremap=no_x2apic_optout"
+      #"intremap=no_x2apic_optout"
       "rootfstype=ext4"
       "video=efifb:off"
       "loglevel=3"
       "udev.log_priority=3"
       "xhci_hcd.quirks=270336"
       "transparent_hugepage=never"
-      "rd.driver.pre=vfio-pci"
-      "pcie_acs_override=downstream,multifunction"
-      "vfio-pci.ids=10de:2482,10de:228b,1912:0014"
+      #"rd.driver.pre=vfio-pci"
+      #"pcie_acs_override=downstream,multifunction"
+      #"vfio-pci.ids=10de:2482,10de:228b,1912:0014"
       "ipv6.disable=1"
-      "video=DP-3:1920x1080"
-      "video=DP-1:3840x2160@120"
-      "video=HDMI-A-1:3840x2160@60"
+      #"video=DP-3:1920x1080"
+      #"video=DP-1:3840x2160@120"
+      #"video=HDMI-A-1:3840x2160@60"
     ];
   };
   fileSystems = {
