@@ -17,7 +17,7 @@
     ../../modules/extra/kitty
     ../../modules/extra/smartcard.nix
     ../../modules/extra/development.nix
-    ../../modules/kernel/normal.nix
+    ../../modules/kernel/hardened.nix
     ../../users/axiom
     ../../modules/extra/docker.nix
     ../../modules/extra/minecraft.nix
