@@ -26,6 +26,7 @@ _: {
     ../../users/axiom
     ../../modules/core/network-bridge.nix
     ../../modules/extra/docker.nix
+    ../../modules/extra/bluetooth.nix
     ../../modules/extra/steam.nix
     ../../modules/extra/minecraft.nix
     ../../modules/extra/thunderbird
