@@ -13,6 +13,10 @@
         monitor=,preferred,auto,1,mirror,DP-1
       '';
     };
+    hyprland.settings.autostart = lib.mkOption {
+      type = lib.types.listOf lib.types.str;
+      default = [ ];
+    };
   };
   config = {
 
@@ -156,42 +160,8 @@
 
           # Autostart necessary processes (like notifications daemons, status bars, etc.)
           # Or execute your favorite apps at launch like this:
-          exec-once = dbus-update-activation-environment --all
-          # Delete Chrome
-          exec-once = rm -rf ~/.config/chromium
-          exec-once = rm -rf ~/.cache/chromium
-          exec-once = ${pkgs.kdePackages.kwallet-pam}/libexec/pam_kwallet_init & kwalletd6 & kded5 & ${pkgs.unstable.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1 & nm-applet &   # Start KWallet
-          exec-once = ${pkgs.bash}/bin/bash -c 'while ! dbus-send --session --dest=org.freedesktop.DBus --type=method_call --print-reply /org/freedesktop/DBus org.freedesktop.DBus.ListNames | grep org.kde.StatusNotifierWatcher; do sleep 0.1; done'   # Fix for waybar tray not working
-          exec-once = XDG_MENU_PREFIX=arch- kbuildsycoca6   # Stupid Dolphin Open With being empty fix
+          ${lib.concatMapStrings (b: "exec-once = " + b + "\n") config.hyprland.settings.autostart}
 
-          exec-once = waybar & 
-          exec-once = steam -silent & 
-          exec-once = ${pkgs.dunst}/bin/dunst -config ${./dunst/dunstrc} & 
-          exec-once = hyprpaper &
-          #exec-once = swww-daemon & 
-          #exec-once = swww img ~/.config/assets/backgrounds/cat_leaves.png  --transition-fps 255 --transition-type outer --transition-duration 0.8 & 
-          exec-once = wl-paste --type text --watch cliphist store & 
-          exec-once = wl-paste --type image --watch cliphist store & 
-          exec-once = hypridle & 
-          exec-once = nm-applet & 
-          #exec-once = ${pkgs.unstable.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1 & 
-          exec-once = ${pkgs.kdePackages.kdeconnect-kde}/bin/kdeconnectd & 
-
-          # Systemd services inherit hyprland environment
-          exec-once = systemctl --user import-environment
-          exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-          exec-once = ${pkgs.bash}/bin/bash -c 'sleep 2.5 ; nextcloud &'
-          #
-          ## Portals
-          #exec-once = systemctl --user restart xdg-desktop-portal.service
-          exec-once = systemctl --user restart xdg-desktop-portal-hyprland.service
-          exec-once = systemctl --user restart xdg-desktop-portal-wlr
-          exec-once = ${pkgs.bash}/bin/bash -c 'sleep 3; systemctl --user start hyprpaper-wallpaper.service'
-          exec-once = ${pkgs.bash}/bin/bash -c 'sleep 4; systemctl --user start wallpaper.timer'
-          exec-once = ddcutil --display 1 setvcp 10 100
-          exec-once = ddcutil --display 2 setvcp 10 100
-          exec-once = ddcutil --display 3 setvcp 10 100
-          exec-once = ${pkgs.thunderbird-latest}/bin/thunderbird
           #####################
           ### LOOK AND FEEL ###
           #####################

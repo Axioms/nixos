@@ -1,7 +1,8 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-_: {
+{ pkgs, ... }:
+{
   nix.settings = {
     download-buffer-size = 524288000; # 500 MiB
   };
@@ -74,6 +75,37 @@ _: {
     monitor=DP-3, 3840x2160@120.00Hz, 1920x0, 1
     monitor=HDMI-A-1, 3840x2160@60.00Hz, 5760x0, 1
   '';
+
+  hyprland.settings.autostart = [
+    "dbus-update-activation-environment --all"
+    "rm -rf ~/.config/chromium"
+    "rm -rf ~/.cache/chromium"
+    "${pkgs.kdePackages.kwallet-pam}/libexec/pam_kwallet_init & kwalletd6 & kded5 & ${pkgs.unstable.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1 & nm-applet &   # Start KWallet"
+    "${pkgs.bash}/bin/bash -c 'while ! dbus-send --session --dest=org.freedesktop.DBus --type=method_call --print-reply /org/freedesktop/DBus org.freedesktop.DBus.ListNames | grep org.kde.StatusNotifierWatcher; do sleep 0.1; done'   # Fix for waybar tray not working"
+    "XDG_MENU_PREFIX=arch- kbuildsycoca6   # Stupid Dolphin Open With being empty fix"
+    "waybar & "
+    "steam -silent & "
+    "${pkgs.dunst}/bin/dunst -config ${../../modules/extra/desktop/hyprland/dunst/dunstrc} &"
+    "hyprpaper &"
+    "wl-paste --type text --watch cliphist store &"
+    "wl-paste --type image --watch cliphist store &"
+    "hypridle & "
+    "nm-applet & "
+    "blueman-tray & "
+    "${pkgs.kdePackages.kdeconnect-kde}/bin/kdeconnectd &"
+    "systemctl --user import-environment"
+    "exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+    "${pkgs.bash}/bin/bash -c 'sleep 2.5 ; nextcloud &'"
+    "systemctl --user restart xdg-desktop-portal-hyprland.service"
+    "systemctl --user restart xdg-desktop-portal-wlr"
+    "${pkgs.bash}/bin/bash -c 'sleep 3; systemctl --user start hyprpaper-wallpaper.service'"
+    "${pkgs.bash}/bin/bash -c 'sleep 4; systemctl --user start wallpaper.timer'"
+    "ddcutil --display 1 setvcp 10 100"
+    "ddcutil --display 2 setvcp 10 100"
+    "ddcutil --display 3 setvcp 10 100"
+    "${pkgs.thunderbird-latest}/bin/thunderbird"
+  ];
+
   #services.ucodenix.enable = true;
   #services.ucodenix.cpuModelId = "00A10F10";
   #hardware.cpu.amd.updateMicrocode = true;
