@@ -61,9 +61,9 @@ let
   nixos-domain-xml = pkgs.writeText "nixos-domain.xml" (
     import "${self}/modules/extra/libvirt/domains/nixos.xml.nix" domainTemplate
   );
-  windows-10-glass-domain-xml = pkgs.writeText "windows-10-glass-domain.xml" (
-    import "${self}/modules/extra/libvirt/domains/windows-10-glass.xml.nix" domainTemplate
-  );
+  #windows-10-glass-domain-xml = pkgs.writeText "windows-10-glass-domain.xml" (
+  #  import "${self}/modules/extra/libvirt/domains/windows-10-glass.xml.nix" domainTemplate
+  #);
 in
 {
 
@@ -160,11 +160,11 @@ in
             active = false;
             restart = false;
           }
-          {
-            definition = windows-10-glass-domain-xml;
-            active = false;
-            restart = false;
-          }
+          #{
+          #  definition = windows-10-glass-domain-xml;
+          #  active = false;
+          #  restart = false;
+          #}
         ];
       };
       verbose = true;

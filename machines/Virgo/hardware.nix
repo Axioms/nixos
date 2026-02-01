@@ -87,10 +87,12 @@
       #"rd.driver.pre=vfio-pci"
       #"pcie_acs_override=downstream,multifunction"
       #"vfio-pci.ids=10de:2482,10de:228b,1912:0014"
-      "ipv6.disable=1"
+      #"ipv6.disable=1"
       #"video=DP-3:1920x1080"
       #"video=DP-1:3840x2160@120"
       #"video=HDMI-A-1:3840x2160@60"
+      "amdgpu.lockup_timeout=1000"
+      "amdgpu.noretry=0"
     ];
   };
   fileSystems = {

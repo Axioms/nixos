@@ -5,6 +5,7 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
     flake-utils.url = "github:numtide/flake-utils";
+    cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     agenix.url = "github:ryantm/agenix";
 
     alien = {

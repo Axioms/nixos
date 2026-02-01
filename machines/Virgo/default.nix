@@ -22,7 +22,7 @@ _: {
     ../../modules/extra/development.nix
     ../../modules/extra/looking-glass-client.nix
     ../../modules/extra/libvirt
-    ../../modules/kernel/zen.nix
+    ../../modules/kernel/cachy.nix
     ../../users/axiom
     ../../modules/core/network-bridge.nix
     ../../modules/extra/docker.nix
@@ -69,8 +69,8 @@ _: {
   network-module.bridge.devices = [ "enp12s0" ];
 
   hyprland.settings.monitor = ''
-    monitor=DP-3, 1920x1080,0x0, 1
-    monitor=DP-1, 3840x2160@120.00Hz, 1920x0, 1
+    monitor=DP-2, 1920x1080,0x0, 1
+    monitor=DP-3, 3840x2160@120.00Hz, 1920x0, 1
     monitor=HDMI-A-1, 3840x2160@60.00Hz, 5760x0, 1
   '';
   #services.ucodenix.enable = true;
