@@ -1,5 +1,6 @@
 { pkgs, ... }:
 
 {
-  boot.kernelPackages = pkgs.linuxPackages_latest_hardened;
+
+  boot.kernelPackages = pkgs.linuxPackages_hardened;
 }
