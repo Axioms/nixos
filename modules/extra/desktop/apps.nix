@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     birdtray
+    bitwarden-desktop
     deskflow
     jellyfin-media-player
     looking-glass-client
