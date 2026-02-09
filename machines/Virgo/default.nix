@@ -21,7 +21,6 @@
     ../../modules/extra/kitty
     ../../modules/extra/smartcard.nix
     ../../modules/extra/development.nix
-    ../../modules/extra/looking-glass-client.nix
     ../../modules/extra/libvirt
     ../../modules/kernel/cachy.nix
     ../../users/axiom

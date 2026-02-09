@@ -156,8 +156,6 @@ if [ $TERM = 'xterm-kitty' ]; then
   alias ssh="kitten ssh"
 fi
 
-#alias looking-glass-client="env -u WAYLAND_DISPLAY looking-glass-client"
-
 # Created by `pipx` on 2023-08-12 23:27:47
 export PATH="$PATH:/home/axiom/.local/bin"
 #/usr/bin/update_motd.sh

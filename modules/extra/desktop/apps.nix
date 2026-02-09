@@ -6,7 +6,6 @@
     bitwarden-desktop
     deskflow
     jellyfin-media-player
-    looking-glass-client
     kdePackages.ark
     kdePackages.filelight
     kdePackages.kcmutils

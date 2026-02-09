@@ -13,7 +13,6 @@
     ../Virgo/syncthing.nix
     ../../modules/core
     ../../modules/extra/browsers/firefox.nix
-    ../../modules/extra/looking-glass-client.nix
     ../../modules/extra/browsers/zen.nix
     ../../modules/extra/desktop/apps.nix
     ../../modules/extra/desktop/sddm.nix
