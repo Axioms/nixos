@@ -30,6 +30,7 @@
             ewen-lbh.vscode-hyprls
             fireblast.hyprlang-vscode
             nefrob.vscode-just-syntax
+            dlasagno.rasi
           ];
 
           userSettings = {
