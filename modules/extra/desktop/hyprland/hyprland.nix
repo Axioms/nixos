@@ -302,6 +302,7 @@
           #bind = $mainMod, M, exit,
           bind = $mainMod, E, exec, $fileManager
           bind = $mainMod, W, togglefloating,
+          bind = $mainMod, F, fullscreen, 1
           bind = $mainMod, A, exec, $menu
           # bind = $mainMod, P, pseudo, # dwindle
           bind = $mainMod, J, togglesplit, # dwindle
@@ -414,6 +415,7 @@
 
           # Example windowrule v2
           # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
+          windowrulev2 = maximize,class:^steam_app_\d+$
           windowrulev2 = opacity 0.90 0.90,class:^(Thorium-browser)$
           windowrulev2 = opacity 0.80 0.80,class:^(Code)$
           windowrulev2 = opacity 0.80 0.80,class:^(Arduino IDE)$
@@ -430,7 +432,7 @@
           windowrulev2 = opacity 0.80 0.80,class:^(kvantummanager)$
           windowrulev2 = opacity 0.80 0.70,class:^(pavucontrol)$
           windowrulev2 = opacity 0.80 0.70,class:^(blueman-manager)$
-          windowrulev2 = opacity 0.80 0.70,class:^(nm-applet)$
+          windowrulev2 = opacity 0.80 0.70,class:^(nm-applet)$s
           #windowrulev2 = opacity 0.70 0.70,class:^(Spotify)$
           windowrulev2 = opacity 0.70 0.70,initialTitle:^(Spotify Free)$
           windowrulev2 = opacity 0.80 0.70,class:^(nm-connection-editor)$
@@ -453,7 +455,8 @@
           # hidden Thunderbird
           windowrulev2 = workspace special:email silent, class:^(thunderbird)$, title:^(Mozilla Thunderbird)$
 
-          # windowrulev2 = suppressevent maximize, class:.* # You'll probably like this.
+          windowrulev2 = suppressevent maximize, class:.* # You'll probably like this.
+          windowrulev2 = suppressevent fullscreen, class:^steam_app_\d+$
 
           # layerrule = blur,waybar
           layerrule = ignorezero,tofi
