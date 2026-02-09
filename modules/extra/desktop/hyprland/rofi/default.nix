@@ -11,7 +11,10 @@
   home-manager.users.axiom = {
     programs.rofi = {
       enable = true;
-      theme = builtins.readFile ./theme.rasi;
+      theme = ./theme.rasi;
+      extraConfig = {
+        "show-icons" = true;
+      };
     };
   };
 }

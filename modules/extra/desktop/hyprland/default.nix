@@ -19,6 +19,7 @@
 
     ./waybar
     ./tofi
+    ./rofi
     ./dunst
     ./wlogout
   ];

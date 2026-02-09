@@ -104,7 +104,7 @@
           # Set programs that you use
           $terminal = kitty
           $fileManager = dolphin
-          $menu = tofi-drun -c ~/.share/tofi/configA --drun-launch=true
+          $menu = rofi -show drun #tofi-drun -c ~/.share/tofi/configA --drun-launch=true
           $browser = zen-beta
           $notes = obsidian
           $editor = code
