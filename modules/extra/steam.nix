@@ -12,7 +12,7 @@
       dedicatedServer.openFirewall = true;
       remotePlay.openFirewall = true;
       gamescopeSession.enable = true;
-
+      protontricks.enable = true;
       extraPackages = with pkgs; [
         kdePackages.breeze-icons
         kdePackages.breeze
@@ -26,4 +26,8 @@
     };
   };
   hardware.xone.enable = true; # support for the xbox controller USB dongle
+
+  environment.systemPackages = with pkgs; [
+    protonup-qt
+  ];
 }
