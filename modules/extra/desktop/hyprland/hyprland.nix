@@ -304,6 +304,7 @@
           bind = $mainMod, W, togglefloating,
           bind = $mainMod, F, fullscreen, 1
           bind = $mainMod, A, exec, $menu
+          bind = $mainMod, G, exec, rofi -modi games -show games -theme games-default
           # bind = $mainMod, P, pseudo, # dwindle
           bind = $mainMod, J, togglesplit, # dwindle
 
