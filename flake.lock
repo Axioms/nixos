@@ -80,11 +80,11 @@
         "sf-pro": "sf-pro"
       },
       "locked": {
-        "lastModified": 1768432053,
-        "narHash": "sha256-4zbGxDTG82KL8aGj7HOlx984eSHpWzGiN/vBBYKd2DE=",
+        "lastModified": 1771015369,
+        "narHash": "sha256-MhtCW601b9tAMP20FBToytRSUMoThtefJ3/7kCThwsE=",
         "owner": "Lyndeno",
         "repo": "apple-fonts.nix",
-        "rev": "00ee0281a803e545a8d7fc3ecee06aa27d3ae84c",
+        "rev": "c3ddc684891e15ae6cc2048bcd033f9995f0d075",
         "type": "github"
       },
       "original": {
@@ -506,11 +506,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1770936159,
-        "narHash": "sha256-INksKY2oo1hDNrDYh0r+uK0Fd4hBxkQwD4qQAl8lYyg=",
+        "lastModified": 1771018093,
+        "narHash": "sha256-STUF5x1eQNKrhGn53WH1GpzBCsG719yl5rYnm7+1c4I=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "9bdb6938109884cb8b6a79ab79ba18e7b585a881",
+        "rev": "26dfad95d92c50a56ce708f4256bf720bb30a630",
         "type": "github"
       },
       "original": {
@@ -527,11 +527,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1770947056,
-        "narHash": "sha256-3Ad/PCxGhsxkp6z2t5J8EDqGXauD+XAWe7UHAAO2Pkc=",
+        "lastModified": 1771007865,
+        "narHash": "sha256-Aja+LNr4iDNgllPjTxROdbbqcBfnyL7ufvL6CE7G3WU=",
         "owner": "swagtop",
         "repo": "hytale-flake",
-        "rev": "9098739b0c3d3421761973ec50468fb6e7113c02",
+        "rev": "d1ee403f623a27375682d5e5718c9d016d06dadf",
         "type": "github"
       },
       "original": {
@@ -939,11 +939,11 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1759802976,
-        "narHash": "sha256-nNHwSR0AJdQBCJ95V/nF7vzuPp792JfMdA+b0nKeBu0=",
+        "lastModified": 1771019555,
+        "narHash": "sha256-E020k7Bsk+MJYlLg/OBfz1FfJIn3PLCDfNCduJ3aGVs=",
         "ref": "refs/heads/main",
-        "rev": "e07323d2379d49a92b9c707f1766401f4cd68d39",
-        "revCount": 1,
+        "rev": "2eacf4c7efcb3cbe957201d7461c2d35dfc1f244",
+        "revCount": 2,
         "type": "git",
         "url": "ssh://git@github.com/Axioms/nixos-secrets.git"
       },
@@ -979,7 +979,7 @@
     "sf-compact": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-xIYPQ27C7wAAfN4Lm+3pXE7GGNO5ZgKGFRjr6WX5xlM=",
+        "narHash": "sha256-oLhkN4HYkU1Xjxk+xdmyxJmROSzo1qd/tafdxw7icxs=",
         "type": "file",
         "url": "https://devimages-cdn.apple.com/design/resources/download/SF-Compact.dmg"
       },
@@ -1027,7 +1027,7 @@
     "sf-pro": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-vxaW2oTdf7EuraHvdkF6JUfC580p56TgpquNw+GQDbQ=",
+        "narHash": "sha256-s42hsaUe0Vkaw5yw8G7G3W3AYJb2TPqSlMqPyY0e5WU=",
         "type": "file",
         "url": "https://devimages-cdn.apple.com/design/resources/download/SF-Pro.dmg"
       },
@@ -1151,11 +1151,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1770919290,
-        "narHash": "sha256-iJ9c0ZewfRRYUflaEOj43n5TWaB6Ezygn2UA/ZHGQJA=",
+        "lastModified": 1771000521,
+        "narHash": "sha256-5UDaXr770MaDac9HcFvGlUjsqyOoNbFdHArmjmtHcVk=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "0078cf2d5e81eb56a9356d51f2738f7141194de1",
+        "rev": "80ce62fd26af1934454f405bcb2510ceeea8d3a2",
         "type": "github"
       },
       "original": {
