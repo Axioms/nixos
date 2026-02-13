@@ -124,6 +124,10 @@
       device = "/dev/disk/by-uuid/0b434c3c-70a0-4ba6-bc30-1e3adc765c28";
       fsType = "ext4";
     };
+    "/mnt/games" = {
+      device = "/dev/disk/by-uuid/ff876ac8-a678-4a18-87da-e4312aa53fda";
+      fsType = "ext4";
+    };
   };
 
   swapDevices = [ ];
@@ -164,6 +168,12 @@
       mode = "400";
       rekeyFile = "${inputs.secrets}/Virgo/disks/nvme2n1p1.key.age";
     };
+
+      GameDrive-Virgo-key = {
+      owner = "root";
+      mode = "400";
+      rekeyFile = "${inputs.secrets}/Virgo/disks/GameDrive.key.age";
+    };
   };
 
   environment.etc.crypttab = {
@@ -175,6 +185,7 @@
       ainstsde1 UUID=6adad7da-3bb9-4ffa-895f-8ddc5e26e0e1 ${config.age.secrets.ainstsde1-Virgo-key.path} luks,key-slot=1
       ainstsda1 UUID=ed67f5cb-e5ea-4efa-a6ef-0c47f1b1fdac ${config.age.secrets.ainstsda1-Virgo-key.path} luks,key-slot=1
       ainstsdc1 UUID=8f97e143-80b8-43a9-904c-248b1173a90d ${config.age.secrets.ainstsdc1-Virgo-key.path} luks,key-slot=1
+      gameDrive UUID=f02b4b9f-5b2d-4632-83ee-fb8e6133cea2 ${config.age.secrets.GameDrive-Virgo-key.path} luks,key-slot=1
       #ainstnvme2n1p1 UUID=6842e454-1b16-4470-8960-6b50d60443e5 ${config.age.secrets.nvme2n1p1-Virgo-key.path} luks,key-slot=0
     '';
   };
