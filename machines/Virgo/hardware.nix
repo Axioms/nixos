@@ -169,7 +169,7 @@
       rekeyFile = "${inputs.secrets}/Virgo/disks/nvme2n1p1.key.age";
     };
 
-      GameDrive-Virgo-key = {
+    GameDrive-Virgo-key = {
       owner = "root";
       mode = "400";
       rekeyFile = "${inputs.secrets}/Virgo/disks/GameDrive.key.age";

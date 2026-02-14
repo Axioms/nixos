@@ -67,6 +67,8 @@
       "memory#swap",
       "disk",
       "custom/spacer1",
+      "idle_inhibitor",
+      "custom/spacer1",
       "network#info",
       "custom/spacer1",
       "pulseaudio#input",
@@ -345,6 +347,14 @@
       "interval": 10,
       "tooltip": false,
       "on-click": "hyprctl dispatch togglespecialworkspace email"
+    },
+
+    "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+        "activated": "󰅶",
+        "deactivated": "󰒲"
+    }
     }
   }
 ]

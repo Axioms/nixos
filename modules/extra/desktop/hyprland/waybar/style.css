@@ -75,6 +75,7 @@
 #waybar.first #battery,
 #waybar.first #backlight,
 #waybar.first #clock,
+#waybar.first #idle_inhibitor,
 #waybar.first #cpu,
 #waybar.first #language,
 #waybar.first #memory.swap,
@@ -107,6 +108,7 @@
 #waybar.first #memory.ram,
 #waybar.first #memory.swap,
 #waybar.first #disk,
+#waybar.first #idle_inhibitor,
 #waybar.first #network {
     color: @performance;
 }
