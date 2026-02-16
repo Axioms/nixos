@@ -305,6 +305,10 @@
           bind = $mainMod, F, fullscreen, 1
           bind = $mainMod, A, exec, $menu
           bind = $mainMod, G, exec, rofi -modi games -show games -theme ${./rofi/games-theme.rasi}
+          bind = $mainMod+Alt, B, exec, ${lib.getExe pkgs.rofi-bluetooth}
+          bind = $mainMod+Alt, V, exec, ${lib.getExe pkgs.pwmenu} --launcher rofi
+          bind = $mainMod+Alt+Shift, V, exec, ${lib.getExe pkgs.rofi-vpn}
+          bind = $mainMod+Alt, W, exec, ${lib.getExe pkgs.rofi-network-manager}
           # bind = $mainMod, P, pseudo, # dwindle
           bind = $mainMod, J, togglesplit, # dwindle
 
