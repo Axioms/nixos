@@ -50,7 +50,7 @@
     '';
   };
   nix-mineral = {
-    enable = true;
+    enable = false;
   };
 
   age.rekey = {
