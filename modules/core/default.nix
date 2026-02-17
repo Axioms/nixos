@@ -19,6 +19,7 @@ _:
     ./ssh.nix
     ./home-manager.nix
     ./cockpit.nix
+    ./tailscale.nix
   ];
 
   # Set your time zone.
