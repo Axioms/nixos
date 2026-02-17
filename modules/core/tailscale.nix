@@ -5,10 +5,9 @@
   services.tailscale = {
     enable = true;
     useRoutingFeatures = "both";
-    extraSetFlags = ["--netfilter-mode=nodivert"];
-    extraDaemonFlags = ["--no-logs-no-support"];
+    extraSetFlags = [ "--netfilter-mode=nodivert" ];
+    extraDaemonFlags = [ "--no-logs-no-support" ];
   };
-
 
   #networking.firewall.checkReversePath = "loose";
 }
