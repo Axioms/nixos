@@ -84,6 +84,7 @@
     "${pkgs.bash}/bin/bash -c 'sleep 3; systemctl --user start hyprpaper-wallpaper.service'"
     "${pkgs.bash}/bin/bash -c 'sleep 4; systemctl --user start wallpaper.timer'"
     "${pkgs.thunderbird-latest}/bin/thunderbird"
+    "tail-tray &"
   ];
 
   # Open ports in the firewall.
