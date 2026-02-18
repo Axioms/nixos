@@ -103,6 +103,7 @@
     "ddcutil --display 2 setvcp 10 100"
     "ddcutil --display 3 setvcp 10 100"
     "${pkgs.thunderbird-latest}/bin/thunderbird"
+    "tail-tray &"
   ];
 
   #services.ucodenix.enable = true;
