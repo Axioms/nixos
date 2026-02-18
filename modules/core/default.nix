@@ -42,9 +42,17 @@ _:
       automatic = true;
       dates = [ "09:00" ];
     };
+    gc = {
+      automatic = true;
+      randomizedDelaySec = "14m";
+      options = "--delete-older-than 10d";
+    };
   };
+
   services.fstrim = {
     enable = true;
     interval = "weekly";
   };
+
+  boot.loader.systemd-boot.configurationLimit = 10;
 }
