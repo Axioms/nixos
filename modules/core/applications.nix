@@ -13,6 +13,7 @@
     nvd
     nix-output-monitor
     statix
+    usbutils
   ];
 
   environment.shellAliases = {
