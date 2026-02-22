@@ -499,7 +499,7 @@
 
               # controls how soon a shake is detected
               # lower values mean sooner
-              threshold = 6.0
+              threshold = 20.0
 
               # magnification level immediately after shake start
               base = 4.0
@@ -516,7 +516,7 @@
               timeout = 2000
 
               # show cursor behaviour `tilt`, `rotate`, etc. while shaking
-              effects = false
+              effects = true
 
               # enable ipc events for shake
               # see the `ipc` section below
