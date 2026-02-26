@@ -16,6 +16,10 @@
         name = "axiom";
         gid = 1000;
       };
+      plugdev = {
+        members = [ "axiom" ];
+        name = "plugdev";
+      };
     };
     users.axiom = {
       isNormalUser = true;
@@ -26,6 +30,7 @@
         "audio"
         "docker"
         "libvirt"
+        "plugdev"
         "libvirt-qemu"
         "input"
         "kvm"
