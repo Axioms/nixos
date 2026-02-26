@@ -43,10 +43,6 @@
       url = "git+ssh://git@github.com/Axioms/nixos-secrets.git";
       flake = false;
     };
-    mineral = {
-      url = "github:cynicsketch/nix-mineral/";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
     nixvirt = {
       url = "https://flakehub.com/f/AshleyYakeley/NixVirt/*.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs-unstable";

@@ -26,7 +26,6 @@
     ../../modules/extra/steam.nix
     ../../modules/extra/fingerprint.nix
     ../../modules/extra/plymouth.nix
-    inputs.mineral.nixosModules.nix-mineral
   ];
 
   networking.hostName = "Aries"; # Define your hostname.
@@ -48,9 +47,6 @@
         }
       });
     '';
-  };
-  nix-mineral = {
-    enable = false;
   };
 
   age.rekey = {
