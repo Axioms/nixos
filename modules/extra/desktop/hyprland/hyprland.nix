@@ -392,14 +392,14 @@
           bind = SUPER SHIFT, S, exec, grimblast --notify copysave area "$HOME/Pictures/Screenshots/Screenshot_$(date +%Y%m%d_%H%M%S).png" # Select area to take screenshot
 
           # Volume and Media Control
-          bind = , XF86AudioRaiseVolume, exec, pamixer -i 5 
-          bind = , XF86AudioLowerVolume, exec, pamixer -d 5 
-          bind = , XF86AudioMicMute, exec, pamixer --default-source -m
-          bind = , XF86AudioMute, exec, pamixer -t
-          bind = , XF86AudioPlay, exec, playerctl play-pause
-          bind = , XF86AudioPause, exec, playerctl play-pause
-          bind = , XF86AudioNext, exec, playerctl next
-          bind = , XF86AudioPrev, exec, playerctl previous
+          #bind = , XF86AudioRaiseVolume, exec, pamixer -i 5 
+          #bind = , XF86AudioLowerVolume, exec, pamixer -d 5 
+          #bind = , XF86AudioMicMute, exec, pamixer --default-source -m
+          #bind = , XF86AudioMute, exec, pamixer -t
+          #bind = , XF86AudioPlay, exec, playerctl play-pause
+          #bind = , XF86AudioPause, exec, playerctl play-pause
+          #bind = , XF86AudioNext, exec, playerctl next
+          #bind = , XF86AudioPrev, exec, playerctl previous
 
           # Screen brightness
           bind = , XF86MonBrightnessUp, exec, brightnessctl s +5%

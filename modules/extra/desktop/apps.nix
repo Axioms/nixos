@@ -27,7 +27,7 @@
     wl-clicker
     unstable.wiremix
     jq
-    grayjay
+    unstable.grayjay
   ];
 
   programs.nix-ld.enable = true;

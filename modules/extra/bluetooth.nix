@@ -45,9 +45,9 @@
         };
       };
     };
-    xpadneo.enable = true;
-    xone.enable = true;
-    enableAllFirmware = true;
+    xpadneo.enable = false;
+    xone.enable = false;
+    enableAllFirmware = false;
   };
   services.blueman.enable = true;
 
