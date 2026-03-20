@@ -18,6 +18,6 @@
 
   environment.shellAliases = {
     killall = "pkill";
-    du = "ncdu";
+    du = "ncdu --color dark-bg --show-graph --show-percent -2 -x";
   };
 }
