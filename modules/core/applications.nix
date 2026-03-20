@@ -10,6 +10,7 @@
     tmux
     vulnix
     linuxHeaders
+    ncdu
     nvd
     nix-output-monitor
     statix
