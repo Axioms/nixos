@@ -3,7 +3,6 @@
 {
   environment.systemPackages = with pkgs; [
     btop
-    comma
     curl
     fastfetch
     sbctl
@@ -19,6 +18,6 @@
 
   environment.shellAliases = {
     killall = "pkill";
-    du = "nccdu";
+    du = "ncdu";
   };
 }

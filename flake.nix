@@ -51,6 +51,10 @@
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       # IMPORTANT: we're using "libgbm" and is only available in unstable so ensure
@@ -82,8 +86,6 @@
     }@inputs:
     let
       inherit (self) outputs;
-      helpers = import ./flakeHelpers.nix inputs;
-      inherit (helpers) mkMerge;
     in
     {
       formatter.x86_64-linux = inputs.nixpkgs-stable.legacyPackages.x86_64-linux.nixfmt-tree;
@@ -101,6 +103,8 @@
             agenix.nixosModules.default
             agenix-rekey.nixosModules.default
             inputs.home-manager-stable.nixosModules.home-manager
+            inputs.nix-index-database.nixosModules.default
+            { programs.nix-index-database.comma.enable = true; }
           ];
         };
 
@@ -116,6 +120,8 @@
             agenix.nixosModules.default
             agenix-rekey.nixosModules.default
             inputs.home-manager-stable.nixosModules.home-manager
+            inputs.nix-index-database.nixosModules.default
+            { programs.nix-index-database.comma.enable = true; }
             { nixpkgs.overlays = [ inputs.dolphin-overlay.overlays.default ]; }
           ];
         };
