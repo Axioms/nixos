@@ -19,5 +19,6 @@
 
   environment.shellAliases = {
     killall = "pkill";
+    du = "nccdu";
   };
 }
