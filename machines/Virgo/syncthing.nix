@@ -37,6 +37,11 @@
     rekeyFile = "${inputs.secrets}/Virgo/syncthing/cert.pem.age";
   };
 
+  syncthing-module = {
+    Acquarius.addresses = [ "tcp://10.0.0.120" ];
+    Libra.addresses = [ "tcp://10.0.0.106" ];
+  };
+
   home-manager.users."axiom".services.syncthing = {
     enable = true;
     #settings = {
