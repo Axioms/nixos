@@ -1,23 +1,43 @@
 {
   config,
+  lib,
   ...
 }:
 
 {
-  home-manager.users."${config.syncthing.username
-  }".services.syncthing.settings.folders.AndroidBackup =
-    {
-      enable = true;
-      id = "pixel_lf8i-backups";
-      label = "Android Backup";
-      path = "/mnt/data/Android Backup";
-      type = "sendreceive";
-      overrideFolders = false;
+  options = {
+    syncthing-module.AndroidBackups.path = lib.mkOption {
+      default = "/mnt/data/Android Backup";
+      type = lib.types.str;
+    };
 
-      devices = [
-        "Pisces"
-        "Libra"
-        "Virgo"
+    syncthing-module.AndroidBackups.type = lib.mkOption {
+      default = "sendreceive";
+      type = lib.types.enum [
+        "sendreceive"
+        "sendonly"
+        "receiveonly"
+        "receiveencrypted"
       ];
     };
+  };
+
+  config = {
+    home-manager.users."${config.syncthing.username
+    }".services.syncthing.settings.folders.AndroidBackup =
+      {
+        enable = true;
+        id = "pixel_lf8i-backups";
+        label = "Android Backup";
+        path = config.syncthing-module.AndroidBackups.path;
+        type = config.syncthing-module.AndroidBackups.type;
+        overrideFolders = false;
+
+        devices = [
+          "Pisces"
+          "Libra"
+          "Virgo"
+        ];
+      };
+  };
 }

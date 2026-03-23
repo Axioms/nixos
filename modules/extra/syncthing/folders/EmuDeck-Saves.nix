@@ -1,23 +1,43 @@
 {
   config,
+  lib,
   ...
 }:
 
 {
-  home-manager.users."${config.syncthing.username
-  }".services.syncthing.settings.folders.EmuDeck-Saves =
-    {
-      enable = false;
-      id = "npfo4-zh4fq";
-      label = "EmuDeck-Saves";
-      path = "/mnt/data/emuDeck-Saves";
-      type = "sendreceive";
-      overrideFolders = false;
+  options = {
+    syncthing-module.EmuDeck.path = lib.mkOption {
+      default = "/mnt/data/emuDeck-Saves";
+      type = lib.types.str;
+    };
 
-      devices = [
-        "Acquarius"
-        "Libra"
-        "Virgo"
+    syncthing-module.EmuDeck.type = lib.mkOption {
+      default = "sendreceive";
+      type = lib.types.enum [
+        "sendreceive"
+        "sendonly"
+        "receiveonly"
+        "receiveencrypted"
       ];
     };
+  };
+
+  config = {
+    home-manager.users."${config.syncthing.username
+    }".services.syncthing.settings.folders.EmuDeck-Saves =
+      {
+        enable = false;
+        id = "npfo4-zh4fq";
+        label = "EmuDeck-Saves";
+        path = config.syncthing-module.EmuDeck.path;
+        type = config.syncthing-module.EmuDeck.type;
+        overrideFolders = false;
+
+        devices = [
+          "Acquarius"
+          "Libra"
+          "Virgo"
+        ];
+      };
+  };
 }

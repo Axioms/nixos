@@ -1,24 +1,44 @@
 {
   config,
+  lib,
   ...
 }:
 
 {
-  home-manager.users."${config.syncthing.username}".services.syncthing.settings.folders.Downloads = {
-    enable = true;
-    id = "qovpu-t2awa";
-    label = "Downloads";
-    path = "/home/axiom/Downloads";
-    type = "sendreceive";
-    overrideFolders = false;
+  options = {
+    syncthing-module.Downloads.path = lib.mkOption {
+      default = "/home/axiom/Downloads";
+      type = lib.types.str;
+    };
 
-    devices = [
-      "Acquarius"
-      "Capricorn"
-      "Libra"
-      "Pisces"
-      "Sagittarius"
-      "Virgo"
-    ];
+    syncthing-module.Downloads.type = lib.mkOption {
+      default = "sendreceive";
+      type = lib.types.enum [
+        "sendreceive"
+        "sendonly"
+        "receiveonly"
+        "receiveencrypted"
+      ];
+    };
+  };
+
+  config = {
+    home-manager.users."${config.syncthing.username}".services.syncthing.settings.folders.Downloads = {
+      enable = true;
+      id = "qovpu-t2awa";
+      label = "Downloads";
+      path = config.syncthing-module.Downloads.path;
+      type = config.syncthing-module.Downloads.type;
+      overrideFolders = false;
+
+      devices = [
+        "Acquarius"
+        "Capricorn"
+        "Libra"
+        "Pisces"
+        "Sagittarius"
+        "Virgo"
+      ];
+    };
   };
 }

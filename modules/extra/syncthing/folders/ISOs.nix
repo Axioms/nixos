@@ -1,21 +1,42 @@
 {
   config,
+  lib,
   ...
 }:
 
 {
-  home-manager.users."${config.syncthing.username}".services.syncthing.settings.folders.ISOs = {
-    enable = true;
-    id = "kscza-5qpec";
-    label = "ISOs";
-    path = "/mnt/data/ISOs";
-    type = "sendreceive";
-    overrideFolders = false;
+  options = {
+    syncthing-module.ISOs.path = lib.mkOption {
+      default = "/mnt/data/ISOs";
+      type = lib.types.str;
+    };
 
-    devices = [
-      "Acquarius"
-      "Libra"
-      "Virgo"
-    ];
+    syncthing-module.ISOs.type = lib.mkOption {
+      default = "sendreceive";
+      type = lib.types.enum [
+        "sendreceive"
+        "sendonly"
+        "receiveonly"
+        "receiveencrypted"
+      ];
+    };
+  };
+
+  config = {
+
+    home-manager.users."${config.syncthing.username}".services.syncthing.settings.folders.ISOs = {
+      enable = true;
+      id = "kscza-5qpec";
+      label = "ISOs";
+      path = config.syncthing-module.ISOs.path;
+      type = config.syncthing-module.ISOs.type;
+      overrideFolders = false;
+
+      devices = [
+        "Acquarius"
+        "Libra"
+        "Virgo"
+      ];
+    };
   };
 }
