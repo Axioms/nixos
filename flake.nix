@@ -120,9 +120,9 @@
             agenix.nixosModules.default
             agenix-rekey.nixosModules.default
             inputs.home-manager-stable.nixosModules.home-manager
+            { nixpkgs.overlays = [ inputs.dolphin-overlay.overlays.default ]; }
             inputs.nix-index-database.nixosModules.default
             { programs.nix-index-database.comma.enable = true; }
-            { nixpkgs.overlays = [ inputs.dolphin-overlay.overlays.default ]; }
           ];
         };
 
@@ -139,6 +139,8 @@
             agenix-rekey.nixosModules.default
             inputs.home-manager-stable.nixosModules.home-manager
             { nixpkgs.overlays = [ inputs.dolphin-overlay.overlays.default ]; }
+            inputs.nix-index-database.nixosModules.default
+            { programs.nix-index-database.comma.enable = true; }
           ];
         };
       };
