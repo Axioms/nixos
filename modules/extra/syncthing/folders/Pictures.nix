@@ -27,8 +27,8 @@
       enable = true;
       id = "0e165-3i136";
       label = "Pictures";
-      path = config.syncthing-module.Pictures.path;
-      type = config.syncthing-module.Pictures.type;
+      inherit (config.syncthing-module.Pictures) path;
+      inherit (config.syncthing-module.Pictures) type;
       overrideFolders = false;
 
       devices = [

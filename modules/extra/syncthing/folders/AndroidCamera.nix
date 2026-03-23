@@ -29,8 +29,8 @@
         enable = true;
         id = "pixel_hr41-photos";
         label = "Android Camera";
-        path = config.syncthing-module.AndroidCamera.path;
-        type = config.syncthing-module.AndroidCamera.type;
+        inherit (config.syncthing-module.AndroidCamera) path;
+        inherit (config.syncthing-module.AndroidCamera) type;
         overrideFolders = false;
 
         devices = [

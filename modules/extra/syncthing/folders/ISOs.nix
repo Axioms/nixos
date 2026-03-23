@@ -28,8 +28,8 @@
       enable = true;
       id = "kscza-5qpec";
       label = "ISOs";
-      path = config.syncthing-module.ISOs.path;
-      type = config.syncthing-module.ISOs.type;
+      inherit (config.syncthing-module.ISOs) path;
+      inherit (config.syncthing-module.ISOs) type;
       overrideFolders = false;
 
       devices = [

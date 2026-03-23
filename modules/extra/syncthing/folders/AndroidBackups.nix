@@ -29,8 +29,8 @@
         enable = true;
         id = "pixel_lf8i-backups";
         label = "Android Backup";
-        path = config.syncthing-module.AndroidBackups.path;
-        type = config.syncthing-module.AndroidBackups.type;
+        inherit (config.syncthing-module.AndroidBackups) path;
+        inherit (config.syncthing-module.AndroidBackups) type;
         overrideFolders = false;
 
         devices = [

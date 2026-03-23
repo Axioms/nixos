@@ -11,7 +11,7 @@
     };
   };
   config = {
-    home-manager.users."${config.syncthing.username}" = { ... }: { };
+    home-manager.users."${config.syncthing.username}" = _: { };
 
   };
 }

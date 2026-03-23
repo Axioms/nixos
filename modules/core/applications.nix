@@ -14,6 +14,7 @@
     nix-output-monitor
     statix
     usbutils
+    statix
   ];
 
   environment.shellAliases = {

@@ -9,7 +9,10 @@ check:
 fmt:
 	nix fmt .
 
-build host=shell("hostname"): fmt
+lint host=shell("hostname"): fmt
+	statix check
+
+build host=shell("hostname"): lint
 	nom build .#nixosConfigurations.{{host}}.config.system.build.toplevel --out-link /tmp/nixos-configuration
 
 test host=shell("hostname"): (build host)

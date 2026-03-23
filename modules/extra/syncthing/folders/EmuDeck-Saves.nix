@@ -29,8 +29,8 @@
         enable = false;
         id = "npfo4-zh4fq";
         label = "EmuDeck-Saves";
-        path = config.syncthing-module.EmuDeck.path;
-        type = config.syncthing-module.EmuDeck.type;
+        inherit (config.syncthing-module.EmuDeck) path;
+        inherit (config.syncthing-module.EmuDeck) type;
         overrideFolders = false;
 
         devices = [

@@ -27,8 +27,8 @@
       enable = true;
       id = "01db6-wir5u";
       label = "Books";
-      path = config.syncthing-module.Books.path;
-      type = config.syncthing-module.Books.type;
+      inherit (config.syncthing-module.Books) path;
+      inherit (config.syncthing-module.Books) type;
       overrideFolders = false;
 
       devices = [

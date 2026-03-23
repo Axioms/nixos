@@ -27,8 +27,8 @@
       enable = true;
       id = "73nfo-5y9fc";
       label = "School";
-      path = config.syncthing-module.School.path;
-      type = config.syncthing-module.School.type;
+      inherit (config.syncthing-module.School) path;
+      inherit (config.syncthing-module.School) type;
       overrideFolders = false;
 
       devices = [

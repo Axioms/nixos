@@ -16,7 +16,7 @@
     boot = {
       plymouth = {
         enable = true;
-        theme = config.plymouth.theme;
+        inherit (config.plymouth) theme;
         themePackages = with pkgs; [
           # By default we would install all themes
           (adi1090x-plymouth-themes.override {

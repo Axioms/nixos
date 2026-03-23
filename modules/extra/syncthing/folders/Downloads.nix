@@ -27,8 +27,8 @@
       enable = true;
       id = "qovpu-t2awa";
       label = "Downloads";
-      path = config.syncthing-module.Downloads.path;
-      type = config.syncthing-module.Downloads.type;
+      inherit (config.syncthing-module.Downloads) path;
+      inherit (config.syncthing-module.Downloads) type;
       overrideFolders = false;
 
       devices = [

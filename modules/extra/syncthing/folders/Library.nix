@@ -27,8 +27,8 @@
       enable = true;
       id = "e3sy5-yvrr3";
       label = "Library";
-      path = config.syncthing-module.Library.path;
-      type = config.syncthing-module.Library.type;
+      inherit (config.syncthing-module.Library) path;
+      inherit (config.syncthing-module.Library) type;
       overrideFolders = false;
 
       devices = [

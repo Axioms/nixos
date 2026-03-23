@@ -27,8 +27,8 @@
       enable = true;
       id = "dn22o-zmjw9";
       label = "Music";
-      path = config.syncthing-module.Music.path;
-      type = config.syncthing-module.Music.type;
+      inherit (config.syncthing-module.Music) path;
+      inherit (config.syncthing-module.Music) type;
       overrideFolders = false;
 
       devices = [
