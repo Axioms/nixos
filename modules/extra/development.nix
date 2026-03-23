@@ -31,5 +31,7 @@
     sdrpp
     solvespace
     unstable.hyprls
+    optnix
+    deadnix
   ];
 }
