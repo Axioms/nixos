@@ -28,6 +28,8 @@
     ../../modules/extra/syncthing/folders/AndroidBackups.nix
   ];
 
+  syncthing.username = "axiom";
+
   age.secrets.syncthing-Virgo-key = {
     owner = "axiom";
     rekeyFile = "${inputs.secrets}/Virgo/syncthing/key.pem.age";
