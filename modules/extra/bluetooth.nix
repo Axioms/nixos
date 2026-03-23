@@ -5,7 +5,7 @@
   disabledModules = [ "hardware/xone.nix" ];
 
   nixpkgs.overlays = [
-    (self: super: {
+    (self: _: {
       xone-dongle-firmware =
         self.callPackage "${inputs.nixpkgs-unstable}/pkgs/by-name/xo/xone-dongle-firmware/package.nix"
           { };
