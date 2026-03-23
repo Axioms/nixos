@@ -9,6 +9,7 @@
   imports = [
     ../../modules/extra/syncthing/devices/Acquarius.nix
     ../../modules/extra/syncthing
+    ../../modules/extra/syncthing/devices/Aries.nix
     ../../modules/extra/syncthing/devices/Boox.nix
     ../../modules/extra/syncthing/devices/Capricorn.nix
     ../../modules/extra/syncthing/devices/Libra.nix

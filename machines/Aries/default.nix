@@ -7,6 +7,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware.nix
+    ./syncthing.nix
     ../../modules/core
     ../../modules/extra/browsers/zen.nix
     ../../modules/extra/desktop/apps.nix

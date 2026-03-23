@@ -38,6 +38,7 @@
         "Pisces"
         "Sagittarius"
         "Virgo"
+        "Aries"
       ];
     };
   };

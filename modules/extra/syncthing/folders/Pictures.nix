@@ -35,6 +35,7 @@
         "Acquarius"
         "Libra"
         "Virgo"
+        "Aries"
       ];
     };
   };
