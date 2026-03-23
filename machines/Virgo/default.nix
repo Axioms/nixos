@@ -33,7 +33,7 @@
     ../../modules/extra/keyboard.nix
     #inputs.ucodenix.nixosModules.default
   ];
-  syncthing.username = "axiom";
+
   security.polkit.enable = true;
 
   security.polkit.extraConfig = ''

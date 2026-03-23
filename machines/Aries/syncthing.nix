@@ -19,6 +19,8 @@
     ../../modules/extra/syncthing/folders/Pictures.nix
   ];
 
+  syncthing.username = "axiom";
+
   age.secrets.syncthing-Aries-key = {
     owner = "axiom";
     rekeyFile = "${inputs.secrets}/Aries/syncthing/key.pem.age";
