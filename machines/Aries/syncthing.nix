@@ -9,6 +9,7 @@
   imports = [
     ../../modules/extra/syncthing/devices/Acquarius.nix
     ../../modules/extra/syncthing
+    ../../modules/extra/syncthing/devices/Aries.nix
     ../../modules/extra/syncthing/devices/Boox.nix
     ../../modules/extra/syncthing/devices/Capricorn.nix
     ../../modules/extra/syncthing/devices/Libra.nix
@@ -33,11 +34,6 @@
 
   home-manager.users."axiom".services.syncthing = {
     enable = true;
-    #settings = {
-    #  device = {
-    #    deviceID = config.age.secrets.syncthing-Virgo-id;
-    #  };
-    #};
 
     cert = config.age.secrets.syncthing-Aries-cert.path;
     key = config.age.secrets.syncthing-Aries-key.path;
