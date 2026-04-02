@@ -14,10 +14,16 @@
         enable = true;
         associations.added = {
           "inode/directory" = [ "org.kde.dolphin.desktop" ];
+          "application/zip" = [ "org.kde.ark.desktop" ];
+          "text/csv" = [ "code.desktop" ];
+          "text/x-c" = [ "code.desktop" ];
+          "text/plain" = [ "org.kde.kate.desktop" ];
+          "application/json" = [ "org.kde.kate.desktop" ];
         };
 
         defaultApplications = {
           "inode/directory" = [ "org.kde.dolphin.desktop" ];
+          "application/zip" = [ "org.kde.ark.desktop" ];
         };
       };
 
