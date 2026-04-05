@@ -6,12 +6,12 @@
 
 {
   options = {
-    syncthing-module.Library.path = lib.mkOption {
+    syncthing-module.Obsidian.path = lib.mkOption {
       default = "/home/axiom/Documents/Obsidian";
       type = lib.types.str;
     };
 
-    syncthing-module.Library.type = lib.mkOption {
+    syncthing-module.Obsidian.type = lib.mkOption {
       default = "sendreceive";
       type = lib.types.enum [
         "sendreceive"
