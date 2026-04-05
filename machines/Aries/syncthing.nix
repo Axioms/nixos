@@ -18,6 +18,7 @@
     ../../modules/extra/syncthing/devices/Virgo.nix
     ../../modules/extra/syncthing/folders/Downloads.nix
     ../../modules/extra/syncthing/folders/Pictures.nix
+    ../../modules/extra/syncthing/folders/Obsidian.nix
   ];
 
   syncthing.username = "axiom";

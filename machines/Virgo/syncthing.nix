@@ -26,6 +26,7 @@
     ../../modules/extra/syncthing/folders/ISOs.nix
     ../../modules/extra/syncthing/folders/EmuDeck-Saves.nix
     ../../modules/extra/syncthing/folders/AndroidBackups.nix
+    ../../modules/extra/syncthing/folders/Obsidian.nix
   ];
 
   syncthing.username = "axiom";

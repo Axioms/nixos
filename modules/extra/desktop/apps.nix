@@ -28,6 +28,7 @@
     unstable.wiremix
     jq
     unstable.grayjay
+    obsidian
   ];
 
   programs.nix-ld.enable = true;
