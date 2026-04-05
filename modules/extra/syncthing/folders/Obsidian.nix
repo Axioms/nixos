@@ -23,12 +23,12 @@
   };
 
   config = {
-    home-manager.users."${config.syncthing.username}".services.syncthing.settings.folders.Library = {
+    home-manager.users."${config.syncthing.username}".services.syncthing.settings.folders.Obsidian = {
       enable = true;
       id = "5sjry-yovao";
       label = "Obsidian";
-      inherit (config.syncthing-module.Library) path;
-      inherit (config.syncthing-module.Library) type;
+      inherit (config.syncthing-module.Obsidian) path;
+      inherit (config.syncthing-module.Obsidian) type;
       overrideFolders = false;
 
       devices = [
