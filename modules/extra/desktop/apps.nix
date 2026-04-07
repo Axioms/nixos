@@ -9,7 +9,6 @@
     kdePackages.ark
     kdePackages.filelight
     kdePackages.kcmutils
-    kdePackages.partitionmanager
     kdePackages.dolphin
     mission-center
     mpv
@@ -32,5 +31,5 @@
   ];
 
   programs.nix-ld.enable = true;
-
+  programs.partition-manager.enable = true;
 }
