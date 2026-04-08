@@ -35,6 +35,7 @@
       grimblast
       shared-mime-info
       hyprlandPlugins.hypr-dynamic-cursors
+      hyprpolkitagent
     ];
 
     programs = {
