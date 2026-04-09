@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  service.sunshine = {
+  services.sunshine = {
     enable = true;
     autoStart = true;
     capSysAdmin = true;
