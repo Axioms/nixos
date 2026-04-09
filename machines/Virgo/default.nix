@@ -31,6 +31,8 @@
     ../../modules/extra/minecraft.nix
     ../../modules/extra/thunderbird
     ../../modules/extra/keyboard.nix
+    ../../modules/extra/moonlight.nix
+    ../../modules/extra/sunshine.nix
     #inputs.ucodenix.nixosModules.default
   ];
 

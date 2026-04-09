@@ -27,6 +27,7 @@
     ../../modules/extra/steam.nix
     ../../modules/extra/fingerprint.nix
     ../../modules/extra/plymouth.nix
+    ../../modules/extra/moonlight.nix
   ];
 
   networking.hostName = "Aries"; # Define your hostname.
