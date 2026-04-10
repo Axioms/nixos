@@ -304,6 +304,7 @@
           bind = $mainMod, E, exec, $fileManager
           bind = $mainMod, W, togglefloating,
           bind = $mainMod, F, fullscreen, 1
+          bind = Control_L&$mainMod, F, fullscreen,
           bind = $mainMod, A, exec, $menu
           bind = $mainMod, G, exec, rofi -modi games -show games -theme ${./rofi/games-theme.rasi}
           bind = $mainMod+Alt, B, exec, ${lib.getExe pkgs.rofi-bluetooth}

@@ -4,7 +4,7 @@
   programs = {
     gamescope = {
       enable = true;
-      capSysNice = true;
+      capSysNice = false;
     };
     steam = {
       enable = true;
@@ -16,6 +16,7 @@
       extraPackages = with pkgs; [
         kdePackages.breeze-icons
         kdePackages.breeze
+        gamescope
       ];
     };
 
