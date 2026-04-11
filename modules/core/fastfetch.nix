@@ -229,28 +229,9 @@ _:
             key = "{#keys}";
             format = " {#90}  {#31}  {#32}  {#33}  {#34}  {#35}  {#36}  {#37}  {#38}  {#39}       {#38}  {#37}  {#36}  {#35}  {#34}  {#33}  {#32}  {#31}  {#90}";
           }
-          {
-            type = "command";
-            "shell" = "/bin/sh";
-            key = "{#keys}";
-            "text" = "/home/axiom/.config/fastfetch/CheckKernelUpdate.sh";
-            format = "{1}";
-          }
         ];
       };
 
-    };
-
-    home.file.".config/fastfetch/CheckKernelUpdate.sh" = {
-      enable = true;
-      executable = true;
-      text = ''
-        NEW_KERNEL="$(nix search nixpkgs ^legacyPackages.x86_64-linux.linuxPackages_zen.kernel$ --offline | tr '\n' ' ' | cut -d "(" -f 2 | cut -d ")" -f 1)"
-        OLD_KERNEL="$(uname -r | cut -d "-" -f 1,3)"
-
-        [[ "$NEW_KERNEL" > "$OLD_KERNEL" ]] && echo "*** System restart required ***"
-      '';
-      target = ".config/fastfetch/CheckKernelUpdate.sh";
     };
   };
 }
