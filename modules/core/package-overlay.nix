@@ -26,12 +26,6 @@
           allowUnfree = true;
         };
 
-        streamdeck = import inputs.nixpkgs-streamcontroller {
-          inherit (final) system;
-          inherit (final) config;
-          allowUnfree = true;
-        };
-
         # java 8 flake is broken, use this instead 7/15
         jdk8 = final.openjdk8-bootstrap;
         # cockpit storage module

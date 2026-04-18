@@ -28,15 +28,23 @@ _:
   nixpkgs.config.allowUnfree = true;
 
   nix = {
-    settings.experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-    # Allow unfree packages
+    settings = {
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      # Allow unfree packages
 
-    # Use Beta Cache
-    settings.substituters = [ "https://aseipp-nix-cache.global.ssl.fastly.net" ];
+      # Use Beta Cache
+      substituters = [
+        "https://aseipp-nix-cache.global.ssl.fastly.net"
+        "https://nix-community.cachix.org"
+      ];
 
+      trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      ];
+    };
     # automation
     optimise = {
       automatic = true;

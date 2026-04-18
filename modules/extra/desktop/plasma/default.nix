@@ -26,6 +26,4 @@
     kde-rounded-corners
     tela-icon-theme
   ];
-  home-manager.sharedModules = [ inputs.plasma-manager.homeModules.plasma-manager ];
-  home-manager.users.axiom = import ./config.nix;
 }

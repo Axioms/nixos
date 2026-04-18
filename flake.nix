@@ -1,7 +1,6 @@
 {
   description = "A very basic flake";
   inputs = {
-    nixpkgs-streamcontroller.url = "github:NixOS/nixpkgs/pull/416567/head";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
     flake-utils.url = "github:numtide/flake-utils";
@@ -19,10 +18,10 @@
       url = "github:Lyndeno/apple-fonts.nix";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
-    dolphin-overlay = {
-      url = "github:rumboon/dolphin-overlay";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
-    };
+    #dolphin-overlay = {
+    #  url = "github:rumboon/dolphin-overlay";
+    #  inputs.nixpkgs.follows = "nixpkgs-stable";
+    #};
     home-manager-stable = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs-stable";
@@ -68,12 +67,6 @@
       url = "github:nix-community/nixos-vscode-server";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
-    plasma-manager = {
-      url = "github:nix-community/plasma-manager";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
-      inputs.home-manager.follows = "home-manager-stable";
-    };
-    ucodenix.url = "github:e-tho/ucodenix";
   };
 
   outputs =
@@ -120,7 +113,7 @@
             agenix.nixosModules.default
             agenix-rekey.nixosModules.default
             inputs.home-manager-stable.nixosModules.home-manager
-            { nixpkgs.overlays = [ inputs.dolphin-overlay.overlays.default ]; }
+            #{ nixpkgs.overlays = [ inputs.dolphin-overlay.overlays.default ]; }
             inputs.nix-index-database.nixosModules.default
             { programs.nix-index-database.comma.enable = true; }
           ];
@@ -138,7 +131,7 @@
             agenix.nixosModules.default
             agenix-rekey.nixosModules.default
             inputs.home-manager-stable.nixosModules.home-manager
-            { nixpkgs.overlays = [ inputs.dolphin-overlay.overlays.default ]; }
+            #{ nixpkgs.overlays = [ inputs.dolphin-overlay.overlays.default ]; }
             inputs.nix-index-database.nixosModules.default
             { programs.nix-index-database.comma.enable = true; }
           ];

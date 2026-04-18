@@ -27,7 +27,6 @@
     ../../users/axiom
     ../../modules/core/network-bridge.nix
     ../../modules/extra/docker.nix
-    inputs.ucodenix.nixosModules.default
     # hardware.cpu.amd.microcodePackage not supported by nix stable
     "${inputs.nixpkgs-unstable}/nixos/modules/hardware/cpu/amd-microcode.nix"
 
@@ -37,10 +36,6 @@
   services = {
     qemuGuest.enable = true;
     spice-vdagentd.enable = true; # enable copy and paste between host and guest
-    ucodenix = {
-      enable = true;
-      cpuModelId = "00A10F10";
-    };
   };
   syncthing.username = "axiom";
   network-module.bridge.devices = [ "enp1s0" ];

@@ -33,7 +33,6 @@
     ../../modules/extra/keyboard.nix
     ../../modules/extra/moonlight.nix
     ../../modules/extra/sunshine.nix
-    #inputs.ucodenix.nixosModules.default
   ];
 
   security.polkit.enable = true;
@@ -108,8 +107,5 @@
     "tail-tray &"
   ];
 
-  #services.ucodenix.enable = true;
-  #services.ucodenix.cpuModelId = "00A10F10";
-  #hardware.cpu.amd.updateMicrocode = true;
   system.stateVersion = "25.05"; # Did you read the comment?
 }
