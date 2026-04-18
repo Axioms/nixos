@@ -15,14 +15,13 @@
     nextcloud-client
     #nvtopPackages.full
     protonvpn-gui
-    spotify
-    streamdeck.streamcontroller
+    unstable.sone
+    streamcontroller
     distrobox
     syncthingtray
     vesktop
     #ventoy-bin-full
     veracrypt
-    #vscode
     wl-clicker
     unstable.wiremix
     jq
