@@ -15,6 +15,7 @@
     statix
     usbutils
     statix
+    p7zip
   ];
 
   environment.shellAliases = {
