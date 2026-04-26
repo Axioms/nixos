@@ -16,6 +16,7 @@
     usbutils
     statix
     p7zip
+    unrar
   ];
 
   environment.shellAliases = {

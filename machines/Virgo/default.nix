@@ -28,6 +28,7 @@
     ../../modules/extra/docker.nix
     ../../modules/extra/bluetooth.nix
     ../../modules/extra/steam.nix
+    ../../modules/extra/switch.nix	
     ../../modules/extra/minecraft.nix
     ../../modules/extra/thunderbird
     ../../modules/extra/keyboard.nix

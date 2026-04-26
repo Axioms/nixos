@@ -4,6 +4,7 @@
 
   environment.systemPackages = with pkgs; [
     ns-usbloader
+    fusee-nano
   ];
 
   services.udev.enable = true;
