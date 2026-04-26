@@ -4,9 +4,6 @@
   environment.systemPackages = with pkgs; [
     btrfs-progs
     cockpit
-    #pkgs.lib.overrideDerivation
-    #    (pkgs.udisks2)
-    #    (old: { configFlags = "--enable-modules"; })
     udisks2
     networkmanager
   ];

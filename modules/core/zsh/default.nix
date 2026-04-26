@@ -50,13 +50,11 @@
         plugins = [
           "archlinux"
           "arduino-cli"
-          #"dnf"
           "colorize"
           "common-aliases"
           "colored-man-pages"
           "docker"
           "docker-compose"
-          #"docker-machine"
           #"dotenv"
           "emoji"
           "firewalld"

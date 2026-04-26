@@ -5,7 +5,6 @@
     download-buffer-size = 524288000; # 500 MiB
   };
   imports = [
-    # Include the results of the hardware scan.
     ./hardware.nix
     ./syncthing.nix
     ../../modules/core

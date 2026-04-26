@@ -2,9 +2,8 @@
 
 {
   environment.systemPackages = with pkgs; [
-    # ... other packages
     fprintd
-    fprintd-tod # Ensure this is present
+    fprintd-tod
   ];
 
   services.fprintd.enable = true;

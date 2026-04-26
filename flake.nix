@@ -18,10 +18,6 @@
       url = "github:Lyndeno/apple-fonts.nix";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
-    #dolphin-overlay = {
-    #  url = "github:rumboon/dolphin-overlay";
-    #  inputs.nixpkgs.follows = "nixpkgs-stable";
-    #};
     home-manager-stable = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs-stable";
@@ -56,8 +52,6 @@
     };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
-      # IMPORTANT: we're using "libgbm" and is only available in unstable so ensure
-      # to have it up-to-date or simply don't specify the nixpkgs input
       inputs = {
         home-manager.follows = "home-manager-stable";
         nixpkgs.follows = "nixpkgs-stable";
@@ -113,7 +107,6 @@
             agenix.nixosModules.default
             agenix-rekey.nixosModules.default
             inputs.home-manager-stable.nixosModules.home-manager
-            #{ nixpkgs.overlays = [ inputs.dolphin-overlay.overlays.default ]; }
             inputs.nix-index-database.nixosModules.default
             { programs.nix-index-database.comma.enable = true; }
           ];
@@ -131,7 +124,6 @@
             agenix.nixosModules.default
             agenix-rekey.nixosModules.default
             inputs.home-manager-stable.nixosModules.home-manager
-            #{ nixpkgs.overlays = [ inputs.dolphin-overlay.overlays.default ]; }
             inputs.nix-index-database.nixosModules.default
             { programs.nix-index-database.comma.enable = true; }
           ];
@@ -157,7 +149,6 @@
           pkgs.age-plugin-yubikey
           pkgs.just
         ];
-        # ...
       };
     });
 }

@@ -48,11 +48,6 @@
 
   home-manager.users."axiom".services.syncthing = {
     enable = true;
-    #settings = {
-    #  device = {
-    #    deviceID = config.age.secrets.syncthing-Virgo-id;
-    #  };
-    #};
 
     cert = config.age.secrets.syncthing-Virgo-cert.path;
     key = config.age.secrets.syncthing-Virgo-key.path;
