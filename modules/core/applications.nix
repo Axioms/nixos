@@ -17,6 +17,7 @@
     statix
     p7zip
     unrar
+    exfatprogs
   ];
 
   environment.shellAliases = {
