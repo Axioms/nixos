@@ -15,15 +15,34 @@
     <memory unit="KiB">4194304</memory>
     <currentMemory unit="KiB">4194304</currentMemory>
     <vcpu placement="static">4</vcpu>
+    <sysinfo type="smbios">
+      <bios>
+        <entry name="vendor">American Megatrends Inc.</entry>
+        <entry name="version">1003</entry>
+        <entry name="date">01/17/2025</entry>
+      </bios>
+      <system>
+        <entry name="manufacturer">ASUS</entry>
+        <entry name="product">ROG STRIX X870E-E GAMING WIFI</entry>
+        <entry name="version">Rev 1.xx</entry>
+      </system>
+      <baseBoard>
+        <entry name="manufacturer">ASUSTeK COMPUTER INC.</entry>
+        <entry name="product">ROG STRIX X870E-E GAMING WIFI</entry>
+        <entry name="version">Rev 1.xx</entry>
+        <entry name="serial">250250830900022</entry>
+      </baseBoard>
+    </sysinfo>
     <os firmware="efi">
-      <type arch="x86_64" machine="pc-q35-9.0">hvm</type>
+      <type arch="x86_64" machine="pc-q35-10.1">hvm</type>
       <firmware>
         <feature enabled="no" name="enrolled-keys"/>
-        <feature enabled="no" name="secure-boot"/>
+        <feature enabled="yes" name="secure-boot"/>
       </firmware>
       <loader readonly="yes" secure="yes" type="pflash" format="raw">${config.virtualisation.libvirtd.qemu.package}/share/qemu/edk2-x86_64-secure-code.fd</loader>
       <nvram template="${config.virtualisation.libvirtd.qemu.package}/share/qemu/edk2-i386-vars.fd" templateFormat="raw" format="raw">/var/lib/libvirt/qemu/nvram/fedora_VARS.fd</nvram>
-      <boot dev="hd"/>
+      <bootmenu enable="no"/>
+      <smbios mode="sysinfo"/>
     </os>
     <features>
       <acpi/>
