@@ -21,7 +21,7 @@
         <feature enabled="no" name="enrolled-keys"/>
         <feature enabled="no" name="secure-boot"/>
       </firmware>
-      <loader readonly="yes" type="pflash" format="raw">${config.virtualisation.libvirtd.qemu.package}/share/qemu/edk2-x86_64-code.fd</loader>
+      <loader readonly="yes" secure="yes" type="pflash" format="raw">${config.virtualisation.libvirtd.qemu.package}/share/qemu/edk2-x86_64-secure-code.fd</loader>
       <nvram template="${config.virtualisation.libvirtd.qemu.package}/share/qemu/edk2-i386-vars.fd" templateFormat="raw" format="raw">/var/lib/libvirt/qemu/nvram/fedora_VARS.fd</nvram>
       <boot dev="hd"/>
     </os>
