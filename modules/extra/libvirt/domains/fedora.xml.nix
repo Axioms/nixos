@@ -158,6 +158,11 @@
       </input>
       <input type="mouse" bus="ps2"/>
       <input type="keyboard" bus="ps2"/>
+      <tpm model="tpm-crb">
+        <backend type="emulator" version="2.0">
+          <profile name="default-v1"/>
+        </backend>
+      </tpm>
       <graphics type="spice" autoport="yes">
         <listen type="address"/>
         <image compression="off"/>
