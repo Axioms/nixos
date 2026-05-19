@@ -27,6 +27,7 @@
     jq
     unstable.grayjay
     obsidian
+    guvcview
   ];
 
   programs.nix-ld.enable = true;

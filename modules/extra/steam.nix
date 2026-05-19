@@ -19,6 +19,8 @@
         gamescope
         steam-devices-udev-rules
         dualsensectl
+        lsfg-vk
+        lsfg-vk-ui
       ];
     };
 
@@ -36,5 +38,7 @@
     gamescope
     steam-devices-udev-rules
     dualsensectl
+    lsfg-vk
+    lsfg-vk-ui
   ];
 }
