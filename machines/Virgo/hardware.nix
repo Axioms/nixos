@@ -109,7 +109,7 @@
       device = "/dev/disk/by-uuid/cf7488e9-4f32-4454-aee0-d4bc7383e551";
       fsType = "ext4";
     };
-    "/mnt/backup" = {
+    "/mnt/gamesSlow" = {
       device = "/dev/disk/by-uuid/0b593e11-ad24-4b81-9224-f863a44f5d98";
       fsType = "ext4";
     };
