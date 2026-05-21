@@ -37,7 +37,7 @@
           ];
         });
 
-        usbeehive = pkgs.callPackage ../../pkgs/rust/usbeehive.nix;
+        usbeehive = pkgs.callPackage ../../pkgs/rust/usbeehive.nix { };
       })
     ];
   };
