@@ -1,5 +1,6 @@
 {
   inputs,
+  pkgs,
   ...
 }:
 
@@ -35,6 +36,8 @@
             "--enable-lvm2"
           ];
         });
+
+        usbeehive = pkgs.callPackage ../../pkgs/rust/usbeehive.nix;
       })
     ];
   };

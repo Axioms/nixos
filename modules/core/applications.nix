@@ -18,6 +18,7 @@
     p7zip
     unrar
     exfatprogs
+    usbeehive
   ];
 
   environment.shellAliases = {
