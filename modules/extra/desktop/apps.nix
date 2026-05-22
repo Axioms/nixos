@@ -18,7 +18,7 @@
     #nvtopPackages.full
     protonvpn-gui
     unstable.sone
-    streamcontroller
+    unstable.streamcontroller
     distrobox
     syncthingtray
     unstable.vesktop
