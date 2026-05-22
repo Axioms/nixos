@@ -36,6 +36,8 @@
       shared-mime-info
       hyprlandPlugins.hypr-dynamic-cursors
       hyprpolkitagent
+      hyprpwcenter
+      hyprsysteminfo
     ];
 
     programs = {
@@ -65,7 +67,7 @@
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
     home-manager.users.axiom = {
-
+      services.easyeffects.enable = true;
       wayland.windowManager.hyprland = {
         enable = true;
         plugins = [ pkgs.hyprlandPlugins.hypr-dynamic-cursors ];

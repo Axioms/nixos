@@ -90,6 +90,7 @@
       #"video=HDMI-A-1:3840x2160@60"
       "amdgpu.lockup_timeout=1000"
       "amdgpu.noretry=0"
+      "usbcore.autosuspend=-1"
     ];
   };
   fileSystems = {

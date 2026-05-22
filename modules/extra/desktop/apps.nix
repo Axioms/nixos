@@ -11,7 +11,9 @@
     kdePackages.kcmutils
     kdePackages.dolphin
     mission-center
+    easyeffects
     mpv
+    qpwgraph
     nextcloud-client
     #nvtopPackages.full
     protonvpn-gui
