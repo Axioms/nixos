@@ -32,5 +32,6 @@
     unstable.hyprls
     optnix
     deadnix
+    zed-editor-fhs
   ];
 }
