@@ -13,6 +13,7 @@
     mission-center
     easyeffects
     mpv
+    kdePackages.kmix
     qpwgraph
     nextcloud-client
     #nvtopPackages.full
