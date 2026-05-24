@@ -103,6 +103,7 @@
     "ddcutil --display 3 setvcp 10 100"
     "${pkgs.thunderbird-latest}/bin/thunderbird"
     "tail-tray &"
+    "sleep 10 && python ~/Documents/git/streamdeck-pipewire/SwitchSink.py SinkToSink"
   ];
 
   system.stateVersion = "25.05"; # Did you read the comment?

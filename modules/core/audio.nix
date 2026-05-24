@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 
 {
 
@@ -23,4 +23,6 @@
 
   home-manager.users.axiom = {
   };
+
+  environment.systemPackages = [ pkgs.pulseaudio ];
 }
