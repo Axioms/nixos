@@ -167,8 +167,8 @@
   environment.systemPackages = with pkgs; [
     sqlite
     universal-ctags
-    python310
-    python310Packages.virtualenv
+    python3
+    python3Packages.virtualenv
     lua-language-server
     gcc
   ];
