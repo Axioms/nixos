@@ -83,8 +83,11 @@
       "locked": {
         "lastModified": 1780240721,
         "narHash": "sha256-O5dSz9h4zRnYyGYTS0hfMamYEDutsEC1PzxQELdsttU=",
+        "lastModified": 1780240721,
+        "narHash": "sha256-O5dSz9h4zRnYyGYTS0hfMamYEDutsEC1PzxQELdsttU=",
         "owner": "Lyndeno",
         "repo": "apple-fonts.nix",
+        "rev": "a11f7174137d4a0267bd8d7abd85da05bd9a41cc",
         "rev": "a11f7174137d4a0267bd8d7abd85da05bd9a41cc",
         "type": "github"
       },
@@ -131,8 +134,11 @@
       "locked": {
         "lastModified": 1780253365,
         "narHash": "sha256-wcJ+6+Z+mfzBjClI0XsjOoGSW6o1RldVj6UETLzK+GQ=",
+        "lastModified": 1780253365,
+        "narHash": "sha256-wcJ+6+Z+mfzBjClI0XsjOoGSW6o1RldVj6UETLzK+GQ=",
         "owner": "xddxdd",
         "repo": "nix-cachyos-kernel",
+        "rev": "236462fb93cb56e26e6a6801ba5edb6dad66be0d",
         "rev": "236462fb93cb56e26e6a6801ba5edb6dad66be0d",
         "type": "github"
       },
@@ -574,8 +580,11 @@
       "locked": {
         "lastModified": 1780210899,
         "narHash": "sha256-4axz3OBPTKa6LIkXV8n0lc63MQU+et2CB5DGobEAi6k=",
+        "lastModified": 1780210899,
+        "narHash": "sha256-4axz3OBPTKa6LIkXV8n0lc63MQU+et2CB5DGobEAi6k=",
         "owner": "nix-community",
         "repo": "nix-index-database",
+        "rev": "97df9dc0b7c924344b793a15c1e8e4522ebb854e",
         "rev": "97df9dc0b7c924344b793a15c1e8e4522ebb854e",
         "type": "github"
       },
@@ -592,19 +601,11 @@
         ]
       },
       "locked": {
-<<<<<<< HEAD
         "lastModified": 1780374538,
         "narHash": "sha256-Du10Y9E0y+E7atCXU8QYZmZMIKsBTVQwsA8R1O9kRD8=",
         "owner": "nix-community",
         "repo": "nix-vscode-extensions",
         "rev": "dab348249c5b821890c8e048b6a31723ee64bcf7",
-=======
-        "lastModified": 1780289349,
-        "narHash": "sha256-WtFLQ7R2bErvItKRgkYXqsm0s/cvDnx9fF4XniD3QxQ=",
-        "owner": "nix-community",
-        "repo": "nix-vscode-extensions",
-        "rev": "f4e7a3b814e1df64804cc211f657e65a1e618695",
->>>>>>> 84ef0c5 (chore (flake.lock): update)
         "type": "github"
       },
       "original": {
@@ -712,8 +713,11 @@
       "locked": {
         "lastModified": 1780206209,
         "narHash": "sha256-33WNQ5sssy+8+xhUz953aEnjR1Oh828j0DgLU1TfMqE=",
+        "lastModified": 1780206209,
+        "narHash": "sha256-33WNQ5sssy+8+xhUz953aEnjR1Oh828j0DgLU1TfMqE=",
         "owner": "NixOS",
         "repo": "nixpkgs",
+        "rev": "45cf63e030188dd38532669b2450182bfc2d4653",
         "rev": "45cf63e030188dd38532669b2450182bfc2d4653",
         "type": "github"
       },
@@ -1042,19 +1046,11 @@
         ]
       },
       "locked": {
-<<<<<<< HEAD
         "lastModified": 1780372976,
         "narHash": "sha256-7B90rWlpRZ6bZtRDCKZOqqfAjFFhiTDHXymWw2omhJ4=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
         "rev": "decef750607ebed4f8ccd9cd6169907367ab08b1",
-=======
-        "lastModified": 1780290245,
-        "narHash": "sha256-ieUjA1L43BstXZCyd8zZ3uc89nRevujVvlL34t2E0pk=",
-        "owner": "0xc000022070",
-        "repo": "zen-browser-flake",
-        "rev": "d4a18a1897aa2c84ad5774c3dedc377c30565366",
->>>>>>> 84ef0c5 (chore (flake.lock): update)
         "type": "github"
       },
       "original": {
