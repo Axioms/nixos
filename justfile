@@ -26,7 +26,8 @@ apply host=shell("hostname"): (diff host)
 
 applynow host=shell("hostname"): (diff host)
 	sudo nixos-rebuild --flake .#{{host}} switch
-
+vm: (lint)
+	nixos-rebuild build-vm --flake .#vm && ./result/bin/run-vm-vm
 
 copy host=shell("hostname"):
 	rsync -ax --delete --rsync-path="sudo rsync" ./ {{host}}:/etc/nixos/

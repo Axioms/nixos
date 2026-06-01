@@ -35,9 +35,23 @@
     };
     kernelModules = [ ];
     extraModulePackages = [ ];
-    kernelParams = [ "microcode.amd_sha_check=off" ];
   };
 
+  virtualisation.vmVariant = {
+    # the following configuration is added only when building VM with `build-vm`
+    virtualisation = {
+      memorySize = 2048; # use 2048MiB memory
+      cores = 3; # use 3 cpu cores
+      graphics = true; # Boot the vm in a window.
+      diskSize = 15000; # Virtual machine disk size in MB.
+      resolution = {
+        x = 1920;
+        y = 1080;
+      };
+      qemu.virtioKeyboard = true;
+    };
+
+  };
 
   swapDevices = [ ];
 
