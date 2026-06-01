@@ -169,7 +169,10 @@
         plugins = [ pkgs.nix-hyprcursor.hyprlandPlugins.hypr-dynamic-cursors ]; # TODO: revert
         configType = "lua";
         extraConfig = ''
+<<<<<<< HEAD
           require("config/main")
+=======
+>>>>>>> b353b5e (vm updates)
         '';
       };
     };

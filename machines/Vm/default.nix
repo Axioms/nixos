@@ -29,6 +29,7 @@
   #  qemuGuest.enable = true;
   #  spice-vdagentd.enable = true; # enable copy and paste between host and guest
   #};
+<<<<<<< HEAD
   hyprland.settings = {
     monitor = ''
       hl.monitor({output = "Virtual-1", mode = "1920x1080@60", position = "0x0", scale = "1"})
@@ -57,6 +58,8 @@
       "tail-tray &"
     ];
   };
+=======
+>>>>>>> b353b5e (vm updates)
   networking.hostName = "vm"; # Define your hostname.
   users.users.axiom.initialPassword = "test";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
