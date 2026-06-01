@@ -27,6 +27,12 @@
           allowUnfree = true;
         };
 
+        nix-hyprcursor = import inputs.nixpkgs-hyprcursor {
+          # TODO: remove
+          inherit (final) system;
+          inherit (final) config;
+        };
+
         # java 8 flake is broken, use this instead 7/15
         jdk8 = final.openjdk8-bootstrap;
         # cockpit storage module
