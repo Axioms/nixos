@@ -11,6 +11,8 @@
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
+    withPython3 = true;
+    withRuby = false;
     plugins = with pkgs.vimPlugins; [
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
@@ -23,7 +25,7 @@
       which-key-nvim
     ];
 
-    extraLuaConfig = # lua
+    initLua = # lua
       ''
         vim.cmd.colorscheme 'onedark'
         vim.g.have_nerd_font = true
