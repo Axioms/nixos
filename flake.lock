@@ -621,6 +621,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-hyprcursor": {
+      "locked": {
+        "lastModified": 1780093636,
+        "narHash": "sha256-n4aPguHHNrzwsuMq8fM16qZVA2BxUezUl+Fd6tfxXTc=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "7e83cf189b7de4f78c0d25fbb2e1c4c7c28ca4e8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "pull/522460/head",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1777168982,
@@ -791,6 +807,7 @@
         "lanzaboote": "lanzaboote",
         "nix-index-database": "nix-index-database_2",
         "nix-vscode-extensions": "nix-vscode-extensions",
+        "nixpkgs-hyprcursor": "nixpkgs-hyprcursor",
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nixvirt": "nixvirt",
