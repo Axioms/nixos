@@ -24,13 +24,14 @@
             jnoortheen.nix-ide
             eamodio.gitlens
             tinkertrain.theme-panda
-            pkief.material-product-icons
             christian-kohler.path-intellisense
             gruntfuggly.todo-tree
             ewen-lbh.vscode-hyprls
             fireblast.hyprlang-vscode
             nefrob.vscode-just-syntax
             dlasagno.rasi
+            pkief.material-icon-theme
+            sumneko.lua
           ];
 
           userSettings = {
@@ -71,6 +72,11 @@
             "chat.todoListTool.descriptionField" = false;
             "chat.disableAIFeatures" = true;
             "editor.fontFamily" = "'JetBrainsMono Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace";
+            "workbench.iconTheme" = "material-icon-theme";
+            "security.workspace.trust.banner" = "never";
+            "security.workspace.trust.enabled" = false;
+            "security.workspace.trust.startupPrompt" = "never";
+            "security.workspace.trust.untrustedFiles" = "open";
           };
         };
       };

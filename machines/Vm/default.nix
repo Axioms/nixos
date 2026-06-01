@@ -25,7 +25,6 @@
     ../../modules/extra/libvirt
     ../../modules/kernel/zen.nix
     ../../users/axiom
-    ../../modules/core/network-bridge.nix
     ../../modules/extra/docker.nix
     # hardware.cpu.amd.microcodePackage not supported by nix stable
     "${inputs.nixpkgs-unstable}/nixos/modules/hardware/cpu/amd-microcode.nix"
@@ -38,13 +37,13 @@
     spice-vdagentd.enable = true; # enable copy and paste between host and guest
   };
   syncthing.username = "axiom";
-  network-module.bridge.devices = [ "enp1s0" ];
   hyprland.settings.monitor = ''
     monitor=Virtual-1, 1920x1080, 0x0, 1
   '';
   networking.hostName = "vm"; # Define your hostname.
 
   hardware.cpu.amd.updateMicrocode = true;
+  users.users.axiom.initialPassword = "test";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
