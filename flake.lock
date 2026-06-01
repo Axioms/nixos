@@ -592,11 +592,19 @@
         ]
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1780374538,
         "narHash": "sha256-Du10Y9E0y+E7atCXU8QYZmZMIKsBTVQwsA8R1O9kRD8=",
         "owner": "nix-community",
         "repo": "nix-vscode-extensions",
         "rev": "dab348249c5b821890c8e048b6a31723ee64bcf7",
+=======
+        "lastModified": 1780289349,
+        "narHash": "sha256-WtFLQ7R2bErvItKRgkYXqsm0s/cvDnx9fF4XniD3QxQ=",
+        "owner": "nix-community",
+        "repo": "nix-vscode-extensions",
+        "rev": "f4e7a3b814e1df64804cc211f657e65a1e618695",
+>>>>>>> 84ef0c5 (chore (flake.lock): update)
         "type": "github"
       },
       "original": {
@@ -1034,11 +1042,19 @@
         ]
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1780372976,
         "narHash": "sha256-7B90rWlpRZ6bZtRDCKZOqqfAjFFhiTDHXymWw2omhJ4=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
         "rev": "decef750607ebed4f8ccd9cd6169907367ab08b1",
+=======
+        "lastModified": 1780290245,
+        "narHash": "sha256-ieUjA1L43BstXZCyd8zZ3uc89nRevujVvlL34t2E0pk=",
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
+        "rev": "d4a18a1897aa2c84ad5774c3dedc377c30565366",
+>>>>>>> 84ef0c5 (chore (flake.lock): update)
         "type": "github"
       },
       "original": {
