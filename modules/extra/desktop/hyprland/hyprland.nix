@@ -67,6 +67,14 @@
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
     home-manager.users.axiom = {
+
+      home.file."hyprland.lua" = { # FIXME: Repalce with a folder and import main.lua
+        enable = true;
+        executable = true;
+        source = ./config/main.lua;
+        target = ".config/hypr/hyprland.lua";
+      };
+
       services.easyeffects.enable = true;
       wayland.windowManager.hyprland = {
         enable = true;

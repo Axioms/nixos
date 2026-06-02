@@ -3,7 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     birdtray
-    unstable.bitwarden-desktop # TODO: Use Stable
+    #unstable.bitwarden-desktop # TODO: Use Stable
     deskflow
     jellyfin-media-player
     kdePackages.ark
@@ -29,7 +29,7 @@
     unstable.wiremix
     jq
     unstable.grayjay
-    unstable.obsidian # TODO: Use Stable
+    #unstable.obsidian # TODO: Use Stable
     guvcview
   ];
 

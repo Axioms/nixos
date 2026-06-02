@@ -31,8 +31,8 @@ local fileManager = "dolphin"
 local menu        = "rofi -show drun #tofi-drun -c ~/.share/tofi/configA --drun-launch=true"
 local browser     = "zen-beta"
 local notes       = "obsidian"
-local editor       = "code"
-local editor_alt = "zed"
+local editor      = "code"
+local editor_alt  = "zed"
 local colorPicker = "hyprpicker"
 -------------------
 ---- AUTOSTART ----
@@ -67,23 +67,23 @@ hl.env("MOZ_ENABLE_WAYLAND", "1")
 --- hl.env("GBM_BACKEND","nvidia-drm")
 --- hl.env("__GLX_VENDOR_LIBRARY_NAME","nvidia") --- remove if firefox crashes
 --- hl.env("NVD_BACKEND","direct")
-hl.env("ELECTRON_OZONE_PLATFORM_HINT","auto")
+hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 --- QT
-hl.env("QT_QPA_PLATFORM","wayland")
-hl.env("QT_QPA_PLATFORMTHEME","qt5ct")
-hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION","1")
-hl.env("QT_AUTO_SCREEN_SCALE_FACTOR","1")
+hl.env("QT_QPA_PLATFORM", "wayland")
+hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")
+hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
+hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
 --- hl.env("QT_STYLE_OVERRIDE","kvantum")
 --- Toolkit Backend Variables
-hl.env("GDK_BACKEND","wayland,x11,*")
-hl.env("SDL_VIDEODRIVER","wayland")
-hl.env("CLUTTER_BACKEND","wayland")
+hl.env("GDK_BACKEND", "wayland,x11,*")
+hl.env("SDL_VIDEODRIVER", "wayland")
+hl.env("CLUTTER_BACKEND", "wayland")
 --- XDG Specifications
-hl.env("XDG_CURRENT_DESKTOP","Hyprland")
-hl.env("XDG_SESSION_TYPE","wayland")
-hl.env("XDG_SESSION_DESKTOP","Hyprland")
-hl.env("SSH_AUTH_SOCK","$XDG_RUNTIME_DIR/ssh-agent.socket")
-hl.env("XDG_MENU_PREFIX","plasma- kbuildsycoca6")
+hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
+hl.env("XDG_SESSION_TYPE", "wayland")
+hl.env("XDG_SESSION_DESKTOP", "Hyprland")
+hl.env("SSH_AUTH_SOCK", "$XDG_RUNTIME_DIR/ssh-agent.socket")
+hl.env("XDG_MENU_PREFIX", "plasma- kbuildsycoca6")
 -----------------------
 ----- PERMISSIONS -----
 -----------------------
@@ -114,8 +114,8 @@ hl.config({
         gaps_out         = 1,
         border_size      = 2,
         col              = {
-            active_border   = { colors = { "rgb(5BCFFB) rgb(F5ABB9) rgb(FFFFFF)" }, angle = 120 },
-            inactive_border = "rgba(24273A)",
+            active_border   = { colors = { "rgb(5BCFFB)", "rgb(F5ABB9)", "rgb(FFFFFF)" }, angle = 120 },
+            inactive_border = "rgba(24273A00)",
         },
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
@@ -140,12 +140,12 @@ hl.config({
         },
 
         blur             = {
-            enabled  = true,
-            size     = 3,
-            passes   = 3,
-            vibrancy = 0.1696,
+            enabled           = true,
+            size              = 3,
+            passes            = 3,
+            vibrancy          = 0.1696,
             new_optimizations = true,
-            ignore_opacity = true,
+            ignore_opacity    = true,
         },
     },
 
@@ -153,7 +153,7 @@ hl.config({
         enabled = true,
     },
 })
-
+--[[
 -- Default curves and animations, see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
 hl.curve("easeOutQuint", { type = "bezier", points = { { 0.23, 1 }, { 0.32, 1 } } })
 hl.curve("easeInOutCubic", { type = "bezier", points = { { 0.65, 0.05 }, { 0.36, 1 } } })
@@ -181,6 +181,20 @@ hl.animation({ leaf = "workspaces", enabled = true, speed = 1.94, bezier = "almo
 hl.animation({ leaf = "workspacesIn", enabled = true, speed = 1.21, bezier = "almostLinear", style = "fade" })
 hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
 hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" })
+]]--
+hl.curve("wind", { type = "bezier", points = { { 0.05, 0.9 }, { 0.1, 1.05 } } })
+hl.curve("winIn", { type = "bezier", points = { { 0.1, 1.1 }, { 0.1, 1.1 } } })
+hl.curve("winOut", { type = "bezier", points = { { 0.3, -0.3 }, { 0, 1 } } })
+hl.curve("liner", { type = "bezier", points = { { 1, 1 }, { 1, 1 } } })
+
+hl.animation({leaf = "windows", enabled = true, speed = 6, bezier = "wind", style = "slide" })
+hl.animation({leaf = "windowsIn", enabled = true, speed = 6, bezier = "winIn", style = "slide" })
+hl.animation({leaf = "windowsOut", enabled = true, speed = 5, bezier = "winOut", style = "slide" })
+hl.animation({leaf = "windowsMove", enabled = true, speed = 5, bezier = "wind", style = "slide" })
+hl.animation({leaf = "border", enabled = true, speed = 1, bezier = "liner" })
+hl.animation({leaf = "borderangle", enabled = true, speed = 30, bezier = "liner", style = "loop" })
+hl.animation({leaf = "fade", enabled = true, speed = 10, bezier = "default" })
+hl.animation({leaf = "workspaces", enabled = true, speed = 5, bezier = "wind" })
 
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 -- "Smart gaps" / "No gaps when only"
@@ -210,14 +224,14 @@ hl.config({
 -- See https://wiki.hypr.land/Configuring/Layouts/Master-Layout/ for more
 hl.config({
     master = {
-        new_status = "master",
+    --    new_status = "master",
     },
 })
 
 -- See https://wiki.hypr.land/Configuring/Layouts/Scrolling-Layout/ for more
 hl.config({
     scrolling = {
-        fullscreen_on_one_column = true,
+    --    fullscreen_on_one_column = true,
     },
 })
 
@@ -227,8 +241,10 @@ hl.config({
 
 hl.config({
     misc = {
-        force_default_wallpaper = -1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
-        disable_hyprland_logo   = false, -- If true disables the random hyprland logo / anime girl background. :(
+        force_default_wallpaper = 0,    -- Set to 0 or 1 to disable the anime mascot wallpapers
+        disable_hyprland_logo   = true, -- If true disables the random hyprland logo / anime girl background. :(
+        disable_splash_rendering = true,
+        vrr = 0,
     },
 })
 
@@ -246,21 +262,22 @@ hl.config({
         kb_rules     = "",
 
         follow_mouse = 1,
+        -- force_no_accel = 1,
 
         sensitivity  = 0, -- -1.0 - 1.0, 0 means no modification.
-
+        numlock_by_default = true,
         touchpad     = {
             natural_scroll = false,
         },
     },
 })
-
+--[[
 hl.gesture({
     fingers = 3,
     direction = "horizontal",
     action = "workspace"
 })
-
+]]--
 -- Example per-device config
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/ for more
 hl.device({
