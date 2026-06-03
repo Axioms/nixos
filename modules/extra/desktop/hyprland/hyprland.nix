@@ -74,6 +74,18 @@
           source = ./config/autostart.lua;
           target = ".config/hypr/config/autostart.lua";
         };
+        "env.lua" = {
+          enable = true;
+          executable = true;
+          source = ./config/env.lua;
+          target = ".config/hypr/config/env.lua";
+        };
+        "hyprCursor.lua" = {
+          enable = true;
+          executable = true;
+          source = ./config/hyprCursor.lua;
+          target = ".config/hypr/config/hyprCursor.lua";
+        };
         "main.lua" = {
           enable = true;
           executable = true;
