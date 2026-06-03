@@ -346,7 +346,7 @@
       "return-type": "json",
       "interval": 10,
       "tooltip": false,
-      "on-click": "hyprctl dispatch togglespecialworkspace email"
+      "on-click": "hyprctl dispatch 'hl.dsp.workspace.toggle_special(\"email\")'"
     },
 
     "idle_inhibitor": {
