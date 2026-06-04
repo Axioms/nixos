@@ -29,32 +29,34 @@
   #  qemuGuest.enable = true;
   #  spice-vdagentd.enable = true; # enable copy and paste between host and guest
   #};
-  hyprland.settings.monitor = ''
-    monitor=Virtual-1, 1920x1080, 0x0, 1
-  '';
-
-  hyprland.settings.autostart = [
-    "dbus-update-activation-environment --all"
-    "rm -rf ~/.config/chromium"
-    "rm -rf ~/.cache/chromium"
-    "${pkgs.kdePackages.kwallet-pam}/libexec/pam_kwallet_init & kwalletd6 & kded5 & (${pkgs.unstable.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1 || ${pkgs.hyprpolkitagent}/libexec/hyprpolkitagent) & nm-applet &   # Start KWallet"
-    "${pkgs.bash}/bin/bash -c 'while ! dbus-send --session --dest=org.freedesktop.DBus --type=method_call --print-reply /org/freedesktop/DBus org.freedesktop.DBus.ListNames | grep org.kde.StatusNotifierWatcher; do sleep 0.1; done'   # Fix for waybar tray not working"
-    "XDG_MENU_PREFIX=arch- kbuildsycoca6   # Stupid Dolphin Open With being empty fix"
-    "waybar & "
-    "${pkgs.dunst}/bin/dunst -config ${../../modules/extra/desktop/hyprland/dunst/dunstrc} &"
-    "wl-paste --type text --watch cliphist store &"
-    "wl-paste --type image --watch cliphist store &"
-    "hypridle & "
-    "nm-applet & "
-    "blueman-tray & "
-    "${pkgs.kdePackages.kdeconnect-kde}/bin/kdeconnectd &"
-    "systemctl --user import-environment"
-    "exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-    "systemctl --user restart xdg-desktop-portal-hyprland.service"
-    "systemctl --user restart xdg-desktop-portal-wlr"
-    "tail-tray &"
-  ];
-
+  hyprland.settings = {
+    monitor = ''
+      hl.monitor({output = "Virtual-1", mode = "1920x1080@60", position = "0x0", scale = "1"})
+    '';
+    enableDefaultWallPaper = true;
+    autostart = [
+      "dbus-update-activation-environment --all"
+      "rm -rf ~/.config/chromium"
+      "rm -rf ~/.cache/chromium"
+      "${pkgs.kdePackages.kwallet-pam}/libexec/pam_kwallet_init & kwalletd6 & kded5 & (${pkgs.unstable.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1 || ${pkgs.hyprpolkitagent}/libexec/hyprpolkitagent) & nm-applet &" # Start KWallet
+      "${pkgs.bash}/bin/bash -c 'while ! dbus-send --session --dest=org.freedesktop.DBus --type=method_call --print-reply /org/freedesktop/DBus org.freedesktop.DBus.ListNames | grep org.kde.StatusNotifierWatcher; do sleep 0.1; done'" # Fix for waybar tray not working
+      "XDG_MENU_PREFIX=arch- kbuildsycoca6" # Stupid Dolphin Open With being empty fix
+      "waybar & "
+      "${pkgs.dunst}/bin/dunst -config ${../../modules/extra/desktop/hyprland/dunst/dunstrc} &"
+      "wl-paste --type text --watch cliphist store &"
+      "wl-paste --type image --watch cliphist store &"
+      "hypridle & "
+      "nm-applet & "
+      "blueman-tray & "
+      "${pkgs.kdePackages.kdeconnect-kde}/bin/kdeconnectd &"
+      "systemctl --user import-environment"
+      "exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+      "${pkgs.thunderbird-latest}/bin/thunderbird"
+      "systemctl --user restart xdg-desktop-portal-hyprland.service"
+      "systemctl --user restart xdg-desktop-portal-wlr"
+      "tail-tray &"
+    ];
+  };
   networking.hostName = "vm"; # Define your hostname.
   users.users.axiom.initialPassword = "test";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

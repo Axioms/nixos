@@ -27,6 +27,7 @@ apply host=shell("hostname"): (diff host)
 applynow host=shell("hostname"): (diff host)
 	sudo nixos-rebuild --flake .#{{host}} switch
 vm: (lint)
+	rm vm.qcow2 || echo 0
 	nixos-rebuild build-vm --flake .#vm && ./result/bin/run-vm-vm
 
 copy host=shell("hostname"):

@@ -22,6 +22,32 @@
   };
 
   home-manager.users.axiom = {
+    services.pipewire.configs = [
+      {
+
+        context.objects = [
+          {
+            "factory" = "adapter";
+            "args" = {
+              "factory.name" = "support.null-audio-sink";
+              "node.name" = "game_sink";
+              "node.description" = "Game Sink";
+              "media.class" = Audio/Sink;
+              "audio.position" = [
+                "FL"
+                "FR"
+              ];
+              "monitor.channel-volumes" = true;
+              "capture.props" = {
+                "media.role" = "Game";
+                #	    application.process.binary = wine64-preloader
+
+              };
+            };
+          }
+        ];
+      }
+    ];
   };
 
   environment.systemPackages = [ pkgs.pulseaudio ];

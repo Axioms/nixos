@@ -3,7 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     birdtray
-    bitwarden-desktop
+    #unstable.bitwarden-desktop # TODO: Use Stable
     deskflow
     jellyfin-media-player
     kdePackages.ark
@@ -17,7 +17,7 @@
     qpwgraph
     nextcloud-client
     #nvtopPackages.full
-    protonvpn-gui
+    proton-vpn
     unstable.sone
     unstable.streamcontroller
     distrobox
@@ -29,7 +29,7 @@
     unstable.wiremix
     jq
     unstable.grayjay
-    obsidian
+    #unstable.obsidian # TODO: Use Stable
     guvcview
   ];
 

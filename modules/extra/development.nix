@@ -16,13 +16,13 @@
     filezilla
     git
     godot
-    isoimagewriter
+    kdePackages.isoimagewriter
     just
     meld
     nil
     niv
     nixd
-    nixfmt-rfc-style
+    nixfmt
     octave
     postman
     qFlipper

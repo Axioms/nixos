@@ -16,15 +16,21 @@
 
       (final: prev: {
         stable = import inputs.nixpkgs-stable {
-          inherit (final) system;
+          inherit (final.stdenv.hostPlatform) system;
           inherit (final) config;
           allowUnfree = true;
         };
 
         unstable = import inputs.nixpkgs-unstable {
-          inherit (final) system;
+          inherit (final.stdenv.hostPlatform) system;
           inherit (final) config;
           allowUnfree = true;
+        };
+
+        nix-hyprcursor = import inputs.nixpkgs-hyprcursor {
+          # TODO: remove
+          inherit (final.stdenv.hostPlatform) system;
+          inherit (final) config;
         };
 
         # java 8 flake is broken, use this instead 7/15
