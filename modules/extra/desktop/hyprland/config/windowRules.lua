@@ -183,8 +183,16 @@ hl.window_rule({
     opacity = "0.80 0.70"
 })
 
+hl.window_rule({
+    name = "transparency for protonvpn",
+    match = {
+        class = ".*proton.vpn.app.gtk.*"
+    },
+    opacity = "0.80 0.70"
+})
+
 local windowsToFloat = { "kvantummanager", "qt5ct", "qt6ct", "nwg-look", "org.kde.ark", "pavucontrol", "blueman-manager",
-    "nm-applet", "nm-connection-editor", "polkit" }
+    "nm-applet", "nm-connection-editor", "polkit", "proton.vpn.app.gtk" }
 
 for _, v in ipairs(windowsToFloat) do
     hl.window_rule({

@@ -24,7 +24,7 @@
     home.file."hyprpaper.conf" = {
       enable = true;
       executable = true;
-      text = "";
+      text = "splash = false";
       target = ".config/hypr/hyprpaper.conf";
     };
 

@@ -31,6 +31,7 @@
     unstable.grayjay
     #unstable.obsidian # TODO: Use Stable
     guvcview
+    drawy
   ];
 
   programs.nix-ld.enable = true;
