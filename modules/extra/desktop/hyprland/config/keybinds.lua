@@ -13,7 +13,7 @@ local colorPicker = "hyprpicker"
 ---- KEYBINDINGS ----
 ---------------------
 
-local mainMod = "SUPER" -- Sets "Windows" key as main modifier
+local mainMod     = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
@@ -28,12 +28,12 @@ hl.bind(mainMod .. " + W", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
 hl.bind(mainMod .. "+ CONTROL" .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("rofi -modi games -show games -theme ${./rofi/games-theme.rasi}")) --#FIXME: update to be substringed out in nix
-hl.bind(mainMod .. "+ ALT" .. " + B", hl.dsp.exec_cmd("${lib.getExe pkgs.rofi-bluetooth}"))                   --#FIXME: update to be substringed out in nix
+hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("rofi -modi games -show games -theme ROFIGAMESTHEMERASI")) -- ${./rofi/games-theme.rasi}")) --#FIXME: update to be substringed out in nix
+hl.bind(mainMod .. "+ ALT" .. " + B", hl.dsp.exec_cmd("LIBGETEXEPKGSROFIBLUETOOTH"))                  --"${lib.getExe pkgs.rofi-bluetooth}"))                   --#FIXME: update to be substringed out in nix
 hl.bind(mainMod .. "+ ALT" .. " + V",
     hl.dsp.exec_cmd("python ~/Documents/git/streamdeck-pipewire/SwitchSink.py AppToSink"))
-hl.bind(mainMod .. "+ ALT" .. "+ SHIFT" .. " + V", hl.dsp.exec_cmd("${lib.getExe pkgs.rofi-vpn}")) --#FIXME: update to be substringed out in nix
-hl.bind(mainMod .. "+ ALT" .. " + W", hl.dsp.exec_cmd("${lib.getExe pkgs.rofi-network-manager}"))  --#FIXME: update to be substringed out in nix
+hl.bind(mainMod .. "+ ALT" .. "+ SHIFT" .. " + V", hl.dsp.exec_cmd("LIBGETEXEPKGSROFIVPN")) --"${lib.getExe pkgs.rofi-vpn}")) --#FIXME: update to be substringed out in nix
+hl.bind(mainMod .. "+ ALT" .. " + W", hl.dsp.exec_cmd("LIBGETEXEPKGSROFINETWORKMANAGER"))   --${lib.getExe pkgs.rofi-network-manager}"))  --#FIXME: update to be substringed out in nix
 -- hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
 

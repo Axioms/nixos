@@ -55,24 +55,24 @@
   };
 
   hyprland.settings.monitor = ''
-    monitor=, preferred, auto, 1
+    hl.monitor({output = "", mode = "preferred", position = "auto", scale = "1"})
   '';
 
   hyprland.settings.autostart = [
     "dbus-update-activation-environment --all"
     "rm -rf ~/.config/chromium"
     "rm -rf ~/.cache/chromium"
-    "${pkgs.kdePackages.kwallet-pam}/libexec/pam_kwallet_init & kwalletd6 & (${pkgs.unstable.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1 || ${pkgs.hyprpolkitagent}/libexec/hyprpolkitagent) & nm-applet &   # Start KWallet"
-    "${pkgs.bash}/bin/bash -c 'while ! dbus-send --session --dest=org.freedesktop.DBus --type=method_call --print-reply /org/freedesktop/DBus org.freedesktop.DBus.ListNames | grep org.kde.StatusNotifierWatcher; do sleep 0.1; done'   # Fix for waybar tray not working"
-    "XDG_MENU_PREFIX=arch- kbuildsycoca6   # Stupid Dolphin Open With being empty fix"
+    "${pkgs.kdePackages.kwallet-pam}/libexec/pam_kwallet_init & kwalletd6 & (${pkgs.unstable.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1 || ${pkgs.hyprpolkitagent}/libexec/hyprpolkitagent) & nm-applet &" # Start KWallet
+    "${pkgs.bash}/bin/bash -c 'while ! dbus-send --session --dest=org.freedesktop.DBus --type=method_call --print-reply /org/freedesktop/DBus org.freedesktop.DBus.ListNames | grep org.kde.StatusNotifierWatcher; do sleep 0.1; done'" # Fix for waybar tray not working
+    "XDG_MENU_PREFIX=arch- kbuildsycoca6" # Stupid Dolphin Open With being empty fix
     "waybar & "
     "${pkgs.dunst}/bin/dunst -config ${../../modules/extra/desktop/hyprland/dunst/dunstrc} &"
     "hyprpaper &"
     "wl-paste --type text --watch cliphist store &"
     "wl-paste --type image --watch cliphist store &"
-    "hypridle & "
-    "nm-applet & "
-    "blueman-tray & "
+    "hypridle &"
+    "nm-applet &"
+    "blueman-tray &"
     "${pkgs.kdePackages.kdeconnect-kde}/bin/kdeconnectd &"
     "systemctl --user import-environment"
     "exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
