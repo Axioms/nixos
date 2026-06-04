@@ -18,7 +18,7 @@
 
   systemd.tmpfiles.rules = [
     "d /tmp/agenix-rekey 1777 root root"
-    "d /tmp/agenix-rekey/1000 1770 1000 1000"
+    "d /tmp/agenix-rekey/1000 1770 axiom axiom"
   ];
 
   age.ageBin = "PATH=$PATH:${lib.makeBinPath [ pkgs.age-plugin-yubikey ]} ${pkgs.age}/bin/age";
