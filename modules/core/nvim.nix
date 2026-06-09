@@ -70,7 +70,7 @@
           return '%2l:%-2v'
         end
 
-        require('nvim-treesitter.configs').setup {
+        require('nvim-treesitter').setup {
           highlight = {
             enable = true,
             -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
