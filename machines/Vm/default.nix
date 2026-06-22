@@ -3,6 +3,7 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   pkgs,
+  lib,
   ...
 }:
 {
@@ -37,23 +38,24 @@
       "dbus-update-activation-environment --all"
       "rm -rf ~/.config/chromium"
       "rm -rf ~/.cache/chromium"
-      "${pkgs.kdePackages.kwallet-pam}/libexec/pam_kwallet_init & kwalletd6 & kded5 & (${pkgs.unstable.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1 || ${pkgs.hyprpolkitagent}/libexec/hyprpolkitagent) & nm-applet &" # Start KWallet
+      "${pkgs.kdePackages.kwallet-pam}/libexec/pam_kwallet_init & kwalletd6 & kded5 & (${pkgs.unstable.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1 || ${pkgs.hyprpolkitagent}/libexec/hyprpolkitagent) & nm-applet" # Start KWallet
       "${pkgs.bash}/bin/bash -c 'while ! dbus-send --session --dest=org.freedesktop.DBus --type=method_call --print-reply /org/freedesktop/DBus org.freedesktop.DBus.ListNames | grep org.kde.StatusNotifierWatcher; do sleep 0.1; done'" # Fix for waybar tray not working
       "XDG_MENU_PREFIX=arch- kbuildsycoca6" # Stupid Dolphin Open With being empty fix
-      "waybar & "
-      "${pkgs.dunst}/bin/dunst -config ${../../modules/extra/desktop/hyprland/dunst/dunstrc} &"
-      "wl-paste --type text --watch cliphist store &"
-      "wl-paste --type image --watch cliphist store &"
-      "hypridle & "
-      "nm-applet & "
-      "blueman-tray & "
-      "${pkgs.kdePackages.kdeconnect-kde}/bin/kdeconnectd &"
+      "waybar"
+      "${pkgs.dunst}/bin/dunst -config ${../../modules/extra/desktop/hyprland/dunst/dunstrc}"
+      "wl-paste --type text --watch cliphist store"
+      "wl-paste --type image --watch cliphist store"
+      "hypridle"
+      "nm-applet"
+      "blueman-tray"
+      "${pkgs.kdePackages.kdeconnect-kde}/bin/kdeconnectd"
       "systemctl --user import-environment"
       "exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       "${pkgs.thunderbird-latest}/bin/thunderbird"
       "systemctl --user restart xdg-desktop-portal-hyprland.service"
       "systemctl --user restart xdg-desktop-portal-wlr"
-      "tail-tray &"
+      "tail-tray"
+      "setpriv --ambient-caps -all ${lib.getExe pkgs.steam} -silent"
     ];
   };
   networking.hostName = "vm"; # Define your hostname.
