@@ -67,7 +67,6 @@
       "memory#swap",
       "disk",
       "custom/spacer1",
-      "custom/spacer1",
       "network#info",
       "custom/spacer1",
       "pulseaudio#input",
