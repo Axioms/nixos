@@ -108,6 +108,7 @@
 #waybar.first #memory.ram,
 #waybar.first #memory.swap,
 #waybar.first #disk,
+#waybar.first #idle_inhibitor,
 #waybar.first #network {
     color: @performance;
 }
@@ -335,7 +336,6 @@ tooltip {
     transition: all 0.15s ease-in-out;
 }
 
-#waybar.first #idle_inhibitor,
 #custom-email.unread {
   background: rgba(255, 255, 255, 0.2);
   color: inherit;
