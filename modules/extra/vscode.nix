@@ -32,6 +32,7 @@
             dlasagno.rasi
             pkief.material-icon-theme
             sumneko.lua
+            docker.docker
           ];
 
           userSettings = {
