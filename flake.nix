@@ -3,7 +3,6 @@
   inputs = {
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
-    nixpkgs-hyprcursor.url = "github:NixOS/nixpkgs/pull/522460/head"; # TODO: remove once pulled in
     flake-utils.url = "github:numtide/flake-utils";
     cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     agenix.url = "github:ryantm/agenix";

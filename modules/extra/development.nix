@@ -12,7 +12,6 @@
     arduino-ide
     arduino-core
     arduino-language-server
-    bambu-studio
     filezilla
     git
     godot

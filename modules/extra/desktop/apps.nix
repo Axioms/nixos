@@ -32,6 +32,7 @@
     #unstable.obsidian # TODO: Use Stable
     guvcview
     drawy
+    kdePackages.kcalc
   ];
 
   programs.nix-ld.enable = true;

@@ -40,7 +40,7 @@
       cliphist
       grimblast
       shared-mime-info
-      nix-hyprcursor.hyprlandPlugins.hypr-dynamic-cursors # TODO: revert
+      hyprlandPlugins.hypr-dynamic-cursors
       hyprpolkitagent
       hyprpwcenter
       hyprsysteminfo
@@ -166,7 +166,7 @@
       services.easyeffects.enable = true;
       wayland.windowManager.hyprland = {
         enable = true;
-        plugins = [ pkgs.nix-hyprcursor.hyprlandPlugins.hypr-dynamic-cursors ]; # TODO: revert
+        plugins = [ pkgs.hyprlandPlugins.hypr-dynamic-cursors ];
         configType = "lua";
         extraConfig = ''
           require("config/main")

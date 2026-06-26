@@ -1,11 +1,11 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 
 {
 
-  disabledModules = [ "services/desktops/pipewire/pipewire.nix" ];
-  imports = [
-    "${inputs.nixpkgs-unstable}/nixos/modules/services/desktops/pipewire/pipewire.nix"
-  ];
+  #disabledModules = [ "services/desktops/pipewire/pipewire.nix" ];
+  #imports = [
+  #  "${inputs.nixpkgs-unstable}/nixos/modules/services/desktops/pipewire/pipewire.nix"
+  #];
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
