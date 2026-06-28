@@ -36,4 +36,8 @@
       application-menu
     ];
 
+    hardware.i2c.enable = true;
+    services.ddccontrol.enable = true;
+    users.users.axiom.extraGroups = [ "i2c" ];
+
 }

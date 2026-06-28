@@ -44,6 +44,9 @@
       hyprpolkitagent
       hyprpwcenter
       hyprsysteminfo
+      ddcui
+      ddcutil
+      ddcutil-service
     ];
 
     programs = {
