@@ -5,7 +5,7 @@
     birdtray
     #unstable.bitwarden-desktop # TODO: Use Stable
     deskflow
-    jellyfin-media-player
+    jellyfin-desktop
     kdePackages.ark
     kdePackages.filelight
     kdePackages.kcmutils

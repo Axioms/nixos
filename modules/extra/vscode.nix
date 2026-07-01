@@ -25,7 +25,7 @@
             eamodio.gitlens
             tinkertrain.theme-panda
             christian-kohler.path-intellisense
-            gruntfuggly.todo-tree
+            fanaticpythoner.better-todo-tree
             ewen-lbh.vscode-hyprls
             fireblast.hyprlang-vscode
             nefrob.vscode-just-syntax
@@ -57,9 +57,9 @@
             "nix.enableLanguageServer" = true;
             "nix.formatterPath" = "nixfmt";
             "nix.serverPath" = "nixd";
-            "todo-tree.general.showActivityBarBadge" = true;
-            "todo-tree.highlights.useColourScheme" = true;
-            "todo-tree.general.tags" = [
+            "better-todo-tree.general.showActivityBarBadge" = true;
+            "better-todo-tree.highlights.useColourScheme" = true;
+            "better-todo-tree.general.tags" = [
               "BUG"
               "HACK"
               "FIXME"
