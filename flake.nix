@@ -3,9 +3,21 @@
   inputs = {
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
-    flake-utils.url = "github:numtide/flake-utils";
-    cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
-    agenix.url = "github:ryantm/agenix";
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+
+    };
+    cachyos-kernel = {
+      url = "github:xddxdd/nix-cachyos-kernel/release";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+
+    };
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+
+    };
 
     alien = {
       url = "github:thiagokokada/nix-alien";

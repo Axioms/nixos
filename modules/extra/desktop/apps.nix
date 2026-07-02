@@ -22,7 +22,7 @@
     unstable.streamcontroller
     distrobox
     syncthingtray
-    unstable.vesktop
+    vesktop
     #ventoy-bin-full
     veracrypt
     wl-clicker

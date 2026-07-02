@@ -7,7 +7,7 @@
 {
   nixpkgs = {
     config = {
-      allowBroken = true;
+      allowBroken = false;
       allowUnfree = true;
     };
     overlays = [
@@ -43,6 +43,8 @@
             "--set-default QTWEBENGINE_FORCE_USE_GBM 0"
           ];
         });
+
+        pnpm_10_29_2 = final.pnpm_10; # TODO: remove after 8/26
 
         usbeehive = pkgs.callPackage ../../pkgs/rust/usbeehive.nix { };
       })
