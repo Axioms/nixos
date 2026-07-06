@@ -33,6 +33,7 @@
     guvcview
     drawy
     kdePackages.kcalc
+    element-desktop
   ];
 
   programs.nix-ld.enable = true;
