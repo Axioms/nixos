@@ -39,7 +39,7 @@
 
         jellyfin-desktop = prev.jellyfin-desktop.overrideAttrs (oldAttrs: {
           # TODO: remove once jellydin desktop v3 is released
-          configureFlags = oldAttrs.qtWrapperArgs ++ [
+          qtWrapperArgs = oldAttrs.qtWrapperArgs ++ [
             "--set-default QTWEBENGINE_FORCE_USE_GBM 0"
           ];
         });
