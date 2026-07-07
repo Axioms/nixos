@@ -34,6 +34,8 @@
     drawy
     kdePackages.kcalc
     element-desktop
+    fluffychat
+    cinny-desktop
   ];
 
   programs.nix-ld.enable = true;
