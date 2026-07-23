@@ -3,7 +3,12 @@ _:
 {
   services.openssh = {
     enable = true;
-    ports = [ 22 ];
+    listenAddresses = [
+      {
+        addr = "0.0.0.0";
+        port = 22;
+      }
+    ];
     settings = {
       PasswordAuthentication = true;
       AllowUsers = [ "axiom" ]; # Allows all users by default. Can be [ "user1" "user2" ]
