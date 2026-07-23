@@ -27,6 +27,30 @@
           allowUnfree = true;
         };
 
+        element-desktop = prev.element-desktop.overrideAttrs (oldAttrs: {
+          desktopItems = [
+            (pkgs.makeDesktopItem {
+              name = "element-desktop";
+              exec = "element-desktop --password-store=\"kwallet6\" %u";
+              icon = "element";
+              desktopName = "Element";
+              genericName = "Matrix Client";
+              comment = oldAttrs.meta.description;
+              categories = [
+                "Network"
+                "InstantMessaging"
+                "Chat"
+              ];
+              startupWMClass = "Element";
+              mimeTypes = [
+                "x-scheme-handler/element"
+                "x-scheme-handler/io.element.desktop"
+              ];
+            })
+          ];
+
+        });
+
         # java 8 flake is broken, use this instead 7/15
         jdk8 = final.openjdk8-bootstrap;
         # cockpit storage module
@@ -43,8 +67,6 @@
             "--set-default QTWEBENGINE_FORCE_USE_GBM 0"
           ];
         });
-
-        pnpm_10_29_2 = final.pnpm_10; # TODO: remove after 8/26
 
         usbeehive = pkgs.callPackage ../../pkgs/rust/usbeehive.nix { };
       })

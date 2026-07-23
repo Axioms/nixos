@@ -66,7 +66,6 @@
     };
     vscode-server = {
       url = "github:nix-community/nixos-vscode-server";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
     };
   };
 
@@ -116,6 +115,11 @@
             inputs.home-manager-stable.nixosModules.home-manager
             inputs.nix-index-database.nixosModules.default
             { programs.nix-index-database.comma.enable = true; }
+            inputs.vscode-server.nixosModules.default
+            (_: {
+              services.vscode-server.enable = true;
+            })
+
           ];
         };
 

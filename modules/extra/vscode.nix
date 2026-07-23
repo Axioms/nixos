@@ -1,17 +1,9 @@
-{
-  inputs,
-  ...
-}:
+_:
 
 {
   home-manager.users.axiom =
     { pkgs, ... }:
     {
-      imports = [
-        inputs.vscode-server.nixosModules.home
-      ];
-      services.vscode-server.enable = true;
-
       programs.vscode = {
         enable = true;
         package = pkgs.unstable.vscode;
