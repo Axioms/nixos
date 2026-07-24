@@ -20,7 +20,7 @@
     exfatprogs
     usbeehive
   ];
-
+// TODO: Move to env.nix
   environment.shellAliases = {
     killall = "pkill";
     du = "ncdu --color dark-bg --show-graph --show-percent -2 -x";
