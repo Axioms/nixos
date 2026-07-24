@@ -1,5 +1,5 @@
 _:
-
+# TODO: Add Config variables for Username AdminUsername TimeZone 
 {
 
   imports = [
@@ -53,7 +53,7 @@ _:
     gc = {
       automatic = true;
       randomizedDelaySec = "14m";
-      options = "--delete-older-than 10d";
+      options = "--delete-older-than 30d";
     };
   };
 
