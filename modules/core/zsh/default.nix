@@ -30,10 +30,21 @@
         DISABLE_MAGIC_FUNCTIONS="true"
         COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
         HIST_STAMPS="%d/%m/%y %H:%M:%S"
-        ZSH_COLORIZE_STYLE="colorful"
         HISTSIZE=50000
         SAVEHIST=50000
+        ZSH_COLORIZE_STYLE="onedark"
+
+        if [[ -n $SSH_CONNECTION ]]; then
+          export EDITOR='nvim'
+        else
+          export EDITOR='code'
+        fi
+
+        if [ $TERM = 'xterm-kitty' ]; then
+          alias ssh="kitten ssh"
+        fi
       '';
+
       history.append = true;
       shellAliases = {
         logout = "loginctl terminate-user axiom";
@@ -47,32 +58,22 @@
       ];
       oh-my-zsh = {
         enable = true;
+        theme = "powerlevel10k/powerlevel10k";
         plugins = [
-          "archlinux"
-          "arduino-cli"
           "colorize"
           "common-aliases"
-          "colored-man-pages"
+          "cp"
           "docker"
-          "docker-compose"
-          #"dotenv"
-          "emoji"
-          "firewalld"
           "git"
+          "git-auto-fetch"
           "gpg-agent"
-          #"last-working-dir"
           "nmap"
           "npm"
-          "pip"
-          "screen"
           "ssh"
           "ssh-agent"
           "sudo"
           "systemd"
           "tmux"
-          "ufw"
-          #"vagrant"
-          "vscode"
           "z"
         ];
       };
