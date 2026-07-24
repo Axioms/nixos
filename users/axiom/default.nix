@@ -46,9 +46,6 @@
 
   home-manager.users.axiom = _: {
     programs.zsh.enable = true;
-    services.syncthing = {
-      enable = true;
-    };
 
     dconf.settings = {
       "org/virt-manager/virt-manager/connections" = {
