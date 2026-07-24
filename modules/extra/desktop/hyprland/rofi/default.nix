@@ -1,5 +1,6 @@
 {
   pkgs,
+  config,
   ...
 }:
 
@@ -8,7 +9,7 @@
     rofi
   ];
 
-  home-manager.users.axiom = {
+  home-manager.users."${config.system.PrimaryUser}" = {
     programs.rofi = {
       enable = true;
       theme = ./theme.rasi;

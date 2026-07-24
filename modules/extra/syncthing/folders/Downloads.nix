@@ -7,7 +7,7 @@
 {
   options = {
     syncthing-module.Downloads.path = lib.mkOption {
-      default = "/home/axiom/Downloads";
+      default = "/home/${config.syncthing.username}/Downloads";
       type = lib.types.str;
     };
 

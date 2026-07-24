@@ -1,4 +1,4 @@
-_:
+{ config, ... }:
 
 {
   # Enable the X11 windowing system.
@@ -6,7 +6,6 @@ _:
   services.xserver.enable = false;
 
   programs.kdeconnect.enable = true;
-  home-manager.users.axiom.services.kdeconnect.enable = true;
   networking.firewall = rec {
     allowedTCPPortRanges = [
       {
@@ -17,10 +16,13 @@ _:
     allowedUDPPortRanges = allowedTCPPortRanges;
   };
 
-  home-manager.users.axiom.home.file."app-org.kde.xwaylandvideobridge@autostart.service" = {
-    enable = true;
-    executable = true;
-    text = "
+  home-manager.users."${config.system.PrimaryUser}" = {
+
+    services.kdeconnect.enable = true;
+    home.file."app-org.kde.xwaylandvideobridge@autostart.service" = {
+      enable = true;
+      executable = true;
+      text = "
         [Install]
         WantedBy=default.target
 
@@ -31,9 +33,9 @@ _:
         [Unit]
         Description=hyprpaper
       ";
-    target = ".config/systemd/user/app-org.kde.xwaylandvideobridge@autostart.service";
+      target = ".config/systemd/user/app-org.kde.xwaylandvideobridge@autostart.service";
+    };
   };
-
   imports = [
     ./xdg.nix
   ];

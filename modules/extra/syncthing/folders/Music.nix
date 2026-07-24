@@ -7,7 +7,7 @@
 {
   options = {
     syncthing-module.Music.path = lib.mkOption {
-      default = "/home/axiom/Music";
+      default = "/home/${config.syncthing.username}/Music";
       type = lib.types.str;
     };
 

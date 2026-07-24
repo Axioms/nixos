@@ -1,9 +1,9 @@
-_:
+{ config, ... }:
 
 {
   programs.hyprlock.enable = false;
 
-  home-manager.users.axiom = {
+  home-manager.users."${config.system.PrimaryUser}" = {
     programs.hyprlock = {
       enable = true;
       extraConfig = ''

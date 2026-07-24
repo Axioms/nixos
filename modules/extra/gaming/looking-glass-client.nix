@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
-  home-manager.users.axiom = {
+  home-manager.users."${config.system.PrimaryUser}" = {
 
     home.file."looking-glass-client.ini" = {
       enable = true;
@@ -80,6 +80,6 @@
   '';
 
   #  systemd.tmpfiles.rules = [
-  #    "f /dev/shm/looking-glass 0660 axiom qemu-libvirtd -"
+  #    "f /dev/shm/looking-glass 0660 ${config.system.PrimaryUser} qemu-libvirtd -"
   #  ];
 }

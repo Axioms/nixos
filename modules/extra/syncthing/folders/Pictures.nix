@@ -7,7 +7,7 @@
 {
   options = {
     syncthing-module.Pictures.path = lib.mkOption {
-      default = "/home/axiom/Pictures";
+      default = "/home/${config.syncthing.username}/Pictures";
       type = lib.types.str;
     };
 

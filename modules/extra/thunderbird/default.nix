@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
-  home-manager.users.axiom = {
+  home-manager.users."${config.system.PrimaryUser}" = {
 
     home.file."birdtray-config.json" = {
       enable = true;
@@ -12,7 +12,7 @@
             "accounts": [
                 {
                     "color": "#000000",
-                    "path": "/home/axiom/.thunderbird/jd0mkrpx.default/Mail/smart mailboxes/Inbox.msf"
+                    "path": "/home/${config.system.PrimaryUser}/.thunderbird/jd0mkrpx.default/Mail/smart mailboxes/Inbox.msf"
                 }
             ],
             "advanced/blinkingusealpha": false,

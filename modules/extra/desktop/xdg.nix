@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  config,
   ...
 }:
 {
@@ -8,7 +9,7 @@
   environment.sessionVariables.DEFAULT_BROWSER = "${inputs.zen-browser.packages.x86_64-linux.beta}/bin/zen-beta";
 
   # Portals
-  home-manager.users.axiom = {
+  home-manager.users."${config.system.PrimaryUser}" = {
     xdg = {
       mimeApps = {
         enable = true;

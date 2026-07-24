@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -6,5 +6,5 @@
     docker
   ];
   virtualisation.docker.enable = true;
-  users.users.axiom.extraGroups = [ "docker" ];
+  users.users."${config.system.PrimaryUser}".extraGroups = [ "docker" ];
 }

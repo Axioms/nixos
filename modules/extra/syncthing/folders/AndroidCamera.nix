@@ -7,7 +7,7 @@
 {
   options = {
     syncthing-module.AndroidCamera.path = lib.mkOption {
-      default = "/home/axiom/Android Camera";
+      default = "/home/${config.syncthing.username}/Android Camera";
       type = lib.types.str;
     };
 

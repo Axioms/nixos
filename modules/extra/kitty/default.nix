@@ -1,8 +1,8 @@
-_:
+{ config, ... }:
 
 {
 
-  home-manager.users.axiom =
+  home-manager.users."${config.system.PrimaryUser}" =
     { pkgs, ... }:
     {
       programs.kitty = {

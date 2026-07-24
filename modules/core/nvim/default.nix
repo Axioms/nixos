@@ -1,11 +1,12 @@
 {
   pkgs,
+  config,
   ...
 }:
 
 {
 
-  home-manager.users.axiom.programs.neovim = {
+  home-manager.users."${config.system.PrimaryUser}".programs.neovim = {
     enable = true;
     defaultEditor = false; # this is configured by me elsewhere
     viAlias = true;

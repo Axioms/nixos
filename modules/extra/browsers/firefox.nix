@@ -2,7 +2,7 @@
 
 {
 
-  home-manager.users.axiom =
+  home-manager.users."${config.system.PrimaryUser}" =
     { config, ... }:
     {
 

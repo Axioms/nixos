@@ -7,7 +7,7 @@
 {
   options = {
     syncthing-module.Obsidian.path = lib.mkOption {
-      default = "/home/axiom/Documents/Obsidian";
+      default = "/home/${config.syncthing.username}/Documents/Obsidian";
       type = lib.types.str;
     };
 

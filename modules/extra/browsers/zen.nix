@@ -1,11 +1,12 @@
 {
   inputs,
+  config,
   ...
 }:
 
 {
 
-  home-manager.users.axiom = {
+  home-manager.users."${config.system.PrimaryUser}" = {
 
     imports = [
       inputs.zen-browser.homeModules.beta

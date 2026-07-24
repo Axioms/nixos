@@ -192,7 +192,7 @@ in
     };
   };
 
-  users.users.axiom = {
+  users.users."${config.system.PrimaryUser}" = {
     extraGroups = [ "libvirtd" ];
   };
   #nvram = [

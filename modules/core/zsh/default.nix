@@ -1,5 +1,6 @@
 {
   pkgs,
+  config,
   ...
 }:
 
@@ -10,7 +11,7 @@
     pkgs.bat
   ];
 
-  home-manager.users.axiom = {
+  home-manager.users."${config.system.PrimaryUser}" = {
     home.file.".p10k.zsh" = {
       source = ./p10k.zsh;
       force = true;
@@ -47,7 +48,7 @@
 
       history.append = true;
       shellAliases = {
-        logout = "loginctl terminate-user axiom";
+        logout = "loginctl terminate-user ${config.system.PrimaryUser}";
       };
       plugins = [
         {

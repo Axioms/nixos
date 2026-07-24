@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
 
@@ -21,7 +21,7 @@
     #media-session.enable = true;
   };
 
-  home-manager.users.axiom = {
+  home-manager.users."${config.system.PrimaryUser}" = {
     services.pipewire.configs = [
       {
 

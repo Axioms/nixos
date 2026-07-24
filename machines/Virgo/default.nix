@@ -33,8 +33,8 @@
     ../../modules/extra/gaming/sunshine.nix
   ];
 
+  system.PrimaryUser = "axiom";
   security.polkit.enable = true;
-
   security.polkit.extraConfig = ''
     polkit.addRule(function(action, subject) {
       if (

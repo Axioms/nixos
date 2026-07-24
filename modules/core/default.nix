@@ -27,6 +27,9 @@
       default = "America/New_York";
       type = lib.types.str;
     };
+    system.PrimaryUser = lib.mkOption {
+      type = lib.types.str;
+    };
   };
   config = {
 

@@ -30,6 +30,7 @@
   ];
 
   networking.hostName = "Aries"; # Define your hostname.
+  system.PrimaryUser = "axiom";
   security.polkit = {
     enable = true;
     extraConfig = ''

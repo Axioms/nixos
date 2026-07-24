@@ -1,5 +1,6 @@
 {
   pkgs,
+  config,
   ...
 }:
 
@@ -38,6 +39,6 @@
 
   hardware.i2c.enable = true;
   services.ddccontrol.enable = true;
-  users.users.axiom.extraGroups = [ "i2c" ];
+  users.users."${config.system.PrimaryUser}".extraGroups = [ "i2c" ];
 
 }

@@ -1,5 +1,6 @@
 {
   pkgs,
+  config,
   ...
 }:
 
@@ -12,7 +13,7 @@
     hyprpaper
   ];
 
-  home-manager.users.axiom = {
+  home-manager.users."${config.system.PrimaryUser}" = {
 
     home.file."wallpaper.sh" = {
       enable = true;
@@ -37,7 +38,7 @@
         };
         Service = {
           Type = "oneshot";
-          ExecStart = "/home/axiom/.share/hypaper/wallpaper.sh";
+          ExecStart = "/home/${config.system.PrimaryUser}/.share/hypaper/wallpaper.sh";
         };
         Install = {
           WantedBy = [ "default.target" ];

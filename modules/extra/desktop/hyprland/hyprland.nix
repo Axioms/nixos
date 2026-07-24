@@ -75,7 +75,7 @@
     # Optional, hint electron apps to use wayland:
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-    home-manager.users.axiom = {
+    home-manager.users."${config.system.PrimaryUser}" = {
       home.file = {
         "autostart.lua" = {
           enable = true;
