@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-
+# TODO: add flags as var maybe?
   services.tailscale = {
     enable = true;
     useRoutingFeatures = "both";
