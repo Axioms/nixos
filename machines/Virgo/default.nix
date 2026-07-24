@@ -67,7 +67,9 @@
   };
 
   network-module.bridge.devices = [ "enp12s0" ];
-
+  cockpit.origins = [
+    "https://virgo.local.axioms.dev"
+  ];
   hyprland.settings = {
     monitor = ''
       hl.monitor({output = "DP-3", mode = "1920x1080@60", position = "0x0", scale = "1"})

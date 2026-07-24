@@ -1,18 +1,36 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
 {
-# TODO: add flags as var maybe?
-  services.tailscale = {
-    enable = true;
-    useRoutingFeatures = "both";
-    extraSetFlags = [ "--netfilter-mode=nodivert" ];
-    extraDaemonFlags = [ "--no-logs-no-support" ];
+  options = {
+    tailscale = {
+      extraSetFlags = lib.mkOption {
+        default = [ ];
+        type = lib.types.listOf lib.types.str;
+      };
+      extraDaemonFlags = lib.mkOption {
+        default = [ ];
+        type = lib.types.listOf lib.types.str;
+      };
+    };
   };
+  config = {
+    services.tailscale = {
+      enable = true;
+      useRoutingFeatures = "both";
+      extraSetFlags = [ "--netfilter-mode=nodivert" ] ++ config.tailscale.extraSetFlags;
+      extraDaemonFlags = [ "--no-logs-no-support" ] ++ config.tailscale.extraDaemonFlags;
+    };
 
-  environment.systemPackages = with pkgs; [
-    tail-tray
-    trayscale
-  ];
+    environment.systemPackages = with pkgs; [
+      tail-tray
+      trayscale
+    ];
 
-  #networking.firewall.checkReversePath = "loose";
+    #networking.firewall.checkReversePath = "loose";
+  };
 }
