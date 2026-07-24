@@ -16,21 +16,21 @@
     ../../modules/extra/desktop/plasma
     ../../modules/extra/desktop
     ../../modules/extra/kitty
-    ../../modules/extra/smartcard.nix
-    ../../modules/extra/development.nix
+    ../../modules/extra/hardware/smartcard.nix
+    ../../modules/extra/development
     ../../modules/extra/libvirt
     ../../modules/kernel/cachy.nix
     ../../users/axiom
     ../../modules/core/network-bridge.nix
     ../../modules/extra/docker.nix
-    ../../modules/extra/bluetooth.nix
-    ../../modules/extra/steam.nix
-    ../../modules/extra/switch.nix
-    ../../modules/extra/minecraft.nix
+    ../../modules/extra/hardware/bluetooth.nix
+    ../../modules/extra/gaming/steam.nix
+    ../../modules/extra/hardware/switch.nix
+    ../../modules/extra/gaming/minecraft.nix
     ../../modules/extra/thunderbird
-    ../../modules/extra/keyboard.nix
-    ../../modules/extra/moonlight.nix
-    ../../modules/extra/sunshine.nix
+    ../../modules/extra/hardware/keyboard.nix
+    ../../modules/extra/gaming/moonlight.nix
+    ../../modules/extra/gaming/sunshine.nix
   ];
 
   security.polkit.enable = true;

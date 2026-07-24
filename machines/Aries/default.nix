@@ -15,18 +15,18 @@
     ../../modules/extra/desktop/plasma
     ../../modules/extra/desktop
     ../../modules/extra/kitty
-    ../../modules/extra/smartcard.nix
-    ../../modules/extra/development.nix
+    ../../modules/extra/hardware/smartcard.nix
+    ../../modules/extra/development
     ../../modules/kernel/normal.nix
     ../../users/axiom
     ../../modules/extra/docker.nix
-    ../../modules/extra/bluetooth.nix
-    ../../modules/extra/minecraft.nix
+    ../../modules/extra/hardware/bluetooth.nix
+    ../../modules/extra/gaming/minecraft.nix
     ../../modules/extra/thunderbird
-    ../../modules/extra/steam.nix
-    ../../modules/extra/fingerprint.nix
+    ../../modules/extra/gaming/steam.nix
+    ../../modules/extra/hardware/fingerprint.nix
     ../../modules/extra/plymouth.nix
-    ../../modules/extra/moonlight.nix
+    ../../modules/extra/gaming/moonlight.nix
   ];
 
   networking.hostName = "Aries"; # Define your hostname.
