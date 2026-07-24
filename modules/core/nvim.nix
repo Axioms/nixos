@@ -24,7 +24,7 @@
       nvim-web-devicons
       which-key-nvim
     ];
-
+# TODO: move lua into its own file
     initLua = # lua
       ''
         vim.cmd.colorscheme 'onedark'
