@@ -11,7 +11,7 @@
     enable = true;
     openFirewall = true;
     port = 9090;
-// TODO: make into variable 
+# TODO: make into variable 
     allowed-origins = [
       "http://localhost:9090"
       "https://localhost:9090"
