@@ -109,5 +109,11 @@
       "sleep 10 && python ~/Documents/git/streamdeck-pipewire/SwitchSink.py SinkToSink"
     ];
   };
+
+  alloy.settings = {
+    prometheusDomain = "prometheus.local.axioms.dev";
+    lokiDomain = "loki.local.axioms.dev";
+  };
+
   system.stateVersion = "25.05"; # Did you read the comment?
 }

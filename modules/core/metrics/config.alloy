@@ -4,7 +4,7 @@ prometheus.remote_write "local" {
       username = "service"
       password_file = "PASSWORDFILE"
     }
-    url = "https://prometheus.axioms.dev/api/v1/write"
+    url = "https://PROMETHEUSDOMAIN/api/v1/write"
   }
 }
 
@@ -14,18 +14,20 @@ loki.write "local" {
       username = "service"
       password_file = "PASSWORDFILE"
     }
-    url = "https://loki.axioms.dev/loki/api/v1/push"
+    url = "https://LOKIDOMAIN/loki/api/v1/push"
   }
 }
 
 prometheus.scrape "virgo_node" {
   targets = prometheus.exporter.unix.node.targets
+  scrape_interval = "15s"
   forward_to = [
     prometheus.remote_write.local.receiver,
   ]
 }
 
 prometheus.exporter.unix "node" {
+  enable_collectors = ["drm", "ethtool", "interrupts", "ksmd", "lnstat", "logind", "meminfo_numa", "network_route", "processes", "sysctl", "systemd"]
 }
 
 loki.relabel "journal" {

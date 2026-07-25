@@ -6,21 +6,37 @@
 }:
 
 {
-  services.alloy = {
-    enable = true;
-    configPath = builtins.toFile "config.alloy" (
-      builtins.replaceStrings [ "PASSWORDFILE" ] [ "${config.age.secrets.alloy-service-key.path}" ] (
-        builtins.readFile ./config.alloy
-      )
-    );
+  options = {
+    alloy.settings.prometheusDomain = lib.mkOption {
+      type = lib.types.str;
+    };
+    alloy.settings.lokiDomain = lib.mkOption {
+      type = lib.types.str;
+    };
   };
 
-  age.secrets.alloy-service-key = {
-    owner = "alloy";
-    group = "docker";
-    mode = "400";
-    rekeyFile = "${inputs.secrets}/Alloy/ServicePassword.txt.age";
-  };
+  config = {
 
-  users.extraGroups.docker.members = [ "alloy" ];
+    services.alloy = {
+      enable = true;
+      configPath = builtins.toFile "config.alloy" (
+        builtins.replaceStrings
+          [ "PASSWORDFILE" "PROMETHEUSDOMAIN" "LOKIDOMAIN" ]
+          [
+            "${config.age.secrets.alloy-service-key.path}"
+            "${config.alloy.settings.prometheusDomain}"
+            "${config.alloy.settings.lokiDomain}"
+          ]
+          (builtins.readFile ./config.alloy)
+      );
+    };
+
+    age.secrets.alloy-service-key = {
+      group = "docker";
+      mode = "440";
+      rekeyFile = "${inputs.secrets}/Alloy/ServicePassword.txt.age";
+    };
+
+    users.extraGroups.docker.members = [ "alloy" ];
+  };
 }
