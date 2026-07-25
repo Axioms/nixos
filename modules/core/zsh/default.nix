@@ -35,12 +35,6 @@
         SAVEHIST=50000
         ZSH_COLORIZE_STYLE="onedark"
 
-        if [[ -n $SSH_CONNECTION ]]; then
-          export EDITOR='nvim'
-        else
-          export EDITOR='code'
-        fi
-
         if [ $TERM = 'xterm-kitty' ]; then
           alias ssh="kitten ssh"
         fi

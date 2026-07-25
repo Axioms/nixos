@@ -1,12 +1,20 @@
 prometheus.remote_write "local" {
   endpoint {
-    url = "https://prometheus.local.axioms.dev/api/v1/write"
+    basic_auth {
+      username = "service"
+      password_file = "PASSWORDFILE"
+    }
+    url = "https://prometheus.axioms.dev/api/v1/write"
   }
 }
 
 loki.write "local" {
   endpoint {
-    url = "https://loki.local.axioms.dev/loki/api/v1/push"
+    basic_auth {
+      username = "service"
+      password_file = "PASSWORDFILE"
+    }
+    url = "https://loki.axioms.dev/loki/api/v1/push"
   }
 }
 

@@ -19,7 +19,7 @@
     ../../modules/extra/thunderbird
     ../../modules/extra/desktop
     ../../modules/extra/kitty
-    ../../modules/extra/development.nix
+    ../../modules/extra/development
     ../../modules/kernel/zen.nix
     ../../users/axiom
   ];
@@ -59,6 +59,7 @@
     ];
   };
   networking.hostName = "vm"; # Define your hostname.
+  system.PrimaryUser = "axiom";
   users.users.axiom.initialPassword = "test";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
