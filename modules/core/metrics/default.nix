@@ -17,6 +17,7 @@
 
   age.secrets.alloy-service-key = {
     owner = "alloy";
+    group = "docker";
     mode = "400";
     rekeyFile = "${inputs.secrets}/Alloy/ServicePassword.txt.age";
   };
