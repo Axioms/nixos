@@ -1,6 +1,6 @@
 prometheus.remote_write "local" {
   endpoint {
-    url = "https://prometheus.local.axioms.dev/api/v1/push"
+    url = "https://prometheus.local.axioms.dev/api/v1/write"
   }
 }
 
@@ -10,7 +10,7 @@ loki.write "local" {
   }
 }
 
-prometheus.scrape "linux_node" {
+prometheus.scrape "virgo_node" {
   targets = prometheus.exporter.unix.node.targets
   forward_to = [
     prometheus.remote_write.local.receiver,
@@ -55,7 +55,7 @@ loki.source.journal "read" {
   }
 }
 discovery.docker "linux" {
-  host = "/var/run/docker.sock"
+  host = "unix:///var/run/docker.sock"
 }
 discovery.relabel "logs_integrations_docker" {
     targets = []
@@ -82,7 +82,7 @@ discovery.relabel "logs_integrations_docker" {
     }
 }
 loki.source.docker "default" {
-  host = "/var/run/docker.sock"
+  host = "unix:///var/run/docker.sock"
   targets = discovery.docker.linux.targets
   relabel_rules = discovery.relabel.logs_integrations_docker.rules
   labels = {

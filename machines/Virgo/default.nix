@@ -31,6 +31,7 @@
     ../../modules/extra/hardware/keyboard.nix
     ../../modules/extra/gaming/moonlight.nix
     ../../modules/extra/gaming/sunshine.nix
+    ../../modules/core/metrics
   ];
 
   system.PrimaryUser = "axiom";
