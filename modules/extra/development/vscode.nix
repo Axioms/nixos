@@ -25,6 +25,7 @@
             pkief.material-icon-theme
             sumneko.lua
             docker.docker
+            grafana.grafana-alloy
           ];
 
           userSettings = {
