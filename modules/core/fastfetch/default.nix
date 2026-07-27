@@ -2,5 +2,5 @@
 
 {
 
-  home-manager.users."${config.system.PrimaryUser}". imports = [ ./hm-module.nix];
+  home-manager.users."${config.system.PrimaryUser}".imports = [ ./hm-module.nix ];
 }
