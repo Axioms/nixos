@@ -7,7 +7,7 @@
     ./applications.nix
     ./audio.nix
     ./env.nix
-    ./fastfetch.nix
+    ./fastfetch
     ./fonts.nix
     ./networking.nix
     ./nvim

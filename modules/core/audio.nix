@@ -40,8 +40,6 @@
               "monitor.channel-volumes" = true;
               "capture.props" = {
                 "media.role" = "Game";
-                #	    application.process.binary = wine64-preloader
-
               };
             };
           }

@@ -2,8 +2,6 @@
 
 {
 
-  home-manager.users."${config.system.PrimaryUser}" = _: {
-
     programs.fastfetch = {
       enable = true;
       settings = {
@@ -233,5 +231,4 @@
       };
 
     };
-  };
 }
