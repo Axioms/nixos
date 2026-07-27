@@ -13,6 +13,8 @@
   home-manager.users."${config.system.PrimaryUser}" = {
     services.swaync = {
       enable = true;
+      settings = lib.lists.toList (builtins.fromJSON (builtins.readFile ./config.json));
+      style = builtins.readFile ./style.css;
     };
   };
 }
