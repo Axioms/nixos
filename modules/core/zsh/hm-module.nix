@@ -5,11 +5,18 @@
 }:
 
 {
-  home.file.".p10k.zsh" = {
-    source = ./p10k.zsh;
-    force = true;
-  };
 
+  home = {
+    packages = [
+      pkgs.vivid
+      pkgs.bat
+    ];
+
+    file.".p10k.zsh" = {
+      source = ./p10k.zsh;
+      force = true;
+    };
+  };
   programs.zsh = {
     enable = true;
 
@@ -35,7 +42,7 @@
 
     history.append = true;
     shellAliases = {
-      logout = "loginctl terminate-user ${config.system.PrimaryUser}";
+      logout = "loginctl terminate-user $(whoami)";
     };
     plugins = [
       {
