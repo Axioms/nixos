@@ -21,7 +21,7 @@
     ./waybar
     ./tofi
     ./rofi
-    ./dunst
+    ./swaync
     ./wlogout
   ];
 

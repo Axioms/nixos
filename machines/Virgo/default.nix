@@ -86,7 +86,7 @@
       "XDG_MENU_PREFIX=arch- kbuildsycoca6" # Stupid Dolphin Open With being empty fix
       "waybar"
       "setpriv --ambient-caps -all ${lib.getExe pkgs.steam} -silent"
-      "${pkgs.dunst}/bin/dunst -config ${../../modules/extra/desktop/hyprland/dunst/dunstrc}"
+      #"${pkgs.dunst}/bin/dunst -config ${../../modules/extra/desktop/hyprland/dunst/dunstrc}"
       "hyprpaper &"
       "wl-paste --type text --watch cliphist store &"
       "wl-paste --type image --watch cliphist store &"
