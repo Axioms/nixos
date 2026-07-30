@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, config, ... }:
 {
   nix.settings = {
     download-buffer-size = 524288000; # 500 MiB
@@ -114,6 +114,8 @@
     prometheusDomain = "prometheus.local.axioms.dev";
     lokiDomain = "loki.local.axioms.dev";
   };
+
+  tailscale.extraSetFlags = ["--ssh" "--accept-dns=false" "--login-server=https://tailscale.axioms.dev" "--operator=${config.system.PrimaryUser}"];
 
   system.stateVersion = "25.05"; # Did you read the comment?
 }
