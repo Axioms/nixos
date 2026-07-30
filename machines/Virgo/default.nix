@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   nix.settings = {
     download-buffer-size = 524288000; # 500 MiB
@@ -115,7 +120,12 @@
     lokiDomain = "loki.local.axioms.dev";
   };
 
-  tailscale.extraSetFlags = ["--ssh" "--accept-dns=false" "--login-server=https://tailscale.axioms.dev" "--operator=${config.system.PrimaryUser}"];
+  tailscale.extraSetFlags = [
+    "--ssh"
+    "--accept-dns=false"
+    "--login-server=https://tailscale.axioms.dev"
+    "--operator=${config.system.PrimaryUser}"
+  ];
 
   system.stateVersion = "25.05"; # Did you read the comment?
 }
