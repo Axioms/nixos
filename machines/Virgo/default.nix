@@ -15,6 +15,7 @@
     ../../modules/core
     ../../modules/extra/browsers/firefox.nix
     ../../modules/extra/browsers/zen.nix
+    ../../modules/extra/browsers/chrome.nix
     ../../modules/extra/desktop/apps.nix
     ../../modules/extra/desktop/sddm.nix
     ../../modules/extra/desktop/hyprland
