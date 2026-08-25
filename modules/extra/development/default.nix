@@ -4,6 +4,7 @@
 
   imports = [
     ./vscode.nix
+    ./zed.nix
   ];
 
   nixpkgs.config.android_sdk.accept_license = true;
@@ -31,6 +32,5 @@
     unstable.hyprls
     optnix
     deadnix
-    zed-editor-fhs
   ];
 }
