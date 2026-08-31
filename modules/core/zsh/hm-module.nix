@@ -23,7 +23,10 @@
     autosuggestion.enable = true;
     initContent = ''
       fastfetch
-      export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+      if command -v bat &>/dev/null; then
+          export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+          export MANROFFOPT="-c"
+      fi
       export LS_COLORS="$(vivid generate snazzy)"
       source ~/.p10k.zsh
       ZSH_COLORIZE_STYLE="onedark"
