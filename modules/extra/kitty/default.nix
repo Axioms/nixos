@@ -28,6 +28,8 @@
           wheel_scroll_multiplier = 3;
           # --- Cursor ---
           cursor_shape = "underline";
+          cursor_shape_unfocused = "uncahnged";
+          shell_integration = "no-cursor";
           cursor_beam_thickness = 2.5;
           cursor_blink_interval = 0.5;
           # --- Bell ---
