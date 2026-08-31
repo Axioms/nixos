@@ -6,9 +6,14 @@
 }:
 {
 
-  environment.sessionVariables.DEFAULT_BROWSER = "${inputs.zen-browser.packages.x86_64-linux.beta}/bin/zen-beta";
-
-  # Portals
+  environment = {
+    sessionVariables.DEFAULT_BROWSER = "${inputs.zen-browser.packages.x86_64-linux.beta}/bin/zen-beta";
+    pathsToLink = [
+      "/share/xdg-desktop-portal"
+      "/share/applications"
+    ];
+  };
+  # Portals use echo $XDG_DATA_DIRS to find and xdg-mime or file -i
   home-manager.users."${config.system.PrimaryUser}" = {
     xdg = {
       mimeApps = {
@@ -16,8 +21,8 @@
         associations.added = {
           "inode/directory" = [ "org.kde.dolphin.desktop" ];
           "application/zip" = [ "org.kde.ark.desktop" ];
-          "text/csv" = [ "code.desktop" ];
-          "text/x-c" = [ "code.desktop" ];
+          "text/csv" = [ "codium.desktop" ];
+          "text/x-c" = [ "codium.desktop" ];
           "text/plain" = [ "org.kde.kate.desktop" ];
           "application/json" = [ "org.kde.kate.desktop" ];
         };
@@ -25,10 +30,14 @@
         defaultApplications = {
           "inode/directory" = [ "org.kde.dolphin.desktop" ];
           "application/zip" = [ "org.kde.ark.desktop" ];
-          "text/csv" = [ "code.desktop" ];
-          "text/x-c" = [ "code.desktop" ];
+          "text/csv" = [ "codium.desktop" ];
+          "text/x-c" = [ "codium.desktop" ];
           "text/plain" = [ "org.kde.kate.desktop" ];
           "application/json" = [ "org.kde.kate.desktop" ];
+          "image/*" = [ "org.kde.gwenview.desktop" ];
+          "image/png" = [ "org.kde.gwenview.desktop" ];
+          "image/jpeg" = [ "org.kde.gwenview.desktop" ];
+          "image/gif" = [ "org.kde.gwenview.desktop" ];
         };
       };
 

@@ -4,9 +4,9 @@
   home-manager.users."${config.system.PrimaryUser}" =
     { pkgs, ... }:
     {
-      programs.vscode = {
+      programs.vscodium = {
         enable = true;
-        package = pkgs.unstable.vscode;
+        package = pkgs.unstable.vscodium;
         profiles.default = {
           enableMcpIntegration = false;
           enableExtensionUpdateCheck = false;
