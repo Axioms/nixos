@@ -17,7 +17,7 @@
     ../../modules/extra/kitty
     ../../modules/extra/hardware/smartcard.nix
     ../../modules/extra/development
-    ../../modules/kernel/normal.nix
+    ../../modules/kernel/cachy.nix
     ../../users/axiom
     ../../modules/extra/docker.nix
     ../../modules/extra/hardware/bluetooth.nix
