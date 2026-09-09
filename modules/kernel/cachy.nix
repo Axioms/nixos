@@ -17,5 +17,5 @@
   };
   nixpkgs.overlays = [ inputs.cachyos-kernel.overlays.pinned ];
   #TODO: remove extend once ddcci driver is fixed
-  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-lts;
 }
