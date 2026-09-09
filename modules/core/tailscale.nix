@@ -22,7 +22,7 @@
     services.tailscale = {
       enable = true;
       useRoutingFeatures = "both";
-      extraSetFlags = [ "--netfilter-mode=nodivert" ] ++ config.tailscale.extraSetFlags;
+      extraSetFlags = [ "--netfilter-mode=nodivert" "--accept-dns=true" ] ++ config.tailscale.extraSetFlags;
       extraDaemonFlags = [ "--no-logs-no-support" ] ++ config.tailscale.extraDaemonFlags;
     };
 
