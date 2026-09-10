@@ -73,7 +73,6 @@
     hostName = "Virgo"; # Define your hostname.
   };
 
-  network-module.bridge.devices = [ "enp12s0" ];
   cockpit.origins = [
     "https://virgo.local.axioms.dev"
   ];
