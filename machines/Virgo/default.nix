@@ -27,7 +27,6 @@
     ../../modules/extra/libvirt
     ../../modules/kernel/cachy.nix
     ../../users/axiom
-    ../../modules/core/network-bridge.nix
     ../../modules/extra/docker.nix
     ../../modules/extra/hardware/bluetooth.nix
     ../../modules/extra/gaming/steam.nix
