@@ -68,6 +68,7 @@
       options kvm ignore_msrs=1
       #options vfio-pci ids=10de:2482,1458:408f,10de:228b,1458:408f,1912:0014
       #options kvmfr static_size_mb=256
+      options snd-hda-intel model=pch position_fix=6 
     '';
 
     extraModulePackages = [ config.boot.kernelPackages.kvmfr ];

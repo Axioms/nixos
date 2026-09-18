@@ -1,4 +1,4 @@
-@define-color module-bg     rgba(8, 8, 11, 0.9);
+@define-color module-bg     rgba(8, 8, 11, 0.5);
 @define-color tooltip-bg    @module-bg;
 @define-color inactive      #787c99;
 @define-color fg            #acb0d0;
@@ -230,4 +230,14 @@ trough highlight {
     border-radius: 8px;
     background-color: @fg;
     background-image: none; /* Some gtk themes set an svg for background. */
+}
+
+#custom-email.unread {
+  background: rgba(255, 255, 255, 0.2);
+  color: @fg;
+  border-radius: 4px;
+  padding: 0 2px;
+  margin: 1px 0;
+  font-weight: bold;
+  border: 1px solid currentColor;
 }

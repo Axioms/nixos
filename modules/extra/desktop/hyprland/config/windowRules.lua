@@ -266,7 +266,7 @@ hl.layer_rule({
     match = {
         namespace = "waybar"
     },
-    blur = true
+    blur = false
 })
 
 hl.layer_rule({
