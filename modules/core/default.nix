@@ -1,5 +1,4 @@
 { lib, config, ... }:
-# TODO: Add Config variables for Username AdminUsername TimeZone
 {
 
   imports = [

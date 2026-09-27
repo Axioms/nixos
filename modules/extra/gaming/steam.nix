@@ -34,7 +34,7 @@
   hardware.steam-hardware.enable = true;
 
   environment.systemPackages = with pkgs; [
-    protonup-qt
+    unstable.protonup-qt
     gamescope
     steam-devices-udev-rules
     dualsensectl
