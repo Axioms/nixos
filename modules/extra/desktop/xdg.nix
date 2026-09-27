@@ -41,10 +41,12 @@
         };
       };
 
+      #FIXME: Undo When DeskFlow Works on Stable
       portal = {
         config = {
           common = {
             default = [
+              "hyprland"
               "kde"
               "gtk"
               "gnome"
@@ -65,16 +67,16 @@
           };
         };
 
-        extraPortals = with pkgs.kdePackages; [
-          kwallet
-          xdg-desktop-portal-kde
+        extraPortals = [
+          pkgs.kdePackages.kwallet
+          pkgs.kdePackages.xdg-desktop-portal-kde
           pkgs.xdg-desktop-portal-gtk
-          pkgs.xdg-desktop-portal-hyprland
+          inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland
         ];
         xdgOpenUsePortal = true;
         configPackages = [
           pkgs.kdePackages.plasma-workspace
-          pkgs.hyprland
+          inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland
         ];
       };
     };

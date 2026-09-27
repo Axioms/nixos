@@ -33,6 +33,13 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+    };
+    hypr-dynamic-cursors = {
+      url = "github:VirtCode/hypr-dynamic-cursors";
+      inputs.hyprland.follows = "hyprland"; # to make sure that the plugin is built for the correct version of hyprland
+    };
     hytale = {
       url = "github:swagtop/hytale-flake";
       inputs.nixpkgs.follows = "nixpkgs-unstable";

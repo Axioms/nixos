@@ -1,5 +1,6 @@
 {
   config,
+  inputs,
   lib,
   pkgs,
   ...
@@ -25,33 +26,47 @@
     };
   };
   config = {
-
-    environment.systemPackages = with pkgs; [
-      libsForQt5.qt5ct
-      kdePackages.qt6ct
-      nwg-look
-      networkmanagerapplet
-      wl-clipboard
-      kdePackages.kdeconnect-kde
-      hyprcursor
-      rose-pine-hyprcursor
-      ddcutil
-      xdg-desktop-portal-wlr
-      cliphist
-      grimblast
-      shared-mime-info
-      hyprlandPlugins.hypr-dynamic-cursors
-      hyprpolkitagent
-      hyprpwcenter
-      hyprsysteminfo
-      ddcui
-      ddcutil
-      ddcutil-service
-    ];
+    #FIXME: Remove When DeskFlow Works on Stable
+    hardware = {
+      graphics = {
+        package = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.mesa;
+      };
+    };
+    environment.systemPackages =
+      with pkgs;
+      [
+        libsForQt5.qt5ct
+        kdePackages.qt6ct
+        nwg-look
+        networkmanagerapplet
+        wl-clipboard
+        kdePackages.kdeconnect-kde
+        rose-pine-hyprcursor
+        ddcutil
+        xdg-desktop-portal-wlr
+        cliphist
+        grimblast
+        shared-mime-info
+        hyprpolkitagent
+        hyprpwcenter
+        hyprsysteminfo
+        ddcui
+        ddcutil
+        ddcutil-service
+      ]
+      ++ [
+        inputs.hypr-dynamic-cursors.packages.${pkgs.stdenv.hostPlatform.system}.hypr-dynamic-cursors
+      ];
 
     programs = {
       hyprland = {
         enable = true;
+        #FIXME: Remove When DeskFlow Works on Stable
+        package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+        # make sure to also set the portal package, so that they are in sync
+        portalPackage =
+          inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+
         withUWSM = true;
         xwayland.enable = true;
       };
@@ -169,11 +184,18 @@
       services.easyeffects.enable = true;
       wayland.windowManager.hyprland = {
         enable = true;
-        plugins = [ pkgs.hyprlandPlugins.hypr-dynamic-cursors ];
+        plugins = [
+          inputs.hypr-dynamic-cursors.packages.${pkgs.stdenv.hostPlatform.system}.hypr-dynamic-cursors
+        ];
         configType = "lua";
         extraConfig = ''
           require("config/main")
         '';
+        #FIXME: Remove When DeskFlow Works on Stable
+        package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+        # make sure to also set the portal package, so that they are in sync
+        portalPackage =
+          inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
       };
     };
 
