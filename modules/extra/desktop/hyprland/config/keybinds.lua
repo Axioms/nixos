@@ -6,8 +6,8 @@ local fileManager = "dolphin"
 local menu        = "rofi -show drun #tofi-drun -c ~/.share/tofi/configA --drun-launch=true"
 local browser     = "zen-beta"
 local notes       = "obsidian"
-local editor      = "code"
-local editor_alt  = "zed"
+local editor      = "codium"
+local editor_alt  = "zeditor"
 local colorPicker = "hyprpicker"
 ---------------------
 ---- KEYBINDINGS ----
