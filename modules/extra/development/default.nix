@@ -34,5 +34,6 @@
     deadnix
     #Rust
     rust-bin.stable.latest.default
+    rust-bin.stable.latest.rust-src
   ];
 }

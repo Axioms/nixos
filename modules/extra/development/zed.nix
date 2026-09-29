@@ -1,4 +1,9 @@
-{ config, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   home-manager.users."${config.system.PrimaryUser}" = _: {
@@ -9,6 +14,15 @@
       mutableUserTasks = true;
       mutableUserSettings = true;
       mutableUserKeymaps = true;
+      package = pkgs.zed-editor;
+      extraPackages = with pkgs; [
+        rust-bin.stable.latest.default
+        rust-bin.stable.latest.rust-src
+      ];
     };
+  };
+
+  environment.shellAliases = {
+    zed = "${lib.getExe pkgs.zed-editor}";
   };
 }

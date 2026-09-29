@@ -13,6 +13,7 @@
     overlays = [
       inputs.nix-vscode-extensions.overlays.default
       inputs.agenix-rekey.overlays.default
+      inputs.rust-overlay.overlays.default
 
       (final: prev: {
         stable = import inputs.nixpkgs-stable {

@@ -1,4 +1,9 @@
-{ config, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   home-manager.users."${config.system.PrimaryUser}" =
@@ -75,4 +80,8 @@
         };
       };
     };
+
+  environment.shellAliases = {
+    code = "${lib.getExe pkgs.unstable.vscodium}";
+  };
 }
