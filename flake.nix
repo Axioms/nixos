@@ -52,6 +52,10 @@
       url = "git+ssh://git@github.com/Axioms/nixos-secrets.git";
       flake = false;
     };
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
     nixvirt = {
       url = "https://flakehub.com/f/AshleyYakeley/NixVirt/*.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -126,7 +130,10 @@
             (_: {
               services.vscode-server.enable = true;
             })
-
+            ({ pkgs, ... }: {
+              nixpkgs.overlays = [ inputs.rust-overlay.overlays.default ];
+              environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
+            })
           ];
         };
 

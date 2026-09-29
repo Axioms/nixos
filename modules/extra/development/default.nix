@@ -32,5 +32,7 @@
     unstable.hyprls
     optnix
     deadnix
+    #Rust
+    rust-bin.stable.latest.default
   ];
 }
