@@ -1,7 +1,7 @@
 {
   "workspace": {
     "library": [
-      "/nix/store/38skp8r9qfx4qzs5g8ba8micbv8hsibw-hyprland-0.55.2/share/hypr/stubs"
+      "/nix/store/xln8hjx6zlpqviq8fpmszzd04h0r57vq-hyprland-0.56.0+date=2026-09-27_4bb6844/share/hypr/stubs"
     ]
   }
 }
