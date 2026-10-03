@@ -30,6 +30,7 @@
     ../../modules/extra/docker.nix
     ../../modules/extra/hardware/bluetooth.nix
     ../../modules/extra/gaming/steam.nix
+    ../../modules/extra/gaming/vintage-story.nix
     ../../modules/extra/hardware/switch.nix
     ../../modules/extra/gaming/minecraft.nix
     ../../modules/extra/thunderbird

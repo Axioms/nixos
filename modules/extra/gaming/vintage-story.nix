@@ -1,19 +1,22 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  config,
+  inputs,
+  ...
+}:
 
 {
-  home-manager.users."${config.system.PrimaryUser}" =
-    { pkgs, ... }:
-    {
-      home.packages = [ pkgs.vintagestoryPackages.latest ];
+  home-manager.users."${config.system.PrimaryUser}" = {
+    imports = [ inputs.vintagestory.homeModules.default ];
 
-      programs.vs-launcher = {
-        enable = true;
-        settings.gameVersions = with pkgs.vintagestoryPackages; [
-          (latest.override {
-            waylandSupport = true;
-            x11Support = false; # optional
-          })
-        ];
-      };
+    programs.vs-launcher = {
+      enable = true;
+      settings.gameVersions = with pkgs.vintagestoryPackages; [
+        (latest.override {
+          waylandSupport = true;
+          x11Support = false; # optional
+        })
+      ];
     };
+  };
 }
