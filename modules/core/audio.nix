@@ -15,6 +15,15 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
+    extraConfig.pipewire = {
+      "QuantumClock" = {
+        "context.properties" = {
+          "default.clock.quantum" = 32;
+          "default.clock.min-quantum" = 32;
+          "default.clock.max-quantum" = 32;
+        };
+      };
+    };
     wireplumber = {
       enable = true;
       extraConfig = {
@@ -28,7 +37,7 @@
               ];
               actions = {
                 update-props = {
-                  "session.suspend-timeout-seconds" = "0";
+                  "session.suspend-timeout-seconds" = 0;
                 };
               };
             }

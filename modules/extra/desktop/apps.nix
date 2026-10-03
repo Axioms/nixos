@@ -11,7 +11,6 @@
     kdePackages.kcmutils
     kdePackages.dolphin
     mission-center
-    easyeffects
     mpv
     kdePackages.kmix
     qpwgraph

@@ -181,7 +181,7 @@
         };
       };
 
-      services.easyeffects.enable = true;
+      services.easyeffects.enable = false;
       wayland.windowManager.hyprland = {
         enable = true;
         plugins = [
