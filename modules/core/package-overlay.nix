@@ -14,6 +14,7 @@
       inputs.nix-vscode-extensions.overlays.default
       inputs.agenix-rekey.overlays.default
       inputs.rust-overlay.overlays.default
+      inputs.vintagestory.overlays.default
 
       (final: prev: {
         stable = import inputs.nixpkgs-stable {

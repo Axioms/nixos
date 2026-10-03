@@ -1162,6 +1162,7 @@
         "nixvirt": "nixvirt",
         "rust-overlay": "rust-overlay_2",
         "secrets": "secrets",
+        "vintagestory": "vintagestory",
         "vscode-server": "vscode-server",
         "zen-browser": "zen-browser"
       }
@@ -1356,6 +1357,26 @@
         "owner": "numtide",
         "repo": "treefmt-nix",
         "type": "github"
+      }
+    },
+    "vintagestory": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-stable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1789664408,
+        "narHash": "sha256-+NUBhdtSgPn/G/saQde+Cgo9F8TSdh+UKn+AdfJS8HE=",
+        "ref": "refs/heads/master",
+        "rev": "846ba0daea535db65a76d6f045c1023209972763",
+        "revCount": 163,
+        "type": "git",
+        "url": "https://codeberg.org/PierreBorine/vintagestory-nix"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://codeberg.org/PierreBorine/vintagestory-nix"
       }
     },
     "vscode-server": {
