@@ -12,7 +12,7 @@
   ];
   zramSwap = {
     enable = true;
-    memoryMax = 1024 * 1024 * 1024;
+    memoryMax = (1024 * 1024 * 1024) * 10;
   };
 
   hardware = {
