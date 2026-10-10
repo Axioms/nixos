@@ -18,5 +18,6 @@
     unrar
     exfatprogs
     usbeehive
+    multipath-tools
   ];
 }

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
 
@@ -36,4 +36,13 @@
     rust-bin.stable.latest.default
     rust-bin.stable.latest.rust-src
   ];
+  home-manager.users."${config.system.PrimaryUser}" = {
+    programs = {
+      direnv = {
+        enable = true;
+        enableBashIntegration = true; # see note on other shells below
+        nix-direnv.enable = true;
+      };
+    };
+  };
 }
