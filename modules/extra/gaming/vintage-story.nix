@@ -9,7 +9,7 @@
   home-manager.users."${config.system.PrimaryUser}" = {
     imports = [ inputs.vintagestory.homeModules.default ];
 
-    programs.vs-launcher = {
+    programs.mvl = {
       enable = true;
       settings.gameVersions = with pkgs.vintagestoryPackages; [
         (latest.override {
