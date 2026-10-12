@@ -76,6 +76,7 @@
           "ctrl+shift+escape" = "kitty_shell window";
           "ctrl+shift+o" = "pass_selection_to_program";
           "ctrl+shift+v" = "paste_from_clipboard";
+          "ctrl+v" = "paste_from_clipboard";
           "ctrl+shift+s" = "paste_from_selection";
           "ctrl+shift+left" = "previous_tab";
           "ctrl+shift+[" = "previous_window";
