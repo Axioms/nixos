@@ -118,7 +118,6 @@
             lanzaboote.nixosModules.lanzaboote
             agenix.nixosModules.default
             agenix-rekey.nixosModules.default
-            inputs.bongocat.nixosModules.default
             inputs.home-manager-stable.nixosModules.home-manager
             inputs.nix-index-database.nixosModules.default
             { programs.nix-index-database.comma.enable = true; }
@@ -136,7 +135,6 @@
             lanzaboote.nixosModules.lanzaboote
             agenix.nixosModules.default
             agenix-rekey.nixosModules.default
-            inputs.bongocat.nixosModules.default
             inputs.home-manager-stable.nixosModules.home-manager
             inputs.nix-index-database.nixosModules.default
             { programs.nix-index-database.comma.enable = true; }
@@ -158,7 +156,6 @@
             lanzaboote.nixosModules.lanzaboote
             agenix.nixosModules.default
             agenix-rekey.nixosModules.default
-            inputs.bongocat.nixosModules.default
             inputs.home-manager-stable.nixosModules.home-manager
             inputs.nix-index-database.nixosModules.default
             { programs.nix-index-database.comma.enable = true; }
