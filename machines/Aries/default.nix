@@ -83,6 +83,7 @@
     "${pkgs.bash}/bin/bash -c 'sleep 4; systemctl --user start wallpaper.timer'"
     "${pkgs.thunderbird-latest}/bin/thunderbird"
     "tail-tray &"
+    "sleep 30 && /run/current-system/sw/bin/bongocat-all"
   ];
 
   # Open ports in the firewall.
