@@ -1,8 +1,8 @@
 _:
 
 {
-programs.wayland-bongocat = {
-        enable = true;
-        autostart = false;
-      };
+  programs.wayland-bongocat = {
+    enable = true;
+    autostart = false;
+  };
 }
