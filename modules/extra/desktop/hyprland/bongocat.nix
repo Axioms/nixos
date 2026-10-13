@@ -5,18 +5,18 @@ _:
     enable = true;
     autostart = false;
     # Example minimal configuration
-    cat_x_offset = 100;
-    cat_y_offset = -12;
-    cat_align = "center";
-    cat_height = 58;
-    overlay_height = 80;
-    overlay_opacity = 0;
-    overlay_position = "top";
+    catXOffset = 100;
+    catYOffset = -12;
+    catAlign = "center";
+    catHeight = 58;
+    overlayHeight = 80;
+    overlayOpacity = 0;
+    overlayPosition = "top";
     layer = "top";
     fps = 60;
-    enable_antialiasing = 1;
-    animation_name = "bongocat";
-    keypress_duration = 200;
+    enableAntialiasing = true;
+    keypressDuration = 200;
+    enableDebug = false;
 
     # add devices found with find-devices
     inputDevices = [
@@ -38,5 +38,9 @@ _:
       "/dev/input/event15"
       "/dev/input/event23"
     ];
+
+    extraConfig = ''
+      animation_name = bongocat
+    '';
   };
 }
