@@ -6,6 +6,10 @@
     flake-utils = {
       url = "github:numtide/flake-utils";
     };
+    bongocat = {
+      url = "github:furudbat/wayland-vpets";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
     cachyos-kernel = {
       url = "github:xddxdd/nix-cachyos-kernel/release";
     };
@@ -13,7 +17,6 @@
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
-
     alien = {
       url = "github:thiagokokada/nix-alien";
     };
@@ -64,6 +67,10 @@
       url = "https://flakehub.com/f/AshleyYakeley/NixVirt/*.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+    mochi-desktop = {
+      url = "github:miflow13/mochi-desktop";
+      flake = false;
+    };
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs-stable";
@@ -72,6 +79,7 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
@@ -110,6 +118,7 @@
             lanzaboote.nixosModules.lanzaboote
             agenix.nixosModules.default
             agenix-rekey.nixosModules.default
+            inputs.bongocat.nixosModules.default
             inputs.home-manager-stable.nixosModules.home-manager
             inputs.nix-index-database.nixosModules.default
             { programs.nix-index-database.comma.enable = true; }
@@ -127,6 +136,7 @@
             lanzaboote.nixosModules.lanzaboote
             agenix.nixosModules.default
             agenix-rekey.nixosModules.default
+            inputs.bongocat.nixosModules.default
             inputs.home-manager-stable.nixosModules.home-manager
             inputs.nix-index-database.nixosModules.default
             { programs.nix-index-database.comma.enable = true; }
@@ -148,6 +158,7 @@
             lanzaboote.nixosModules.lanzaboote
             agenix.nixosModules.default
             agenix-rekey.nixosModules.default
+            inputs.bongocat.nixosModules.default
             inputs.home-manager-stable.nixosModules.home-manager
             inputs.nix-index-database.nixosModules.default
             { programs.nix-index-database.comma.enable = true; }

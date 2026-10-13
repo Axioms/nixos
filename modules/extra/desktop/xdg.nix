@@ -87,5 +87,8 @@
 
   # A cool app to test a DE for which portals it support
   # https://flathub.org/apps/com.belmoussaoui.ashpd.demo
-  environment.systemPackages = with pkgs; [ ashpd-demo ];
+  environment.systemPackages = with pkgs; [
+    ashpd-demo
+    waycheck
+  ];
 }

@@ -27,11 +27,7 @@
   };
   config = {
     #FIXME: Remove When DeskFlow Works on Stable
-    hardware = {
-      graphics = {
-        package = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.mesa;
-      };
-    };
+
     environment.systemPackages =
       with pkgs;
       [

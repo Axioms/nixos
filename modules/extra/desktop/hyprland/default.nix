@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  inputs,
   ...
 }:
 
@@ -17,7 +18,7 @@
     ./hypridle.nix
     ./hyprlock.nix
     ./hyprpaper.nix
-
+    ./bongocat.nix
     ./waybar
     ./tofi
     ./rofi

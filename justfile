@@ -13,7 +13,7 @@ lint host=shell("hostname"): fmt
 	statix check
 
 build host=shell("hostname"): lint
-	nom build .#nixosConfigurations.{{host}}.config.system.build.toplevel --out-link /tmp/nixos-configuration
+	nom build .#nixosConfigurations.{{host}}.config.system.build.toplevel --out-link /tmp/nixos-configuration --fallback
 
 test host=shell("hostname"): (build host)
 	sudo /tmp/nixos-configuration/dry-activate
