@@ -200,7 +200,7 @@ hl.window_rule({
 })
 
 local windowsToFloat = { "kvantummanager", "qt5ct", "qt6ct", "nwg-look", "org.kde.ark", "pavucontrol", "blueman-manager",
-    "nm-applet", "nm-connection-editor", "polkit", "proton.vpn.app.gtk" }
+    "nm-applet", "nm-connection-editor", "polkit", "proton.vpn.app.gtk", "dev.faetalize.waytator" }
 
 for _, v in ipairs(windowsToFloat) do
     hl.window_rule({
