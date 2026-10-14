@@ -12,107 +12,93 @@
       programs.wayland-bongocat = {
         enable = true;
         autostart = true;
+
+        catXOffset = 100;
+        catYOffset = -12;
+        catHeight = 58;
+        catAlign = "center";
+
+        # Visual settings
+        mirrorX = false;
+        mirrorY = false;
+        enableAntialiasing = true;
+
+        # Overlay settings
+        overlayPosition = "top";
+        overlayHeight = 80;
+        overlayOpacity = 0;
+        layer = "top";
+
+        # Animation settings
+        idleFrame = 0;
+        keypressDuration = 200;
+        testAnimationDuration = 200;
+        testAnimationInterval = 0;
+        fps = 60;
+        enableHandMapping = true;
+
+        # Sleep mode
+        idleSleepTimeout = 0;
+        enableScheduledSleep = true;
+        sleepBegin = "22:00";
+        sleepEnd = "06:00";
+
+        # Debug mode
+        enableDebug = false;
+
+        # Input devices
+        inputDevices = [
+          "/dev/input/event0"
+          "/dev/input/event1"
+          "/dev/input/event2"
+          "/dev/input/event3"
+          "/dev/input/event4"
+          "/dev/input/event5"
+          "/dev/input/event6"
+          "/dev/input/event7"
+          "/dev/input/event8"
+          "/dev/input/event9"
+          "/dev/input/event10"
+          "/dev/input/event11"
+          "/dev/input/event12"
+          "/dev/input/event13"
+          "/dev/input/event14"
+          "/dev/input/event15"
+          "/dev/input/event16"
+          "/dev/input/event18"
+          "/dev/input/event19"
+          "/dev/input/event20"
+          "/dev/input/event21"
+          "/dev/input/event22"
+          "/dev/input/event23"
+          "/dev/input/event24"
+          "/dev/input/event25"
+          "/dev/input/event26"
+          "/dev/input/event28"
+          "/dev/input/event29"
+          "/dev/input/event30"
+          "/dev/input/event31"
+          "/dev/input/event32"
+          "/dev/input/event33"
+          "/dev/input/event34"
+          "/dev/input/event35"
+          "/dev/input/event36"
+          "/dev/input/event37"
+          "/dev/input/event38"
+          "/dev/input/event39"
+          "/dev/input/event40"
+          "/dev/input/event41"
+          "/dev/input/event42"
+          "/dev/input/event43"
+          "/dev/input/event44"
+          "/dev/input/event45"
+          "/dev/input/event46"
+          "/dev/input/event47"
+          "/dev/input/event48"
+          "/dev/input/event49"
+          "/dev/input/event50"
+          "/dev/input/event260"
+        ];
       };
-
-      home.file."bongocat.conf" = {
-        enable = true;
-        executable = true;
-        text = ''
-          # Cat position and size
-          cat_x_offset=100
-          cat_y_offset=-12
-          cat_height=58
-          cat_align=center
-
-          # Visual settings
-          mirror_x=0
-          mirror_y=0
-          enable_antialiasing=1
-
-          # Overlay settings
-          overlay_position=top
-          overlay_height=80
-          overlay_opacity=0
-          layer=top
-
-          # Animation settings
-          idle_frame=0
-          keypress_duration=200
-          test_animation_duration=200
-          test_animation_interval=0
-          fps=60
-          enable_hand_mapping=1
-
-          # Sleep mode
-          idle_sleep_timeout=0
-          enable_scheduled_sleep=0
-          sleep_begin=22:00
-          sleep_end=06:00
-
-          # Debug mode
-          enable_debug=0
-
-          # Monitor
-          monitor=
-
-          # Input devices
-          keyboard_device=/dev/input/event0
-          keyboard_device=/dev/input/event1
-          keyboard_device=/dev/input/event2
-          keyboard_device=/dev/input/event3
-          keyboard_device=/dev/input/event4
-          keyboard_device=/dev/input/event5
-          keyboard_device=/dev/input/event6
-          keyboard_device=/dev/input/event7
-          keyboard_device=/dev/input/event8
-          keyboard_device=/dev/input/event9
-          keyboard_device=/dev/input/event10
-          keyboard_device=/dev/input/event11
-          keyboard_device=/dev/input/event12
-          keyboard_device=/dev/input/event13
-          keyboard_device=/dev/input/event14
-          keyboard_device=/dev/input/event15
-          keyboard_device=/dev/input/event16
-          keyboard_device=/dev/input/event18
-          keyboard_device=/dev/input/event19
-          keyboard_device=/dev/input/event20
-          keyboard_device=/dev/input/event21
-          keyboard_device=/dev/input/event22
-          keyboard_device=/dev/input/event23
-          keyboard_device=/dev/input/event24
-          keyboard_device=/dev/input/event25
-          keyboard_device=/dev/input/event26
-          keyboard_device=/dev/input/event28
-          keyboard_device=/dev/input/event29
-          keyboard_device=/dev/input/event30
-          keyboard_device=/dev/input/event31
-          keyboard_device=/dev/input/event32
-          keyboard_device=/dev/input/event33
-          keyboard_device=/dev/input/event34
-          keyboard_device=/dev/input/event35
-          keyboard_device=/dev/input/event36
-          keyboard_device=/dev/input/event37
-          keyboard_device=/dev/input/event38
-          keyboard_device=/dev/input/event39
-          keyboard_device=/dev/input/event40
-          keyboard_device=/dev/input/event41
-          keyboard_device=/dev/input/event42
-          keyboard_device=/dev/input/event43
-          keyboard_device=/dev/input/event44
-          keyboard_device=/dev/input/event45
-          keyboard_device=/dev/input/event46
-          keyboard_device=/dev/input/event47
-          keyboard_device=/dev/input/event48
-          keyboard_device=/dev/input/event49
-          keyboard_device=/dev/input/event50
-          keyboard_device=/dev/input/event260
-
-          hotplug_scan_interval=30
-
-          # Extra Config
-          animation_name = bongocat'';
-        target = ".config/bongocat/bongocat.conf";
-      };
-
     };
 }
