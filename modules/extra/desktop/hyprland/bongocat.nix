@@ -11,7 +11,7 @@
 
       programs.wayland-bongocat = {
         enable = true;
-        autostart = false;
+        autostart = true;
       };
 
       home.file."bongocat.conf" = {
