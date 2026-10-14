@@ -49,6 +49,8 @@
         ddcui
         ddcutil
         ddcutil-service
+        unstable.waytator
+        notify-send
       ]
       ++ [
         inputs.hypr-dynamic-cursors.packages.${pkgs.stdenv.hostPlatform.system}.hypr-dynamic-cursors
@@ -173,6 +175,12 @@
           executable = true;
           source = ./config/windowRules.lua;
           target = ".config/hypr/config/windowRules.lua";
+        };
+        "screenshot.sh" = {
+          enable = true;
+          executable = true;
+          source = ./assets/scripts/screenshot.sh;
+          target = ".config/hypr/scripts/screenshot.sh";
         };
       };
 

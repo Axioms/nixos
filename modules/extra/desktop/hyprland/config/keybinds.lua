@@ -92,8 +92,7 @@ hl.bind("CONTROL" .. "+  ESCAPE", hl.dsp.exec_cmd("pkill waybar || waybar # togg
 
 -- Screenshot
 hl.bind(mainMod .. "+ SHIFT" .. "+ S",
-    hl.dsp.exec_cmd(
-        "grimblast --notify copysave area \"$HOME/Pictures/Screenshots/Screenshot_$(date +%Y%m%d_%H%M%S).png\"")) --# Select area to take screenshot"
+    hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/screenshot.sh")) --# Select area to take screenshot"
 
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
