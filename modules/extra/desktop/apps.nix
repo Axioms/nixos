@@ -35,6 +35,7 @@
     element-desktop
     fluffychat
     cinny-desktop
+    gdk-pixbuf
   ];
 
   programs.nix-ld.enable = true;

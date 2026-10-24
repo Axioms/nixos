@@ -3,7 +3,14 @@
   pkgs,
   ...
 }:
-
+let
+  kernel = pkgs.cachyosKernels.linux-cachyos-latest.override {
+    # Customize CachyOS settings
+    lto = "full";
+    processorOpt = "zen4";
+    bbr3 = true;
+  };
+in
 {
   nix.settings = {
     substituters = [
@@ -16,5 +23,22 @@
     ];
   };
   nixpkgs.overlays = [ inputs.cachyos-kernel.overlays.pinned ];
-  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-lts;
+  boot.kernelPackages = (pkgs.linuxKernel.packagesFor kernel).extend (
+    final: prev: {
+      zfs_cachyos = pkgs.cachyosKernels.zfs-cachyos.override {
+        inherit kernel;
+      };
+
+      ddcci-driver = prev.ddcci-driver.overrideAttrs (oldAttrs: {
+        patches = [
+          (pkgs.fetchpatch {
+            name = "Use-sysfs_emit-and-field-width-specifier.patch";
+            url = "https://gitlab.com/liquidnya/ddcci-driver-linux/-/commit/9510aa4aebf32678884f55ae251e54012a354ed1.patch";
+            hash = "sha256-s12ers7nPFaHOB+8/S8t3dtdoR6slukkfNPdghgftNs=";
+          })
+        ]
+        ++ (oldAttrs.patches or [ ]);
+      });
+    }
+  );
 }

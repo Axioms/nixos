@@ -37,6 +37,7 @@
     ../../modules/extra/hardware/keyboard.nix
     ../../modules/extra/gaming/moonlight.nix
     ../../modules/extra/gaming/sunshine.nix
+    ../../modules/extra/waydroid.nix
     ../../modules/core/metrics
   ];
 

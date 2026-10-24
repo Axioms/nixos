@@ -11,6 +11,7 @@
       localNetworkGameTransfers.openFirewall = true;
       dedicatedServer.openFirewall = true;
       remotePlay.openFirewall = true;
+      extest.enable = true;
       gamescopeSession.enable = true;
       protontricks.enable = true;
       extraPackages = with pkgs; [
@@ -21,9 +22,9 @@
         dualsensectl
         lsfg-vk
         lsfg-vk-ui
+        gdk-pixbuf
       ];
     };
-
     appimage = {
       enable = true;
       binfmt = true;
