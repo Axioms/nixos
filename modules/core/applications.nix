@@ -19,5 +19,6 @@
     exfatprogs
     usbeehive
     multipath-tools
+    unstable.openseachest
   ];
 }

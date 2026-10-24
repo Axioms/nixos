@@ -13,6 +13,7 @@
     ./hardware.nix
     ./syncthing.nix
     ../../modules/core
+    ../../modules/extra/alien.nix
     ../../modules/extra/browsers/firefox.nix
     ../../modules/extra/browsers/zen.nix
     ../../modules/extra/browsers/chrome.nix

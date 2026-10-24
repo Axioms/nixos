@@ -15,7 +15,7 @@
       inputs.agenix-rekey.overlays.default
       inputs.rust-overlay.overlays.default
       inputs.vintagestory.overlays.default
-
+      inputs.alien.overlays.default
       (final: prev: {
         stable = import inputs.nixpkgs-stable {
           inherit (final.stdenv.hostPlatform) system;
