@@ -8,7 +8,7 @@
     enable = true;
   };
 
-  enviroment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     waydroid-helper
     waydroid-nftables
   ];
