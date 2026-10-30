@@ -1,21 +1,6 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-
-  disabledModules = [ "hardware/xone.nix" ];
-
-  nixpkgs.overlays = [
-    (self: _: {
-      xone-dongle-firmware =
-        self.callPackage "${inputs.nixpkgs-unstable}/pkgs/by-name/xo/xone-dongle-firmware/package.nix"
-          { };
-    })
-  ];
-
-  imports = [
-    "${inputs.nixpkgs-unstable}/nixos/modules/hardware/xone.nix"
-  ];
-
   hardware = {
     bluetooth = {
       enable = true;
@@ -46,7 +31,6 @@
       };
     };
     xpadneo.enable = false;
-    xone.enable = false;
     enableAllFirmware = false;
   };
   services.blueman.enable = true;

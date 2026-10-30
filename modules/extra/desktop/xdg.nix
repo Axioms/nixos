@@ -71,12 +71,12 @@
           pkgs.kdePackages.kwallet
           pkgs.kdePackages.xdg-desktop-portal-kde
           pkgs.xdg-desktop-portal-gtk
-          pkgs.unstable.xdg-desktop-portal-hyprland
+          inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland
         ];
         xdgOpenUsePortal = true;
         configPackages = [
           pkgs.kdePackages.plasma-workspace
-          pkgs.unstable.hyprland
+          inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland
         ];
       };
     };

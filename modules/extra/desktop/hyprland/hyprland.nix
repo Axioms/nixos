@@ -60,9 +60,10 @@
       hyprland = {
         enable = true;
         #FIXME: Remove When DeskFlow Works on Stable
-        package = pkgs.unstable.hyprland;
+        package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
         # make sure to also set the portal package, so that they are in sync
-        portalPackage = pkgs.unstable.xdg-desktop-portal-hyprland;
+        portalPackage =
+          inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
 
         withUWSM = true;
         xwayland.enable = true;
@@ -195,9 +196,10 @@
           require("config/main")
         '';
         #FIXME: Remove When DeskFlow Works on Stable
-        package = pkgs.unstable.hyprland;
+        package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
         # make sure to also set the portal package, so that they are in sync
-        portalPackage = pkgs.unstable.xdg-desktop-portal-hyprland;
+        portalPackage =
+          inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
       };
     };
 

@@ -123,7 +123,7 @@
           ];
         };
 
-        Virgo = inputs.nixpkgs-stable.lib.nixosSystem {
+        Virgo = inputs.nixpkgs-unstable.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = {
             inherit inputs outputs self;
@@ -134,7 +134,7 @@
             lanzaboote.nixosModules.lanzaboote
             agenix.nixosModules.default
             agenix-rekey.nixosModules.default
-            inputs.home-manager-stable.nixosModules.home-manager
+            inputs.home-manager-unstable.nixosModules.home-manager
             inputs.nix-index-database.nixosModules.default
             { programs.nix-index-database.comma.enable = true; }
             inputs.vscode-server.nixosModules.default

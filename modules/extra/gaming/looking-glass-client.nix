@@ -70,7 +70,7 @@
     SUBSYSTEM=="kvmfr", GROUP="kvm", MODE="0660"
   '';
 
-  virtualisation.libvirtd.qemu.verbatimConfig = ''
+  virtualisation.libvirt.qemu.verbatimConfig = ''
     cgroup_device_acl = [
         "/dev/null", "/dev/full", "/dev/zero",
         "/dev/random", "/dev/urandom",
