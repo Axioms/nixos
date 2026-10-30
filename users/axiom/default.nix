@@ -39,6 +39,7 @@
         "qemu"
         "wheel"
         "networkmanager"
+        "pipewire"
         "tty"
         "usbmux"
         "sshuser"
