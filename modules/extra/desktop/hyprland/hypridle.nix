@@ -18,22 +18,22 @@
           };
 
           listener = [
-            {
-              timeout = 60; # 1min.
-              on-timeout = "brightnessctl -s set 5"; # set monitor backlight to minimum, avoid 0 on OLED monitor.
-              on-resume = "brightnessctl -r"; # monitor backlight restore.
-            }
+            #{
+            #  timeout = 60; # 1min.
+            #  on-timeout = "brightnessctl -s set 5"; # set monitor backlight to minimum, avoid 0 on OLED monitor.
+            #  on-resume = "brightnessctl -r"; # monitor backlight restore.
+            #}
 
-            {
-              timeout = 120; # 2min
-              on-timeout = "loginctl lock-session"; # lock screen when timeout has passed
-            }
+            #{
+            #  timeout = 120; # 2min
+            #  on-timeout = "loginctl lock-session"; # lock screen when timeout has passed
+            #}
 
-            {
-              timeout = 300; # 5min
-              on-timeout = "hyprctl dispatch dpms off"; # screen off when timeout has passed
-              on-resume = "hyprctl dispatch dpms on"; # screen on when activity is detected after timeout has fired.
-            }
+            #{
+            #  timeout = 300; # 5min
+            #  on-timeout = "hyprctl dispatch dpms off"; # screen off when timeout has passed
+            #  on-resume = "hyprctl dispatch dpms on"; # screen on when activity is detected after timeout has fired.
+            #}
 
             #{
             #  timeout = 900; # 30min

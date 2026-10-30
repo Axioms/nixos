@@ -36,6 +36,7 @@
     fluffychat
     cinny-desktop
     gdk-pixbuf
+    unstable.cloudflare-speed-cli
   ];
 
   programs.nix-ld.enable = true;

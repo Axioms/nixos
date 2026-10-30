@@ -12,34 +12,35 @@
   imports = [
     ./hardware.nix
     ./syncthing.nix
-    ../../modules/core
-    ../../modules/extra/alien.nix
-    ../../modules/extra/browsers/firefox.nix
-    ../../modules/extra/browsers/zen.nix
-    ../../modules/extra/browsers/chrome.nix
-    ../../modules/extra/desktop/apps.nix
-    ../../modules/extra/desktop/sddm.nix
-    ../../modules/extra/desktop/hyprland
-    ../../modules/extra/desktop/plasma
-    ../../modules/extra/desktop
-    ../../modules/extra/kitty
-    ../../modules/extra/hardware/smartcard.nix
-    ../../modules/extra/development
-    ../../modules/extra/libvirt
     ../../modules/kernel/cachy.nix
     ../../users/axiom
-    ../../modules/extra/docker.nix
-    ../../modules/extra/hardware/bluetooth.nix
-    ../../modules/extra/gaming/steam.nix
-    ../../modules/extra/gaming/vintage-story.nix
-    ../../modules/extra/hardware/switch.nix
-    ../../modules/extra/gaming/minecraft.nix
-    ../../modules/extra/thunderbird
-    ../../modules/extra/hardware/keyboard.nix
-    ../../modules/extra/gaming/moonlight.nix
-    ../../modules/extra/gaming/sunshine.nix
-    ../../modules/extra/waydroid.nix
+    ../../modules/core
     ../../modules/core/metrics
+    ../../modules/extra/alien.nix
+    ../../modules/extra/kitty
+    ../../modules/extra/libvirt
+    ../../modules/extra/docker.nix
+    ../../modules/extra/thunderbird
+    ../../modules/extra/waydroid.nix
+    ../../modules/extra/browsers/firefox.nix
+    ../../modules/extra/browsers/chrome.nix
+    ../../modules/extra/browsers/zen.nix
+    ../../modules/extra/desktop
+    ../../modules/extra/desktop/apps.nix
+    ../../modules/extra/desktop/sddm.nix
+    ../../modules/extra/desktop/plasma
+    ../../modules/extra/desktop/hyprland
+    ../../modules/extra/development
+    ../../modules/extra/gaming/steam.nix
+    ../../modules/extra/gaming/sunshine.nix
+    ../../modules/extra/gaming/moonlight.nix
+    ../../modules/extra/gaming/minecraft.nix
+    ../../modules/extra/gaming/vintage-story.nix
+    ../../modules/extra/gaming/vr.nix
+    ../../modules/extra/hardware/bluetooth.nix
+    ../../modules/extra/hardware/keyboard.nix
+    ../../modules/extra/hardware/smartcard.nix
+    ../../modules/extra/hardware/switch.nix
   ];
 
   system.PrimaryUser = "axiom";

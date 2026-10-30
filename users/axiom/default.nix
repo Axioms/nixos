@@ -42,6 +42,7 @@
         "tty"
         "usbmux"
         "sshuser"
+        "rtkit"
       ];
     };
   };
