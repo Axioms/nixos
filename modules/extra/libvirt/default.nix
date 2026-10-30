@@ -72,7 +72,7 @@ in
   boot.extraModprobeConfig = "options kvm_amd nested=1";
   imports = [
     inputs.nixvirt.nixosModules.default
-    "${inputs.nixpkgs-unstable}/nixos/modules/virtualisation/libvirt.nix"
+    "${inputs.nixpkgs-unstable}/nixos/modules/virtualisation/libvirtd.nix"
   ];
   programs.virt-manager = {
     enable = true;
@@ -184,11 +184,11 @@ in
 
   environment.etc = {
     "ovmf/edk2-x86_64-secure-code.fd" = {
-      source = config.virtualisation.libvirt.qemu.package + "/share/qemu/edk2-x86_64-secure-code.fd";
+      source = config.virtualisation.libvirtd.qemu.package + "/share/qemu/edk2-x86_64-secure-code.fd";
     };
 
     "ovmf/edk2-i386-vars.fd" = {
-      source = config.virtualisation.libvirt.qemu.package + "/share/qemu/edk2-i386-vars.fd";
+      source = config.virtualisation.libvirtd.qemu.package + "/share/qemu/edk2-i386-vars.fd";
     };
   };
 

@@ -106,7 +106,7 @@
       formatter.x86_64-linux = inputs.nixpkgs-stable.legacyPackages.x86_64-linux.nixfmt-tree;
 
       nixosConfigurations = {
-        vm = inputs.nixpkgs-stable.lib.nixosSystem {
+        vm = inputs.nixpkgs-unstable.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = {
             inherit inputs outputs self;
@@ -117,7 +117,7 @@
             lanzaboote.nixosModules.lanzaboote
             agenix.nixosModules.default
             agenix-rekey.nixosModules.default
-            inputs.home-manager-stable.nixosModules.home-manager
+            inputs.home-manager-unstable.nixosModules.home-manager
             inputs.nix-index-database.nixosModules.default
             { programs.nix-index-database.comma.enable = true; }
           ];
@@ -144,7 +144,7 @@
           ];
         };
 
-        Aries = inputs.nixpkgs-stable.lib.nixosSystem {
+        Aries = inputs.nixpkgs-unstable.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = {
             inherit inputs outputs self;
@@ -155,7 +155,7 @@
             lanzaboote.nixosModules.lanzaboote
             agenix.nixosModules.default
             agenix-rekey.nixosModules.default
-            inputs.home-manager-stable.nixosModules.home-manager
+            inputs.home-manager-unstable.nixosModules.home-manager
             inputs.nix-index-database.nixosModules.default
             { programs.nix-index-database.comma.enable = true; }
           ];
