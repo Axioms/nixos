@@ -7,13 +7,13 @@ if hl.plugin.dynamic_cursors ~= nil then
                 mode = "tilt",
                 shake = {
                     enabled = true,
-                    threshold = 20.0,
+                    threshold = 6.0,
                     base = 4.0,
                     speed = 4.0,
                     influence = 0.0,
                     limit = 0.0,
                     timeout = 2000,
-                    effects = false,
+                    effects = true,
                     ipc = false,
                 },
                 hyprcursor = {
