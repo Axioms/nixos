@@ -13,7 +13,7 @@
     programs.rofi = {
       enable = true;
       theme = ./theme.rasi;
-      extraConfig = {
+      settings = {
         "show-icons" = true;
         "display-ssh" = " ";
         "display-run" = " ";
@@ -24,7 +24,7 @@
         "display-emoji" = " ";
       };
 
-      modes = [
+      settings.modes = [
         "keys"
         "filebrowser"
         "emoji"
