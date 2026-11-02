@@ -1539,10 +1539,10 @@
     "zen-browser": {
       "inputs": {
         "home-manager": [
-          "home-manager-stable"
+          "home-manager-unstable"
         ],
         "nixpkgs": [
-          "nixpkgs-stable"
+          "nixpkgs-unstable"
         ]
       },
       "locked": {

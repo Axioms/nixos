@@ -14,7 +14,7 @@ in
 {
   nix.settings = {
     substituters = [
-      "https://attic.xuyh0120.win/lantian"
+      "https://cache.lantian.pub/lantian"
       "https://cache.xinux.uz"
     ];
     trusted-public-keys = [

@@ -82,8 +82,8 @@
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
-        home-manager.follows = "home-manager-stable";
-        nixpkgs.follows = "nixpkgs-stable";
+        home-manager.follows = "home-manager-unstable";
+        nixpkgs.follows = "nixpkgs-unstable";
       };
     };
     vscode-server = {

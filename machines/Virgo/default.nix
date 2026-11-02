@@ -20,6 +20,7 @@
     ../../modules/extra/kitty
     ../../modules/extra/libvirt
     ../../modules/extra/docker.nix
+    ../../modules/extra/plymouth.nix
     ../../modules/extra/thunderbird
     ../../modules/extra/waydroid.nix
     ../../modules/extra/browsers/firefox.nix
@@ -79,6 +80,7 @@
   cockpit.origins = [
     "https://virgo.local.axioms.dev"
   ];
+  plymouth.theme = "cubes";
   hyprland.settings = {
     monitor = ''
       hl.monitor({output = "DP-3", mode = "1920x1080@60", position = "0x0", scale = "1"})
