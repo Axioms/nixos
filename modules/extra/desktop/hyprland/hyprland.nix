@@ -177,6 +177,12 @@
           source = ./config/windowRules.lua;
           target = ".config/hypr/config/windowRules.lua";
         };
+        "disablehdr.lua" = {
+          enable = true;
+          executable = true;
+          source = ./config/disablehdr.lua;
+          target = ".config/hypr/config/disablehdr.lua";
+        };
         "screenshot.sh" = {
           enable = true;
           executable = true;
