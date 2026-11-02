@@ -115,6 +115,7 @@
       "${pkgs.thunderbird-latest}/bin/thunderbird"
       "tail-tray"
       "sleep 10 && python ~/Documents/git/streamdeck-pipewire/SwitchSink.py SinkToSink"
+      "sleep 15 && streamcontroller -b"
     ];
   };
 

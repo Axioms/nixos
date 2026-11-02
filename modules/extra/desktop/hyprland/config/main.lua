@@ -17,6 +17,7 @@ require("config/lookAndFeel")
 require("config/windowRules")
 require("config/permissions")
 require("config/hyprCursor")
+require("config/disablehdr")
 ----------------
 ----  MISC  ----
 ----------------
