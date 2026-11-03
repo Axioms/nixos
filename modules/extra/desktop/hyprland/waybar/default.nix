@@ -15,8 +15,8 @@
       settings = lib.lists.toList (builtins.fromJSON (builtins.readFile ./config.json));
       style = ./style.css;
       systemd = {
-        enabled = true;
-        targets  = [ "hyprland-session.target" ];
+        enable = true;
+        targets = [ "hyprland-session.target" ];
       };
     };
   };
