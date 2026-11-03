@@ -13,8 +13,11 @@
     programs.waybar = {
       enable = true;
       settings = lib.lists.toList (builtins.fromJSON (builtins.readFile ./config.json));
-
       style = ./style.css;
+      systemd = {
+        enabled = true;
+        targets  = [ "hyprland-session.target" ];
+      };
     };
   };
 }
