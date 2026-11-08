@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 
 {
-
+  steam.enable.vr = true;
   boot = {
     kernelPatches = [
       {
@@ -17,8 +17,24 @@
       options cfg80211 ieee80211_regdom=US
     '';
   };
+
   networking.networkmanager.enable = true;
   environment.systemPackages = [ pkgs.iw ];
   users.users."${config.system.PrimaryUser}".extraGroups = [ "networkmanager" ];
 
+  home-manager.users."${config.system.PrimaryUser}" = {
+    xdg = {
+      configFile."openxr/1/active_runtime.json".text = ''
+        {
+           "file_format_version": "1.0.0",
+            "runtime": {
+            "VALVE_runtime_is_steamvr": true,
+            "library_path": "/home/${config.system.PrimaryUser}/.local/share/Steam/steamapps/common/SteamVR/bin/linux64/vrclient.so",
+            "name": "SteamVR"
+            }
+        }
+      '';
+
+    };
+  };
 }
