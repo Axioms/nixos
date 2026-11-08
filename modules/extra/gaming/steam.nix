@@ -1,5 +1,11 @@
 { pkgs, ... }:
-
+let
+  patchedBwrap = pkgs.bubblewrap.overrideAttrs (o: {
+    patches = (o.patches or [ ]) ++ [
+      ./bwrap.patch
+    ];
+  });
+in
 {
   programs = {
     gamescope = {
@@ -14,6 +20,22 @@
       extest.enable = true;
       gamescopeSession.enable = true;
       protontricks.enable = true;
+      package = pkgs.steam.override {
+        buildFHSEnv =
+          args:
+          (
+            (pkgs.buildFHSEnv.override {
+              bubblewrap = patchedBwrap;
+            })
+              (
+                args
+                // {
+                  extraBwrapArgs = (args.extraBwrapArgs or [ ]) ++ [ "--cap-add ALL" ];
+                }
+              )
+          );
+      };
+
       extraPackages = with pkgs; [
         kdePackages.breeze-icons
         kdePackages.breeze
