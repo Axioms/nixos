@@ -25,7 +25,7 @@
       overlayPosition = "top";
       overlayHeight = 80;
       overlayOpacity = 0;
-      layer = "top";
+      overlayLayer = "top";
 
       # Animation settings
       idleFrame = 0;
