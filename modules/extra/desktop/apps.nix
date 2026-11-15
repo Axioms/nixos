@@ -39,6 +39,10 @@
     unstable.cloudflare-speed-cli
   ];
 
-  programs.nix-ld.enable = true;
-  programs.partition-manager.enable = true;
+  programs = {
+    nix-ld.enable = true;
+    partition-manager.enable = true;
+    localsend.enable = true;
+  };
+
 }
