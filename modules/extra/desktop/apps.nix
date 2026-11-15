@@ -42,7 +42,10 @@
   programs = {
     nix-ld.enable = true;
     partition-manager.enable = true;
-    localsend.enable = true;
+    localsend = {
+      enable = true;
+      openFirewall = true;
+    };
   };
 
 }

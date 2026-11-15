@@ -117,6 +117,7 @@
       "tail-tray"
       "sleep 100 && python ~/Documents/git/streamdeck-pipewire/SwitchSink.py SinkToSink"
       "sleep 15 && streamcontroller -b"
+      "localsend_app --hidden &"
     ];
   };
 

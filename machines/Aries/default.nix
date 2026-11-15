@@ -82,6 +82,7 @@
     "${pkgs.bash}/bin/bash -c 'sleep 4; systemctl --user start wallpaper.timer'"
     "${pkgs.thunderbird-latest}/bin/thunderbird"
     "tail-tray &"
+    "localsend_app --hidden &"
   ];
 
   # Open ports in the firewall.
