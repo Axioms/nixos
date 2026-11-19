@@ -13,6 +13,7 @@
     arduino-ide
     arduino-core
     arduino-language-server
+    bruno
     filezilla
     git
     godot
