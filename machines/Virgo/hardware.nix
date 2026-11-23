@@ -112,8 +112,8 @@
       fsType = "ext4";
     };
     "/mnt/gamesSlow" = {
-      device = "/dev/disk/by-uuid/0b593e11-ad24-4b81-9224-f863a44f5d98";
-      fsType = "ext4";
+      device = "/dev/disk/by-uuid/cc907d4c-689e-4efa-9416-0c4af05f692a";
+      fsType = "xfs";
     };
     "/home" = {
       device = "/dev/disk/by-uuid/63d5edb1-b3f1-4525-99ed-659304e4005e";
@@ -124,8 +124,8 @@
       fsType = "ext4";
     };
     "/mnt/games" = {
-      device = "/dev/disk/by-uuid/ff876ac8-a678-4a18-87da-e4312aa53fda";
-      fsType = "ext4";
+      device = "/dev/disk/by-uuid/5ea72c65-21cd-482b-a465-f9e7bff12cdf";
+      fsType = "xfs";
     };
   };
 
@@ -182,9 +182,9 @@
       #ainstsdd1 UUID=0201b90d-c3e2-4e0b-81a1-b0bf73b21007 ${config.age.secrets.ainstsdd1-Virgo-key.path} luks,key-slot=1
       ainstsdb1 UUID=e5ea3b7f-edfe-4aab-999c-d49b54bab21b ${config.age.secrets.ainstsdb1-Virgo-key.path} luks,key-slot=1
       ainstsde1 UUID=6adad7da-3bb9-4ffa-895f-8ddc5e26e0e1 ${config.age.secrets.ainstsde1-Virgo-key.path} luks,key-slot=1
-      ainstsda1 UUID=ed67f5cb-e5ea-4efa-a6ef-0c47f1b1fdac ${config.age.secrets.ainstsda1-Virgo-key.path} luks,key-slot=1
+      ainstsda1 UUID=c6dd47e2-cf00-4b22-8390-b08f43128ea1 ${config.age.secrets.ainstsda1-Virgo-key.path} luks,key-slot=1
       ainstsdc1 UUID=8f97e143-80b8-43a9-904c-248b1173a90d ${config.age.secrets.ainstsdc1-Virgo-key.path} luks,key-slot=1
-      gameDrive UUID=f02b4b9f-5b2d-4632-83ee-fb8e6133cea2 ${config.age.secrets.GameDrive-Virgo-key.path} luks,key-slot=1
+      gameDrive UUID=7358e6d8-2071-4590-b3e1-dbcb4cf75db2 ${config.age.secrets.GameDrive-Virgo-key.path} luks,key-slot=1
       #ainstnvme2n1p1 UUID=6842e454-1b16-4470-8960-6b50d60443e5 ${config.age.secrets.nvme2n1p1-Virgo-key.path} luks,key-slot=0
     '';
   };
